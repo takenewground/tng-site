@@ -1,7 +1,7 @@
 {
-    "name": "Adrian Koehler",
-    "short_name": "Adrian Koehler",
-    "description": "no bullshit COACH for the RELENTLESS",
+    "name": "Take New Ground",
+    "short_name": "TNG",
+    "description": "let's turn LEADERSHIT into LEADERSHIP",
     "start_url": "./index.html",
     "display_override": [""],
     "display":      "standalone",
