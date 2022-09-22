@@ -1,0 +1,21 @@
+{
+  "name": "ak-site",
+  "version": "1.0.0",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "description": "",
+  "scripts": {
+    "start": "serve",
+    "build": "node ./.dss.mjs",
+    "dist": "rm -rf docs/* && gcp -rlf src/* docs/",
+    "clean": "rm -rf docs/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/takenewground/ak-site.git"
+  },
+  "keywords": [],
+  "author": "d4",
+  "dependencies": {
+
+  }
+}
