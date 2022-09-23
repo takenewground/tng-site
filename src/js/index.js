@@ -154,8 +154,8 @@ scrollrig.jack('main', document.querySelector('main'), {
         scroll_y = $.dim_y[0];
         let styles = `
             #s1>.graphic {transform:translate3d(0,${map_range(scroll_y, 0,vh, 0,-vh/4)}px,0);}
-            #s2>.graphic {transform:translate3d(0,${map_range(scroll_y, vh,vh<<1, 0,-vh/6)}px,0);}
-        `;
+            
+        `;//#s2>.graphic {transform:translate3d(0,${map_range(scroll_y, vh,vh<<1, 0,-vh/6)}px,0);}
         section_style.innerHTML = styles;
         // console.log($.dim_y[0]);
     }
@@ -212,7 +212,7 @@ function listen_mouse() {
             mtgt_has = true;
             mtgt_scroll_y = scroll_y;
             let {x,y,width,height,right,bottom} = target.getBoundingClientRect()
-            const pad = -(height >> 2);
+            const pad = vw/144; //-(height >> 2);
             mtgt_rect[0] = map_range(mx, x,right, x, x - pad);
             mtgt_rect[1] = map_range(my, y,bottom, y, y - pad);
             mtgt_rect[2] = width + (pad);
@@ -272,13 +272,15 @@ function roundedRect(ctx, x, y, width, height, radius) {
           ctx.beginPath();
           const x = this.x - (this.w>>1)
           const y = this.y - (this.h>>1)
-          roundedRect(ctx, x, y, this.w, this.h, this.radius)
+            
+        //   roundedRect(ctx, x, y, this.w, this.h, this.radius)
         //   ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
           ctx.closePath();
-          if (this.fill) {
+        //   if (this.fill) {
             ctx.fillStyle = this.fill;
-            ctx.fill();
-          }
+            // ctx.fill();
+            ctx.fillRect(x,y,this.w,this.h);
+        //   }
         //   if (this.stroke) {
         //     // ctx.lineWidth = this.stroke_w;
         //     ctx.lineWidth = (vw+vh)/360;
@@ -329,6 +331,7 @@ function roundedRect(ctx, x, y, width, height, radius) {
         ctx.fillRect(0,0,vw,vh);
         // ctx.clearRect(0,0, vw, vh);
     }
+    let _DID_INIT = 0;
     function draw() {
         if (canvas_w !== vw || canvas_h !== vh) {
             canvas.width = canvas_w = vw;
@@ -344,19 +347,22 @@ function roundedRect(ctx, x, y, width, height, radius) {
             sys.set('my', mtgt_rect[1] + (h>>1) - (mtgt_scroll_y - scroll_y))
             sys.set('rad', 0)//Math.max(0, Math.min(pill.w,pill.h)>>1 ))
         }
-        else if (scroll_y > -100) {
-            const r = vw > vh ?
-                vw/18 : vh/18
-            sys.set('w', r<<1)
-            sys.set('h', r<<1)
-            sys.set('rad', 0)
-            sys.set('mx', tgt_x)
-            sys.set('my', tgt_y)
-        }
+        // else if (!_DID_INIT) { // scroll_y > -100) {
+        //     _DID_INIT = 1;
+        //     const r = vw > vh ?
+        //         vw/18 : vh/18
+        //     // sys.set('w', r<<1)
+        //     // sys.set('h', r<<1)
+        //     sys.set('w', 0)
+        //     sys.set('h', 0)
+        //     sys.set('rad', 0)
+        //     sys.set('mx', tgt_x)
+        //     sys.set('my', tgt_y)
+        // }
         else {
             const r = Math.abs(map_range(Math.abs(pill.x + pill.y - (mx + my)), 500,0, vw/36,vw/18))
-            sys.set('w', r<<1)
-            sys.set('h', r<<1)
+            sys.set('w', 0)
+            sys.set('h', 0)
             sys.set('rad',r)
             sys.set('mx', mx)
             sys.set('my', my)
@@ -373,8 +379,8 @@ function roundedRect(ctx, x, y, width, height, radius) {
             pill.radius = (pill.w >> 1)
 
         // pill.stroke_w = vw >> 6;
-
-        pill.draw();
+        if ((pill.w|pill.h) > 1)
+            pill.draw();
         requestAnimationFrame(draw)
     }
 })();

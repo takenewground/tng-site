@@ -1478,6 +1478,17 @@ section {
 	contain:style;
 }
 
+section >.area {
+	max-width:1400px;
+	width:100vw;
+	margin:auto;
+	display:flex;
+	 flex-direction:column;
+	gap:2.7777778vh;
+	padding-top:11.1111111vh;
+	   padding-bottom:11.1111111vh;
+}
+
 section.intro {
 	position: relative;
 	height:100vh;
@@ -1490,6 +1501,7 @@ section.intro > .graphic {
 	display:flex;
 	 flex-direction:row;
 	z-index:-1;
+	background:black;
 }
 
 section.intro > .graphic {
@@ -1514,7 +1526,7 @@ section.intro > .graphic .graphic-item {
 	
                             object-position: 50% 50%;
 	
-                            opacity: .66;
+                            opacity: .5;
 	
                         ;
 }section.intro > .title {
@@ -1552,7 +1564,6 @@ section.intro > .title .logo {
                         ;
 }section.intro > .title .title-main {
 	margin:0;
-	font-size:13vw;
 	font-family:Saol Display, ivypresto-display, serif;
 	font-weight:500;
 	font-size:6vw;
@@ -1574,58 +1585,203 @@ section.intro > .social-links {
 	display:none;
 }
 
-section.quote {
+section.process-cards {
+	display:flex;
+	padding-top:11.1111111vh;
+}
+
+section.process-cards >.area .title h1 {
+	
+                            font-family: Saol Display, ivypresto-display, serif;
+	
+                            font-weight: 500;
+	
+                            font-size: 6vw;
+	
+                            line-height: 1.1111111;
+	
+                            letter-spacing: -0.131vw;
+	
+                            pointer-events: none;
+	
+                        ;
+}section.process-cards .cards {
+	display:flex;
+	 flex-direction:row;
+	justify-items: stretch;
+	width:100%;
+	gap:1.3888889vw;
+}
+
+section.process-cards .card {
+	padding:2.7777778vw;
+	display:flex;
+	 flex-direction:column;
+}
+
+section.process-cards .card {
+	
+                        border: 1px solid black;
+	
+                    ;
+}section.process-cards .card > * {
+	pointer-events: none;
+}
+
+section.process-cards .card h2 {
+	
+                            text-transform: uppercase;
+	
+                            font-size: 1rem;
+	
+                            opacity: .5;
+	
+                        ;
+}section.process-cards .card h4 {
+	margin-bottom:auto;
+	margin-top:1rem;
+}
+
+section.process-cards .card h4 {
+	                            
+                            font-family: Saol Display, ivypresto-display, serif;
+	
+                            font-weight: 500;
+	
+                            font-size: 2vw;
+	
+                            line-height: 1.1111111;
+	
+                            letter-spacing: -0.131vw;
+	
+                            pointer-events: none;
+	
+                        ;
+}section.process-cards .card p {
+	margin-top:4rem;
+}
+
+section.process-cards .card p {
+	
+                            opacity: .5;
+	
+                        ;
+}section.quote {
 	position: relative;
-	margin-top:11.1111111vw;
-	   margin-bottom:11.1111111vw;
-	width:100vw;
-	display:grid;
-	grid-template-columns: repeat(9, minmax(0, 1fr));
 }
 
-section.quote >.figure-blockquote {
-	grid-column-start: 1;
-	grid-column-end: 10;
-	display:grid;
-	grid-template-columns: repeat(9, minmax(0, 1fr));
+section.quote .figure-blockquote {
+	display:flex;
+	 flex-direction:column;
+	align-items: flex-end;
+	margin-bottom:11.1111111vh;
 }
 
-section.quote >.figure-blockquote >blockquote {
-	grid-column-start: 2;
-	grid-column-end: 7;
-	font-size:13vw;
+section.quote .figure-blockquote >blockquote {
+	order: 0;
+	margin-right:3rem;
+	 margin-left:3rem;
+	margin-top:1rem;
+	   margin-bottom:1rem;
 	font-family:Saol Display, ivypresto-display, serif;
 	font-weight:500;
-	font-size:6vw;
+	font-size:3vw;
 	line-height:1.1111111;
-	letter-spacing:-0.231vw;
+	letter-spacing:-0.131vw;
 	pointer-events:none;
 }
 
-section.quote >.figure-blockquote >figcaption {
-	grid-column-start: 7;
-	grid-column-end: 9;
+section.quote .figure-blockquote >figcaption {
+	order: 1;
 	display:flex;
 	 flex-direction:column;
+	align-items: flex-end;
+	gap:1rem;
 	padding:1.11111111rem;
-	margin-top:22.2222222vh;
 	text-align: center;
 }
 
-section.quote >.figure-blockquote >figcaption .avatar {
-	margin-bottom:1.11111111rem;
-	width:100%;
-	display:block;
-	border-top-left-radius:999px;
-	 border-top-right-radius:999px;
-}
-
-section.quote >.figure-blockquote >figcaption .author-meta {
-	color:black;
+section.quote .figure-blockquote >figcaption .author-meta {
 	font-weight:600;
+	opacity:.5;
 }
 
-section.outro {
+section.quote .figure-blockquote >figcaption .avatar {
+	width:10rem;
+	height:10rem;
+	border-radius:0;
+	display:block;
+}
+
+section.quote .figure-blockquote >figcaption .avatar {
+	
+                                object-fit: cover;
+	
+                            ;
+}section.profile-list {
+	position: relative;
+}
+
+section.profile-list >.area {
+	display:flex;
+	 flex-direction:row;
+}
+
+section.profile-list .title h1 {
+	
+                        font-family: Saol Display, ivypresto-display, serif;
+	
+                        font-weight: 500;
+	
+                        font-size: 6vw;
+	
+                        line-height: 1.1111111;
+	
+                        letter-spacing: -0.131vw;
+	
+                        pointer-events: none;
+	
+                    ;
+}section.profile-list ul {
+	display:flex;
+	 flex-direction:row;
+	flex-wrap: wrap;
+	justify-items: stretch;
+	gap:3rem;
+}
+
+section.profile-list li {
+	display:flex;
+	 flex-direction:column;
+	min-width:40%;
+	margin-bottom:3rem;
+}
+
+section.profile-list li {
+	
+                        flex:1;
+	 
+                    ;
+}section.profile-list li .role {
+	font-weight:600;
+	opacity:.5;
+}
+
+section.profile-list li .avatar {
+	width:100%;
+	border-radius:0;
+	display:block;
+	margin-bottom:2rem;
+}
+
+section.profile-list li .avatar {
+	
+                            object-fit: contain;
+	
+                            aspect-ratio:1/1;
+	
+                        ;
+}section.outro {
 	position: relative;
 	height:100vh;
 	padding-top:0;
@@ -1683,42 +1839,30 @@ section.outro > .text {
 
 }section.graphic-text {
 	position: relative;
-	height:100vh;
-	padding-top:0vh;
-	   padding-bottom:0vh;
-	display:grid;
-	grid-template-columns: repeat(9, minmax(0, 1fr));
-	grid-template-rows: repeat(9, minmax(0, 1fr));
 }
 
-@media screen and (max-width:992px)  {
-	 section.graphic-text {
-	height:111.11111vh;
-	padding-top:0.0555556vh;
-	   padding-bottom:0.0555556vh;
+section.graphic-text {
+	
+                    background: hsl(0 0% 100% / 0.6);
+	
+                    color: black;
+	
+                ;
+}section.graphic-text >.area {
+	display:flex;
+	 flex-direction:row;
+	min-height:100vh;
+	gap:6rem;
 }
 
-}section.graphic-text > .graphic {
-	grid-column-start: 3;
-	grid-column-end: 5;
-	grid-row-start: 1;
-	grid-row-end: 6;
-	margin-bottom:-11.1111111vh;
+section.graphic-text .graphic {
+	width:50%;
+	height:auto;
 	display:flex;
 	 flex-direction:row;
 }
 
-@media screen and (max-width:992px)  {
-	 section.graphic-text > .graphic {
-	grid-column-start: 1;
-	grid-column-end: 4;
-	grid-row-start: 1;
-	grid-row-end: 6;
-	margin-bottom:-11.1111111vh;
-	margin-left:-5.5555556vh;
-}
-
-}section.graphic-text > .graphic .graphic-item {
+section.graphic-text .graphic .graphic-item {
 	width:100%;
 	display:block;
 	background-size:contain;
@@ -1726,21 +1870,30 @@ section.outro > .text {
 	background-position:50% 50%;
 }
 
-section.graphic-text > .text {
-	grid-column-start: 6;
-	grid-column-end: 8;
-	grid-row-start: 6;
-	grid-row-end: auto;
+section.graphic-text .text {
+	width:50%;
+	height:auto;
+	justify-content: center;
+	display:flex;
+	 flex-direction:column;
+	gap:3rem;
 }
 
-@media screen and (max-width:992px)  {
-	 section.graphic-text > .text {
-	grid-column-start: 5;
-	grid-column-end: 9;
-	grid-row-start: 6;
-	grid-row-end: auto;
-}
-
+section.graphic-text .text h2 {
+	
+                            font-family: Saol Display, ivypresto-display, serif;
+	
+                            font-weight: 500;
+	
+                            font-size: 6vw;
+	
+                            line-height: 1.1111111;
+	
+                            letter-spacing: -0.231vw;
+	
+                            pointer-events: none;
+	
+                        ;
 }section.graphic-text-alt {
 	position: relative;
 	height:100vh;
@@ -1835,61 +1988,57 @@ section.present {
                         gap: 3.75vw;
 	
                     ;
-}section.clients {
+}section.clients .area {
 	position: relative;
 	display:flex;
 	 flex-direction:column;
 	align-items: center;
 }
 
-section.clients >:not([hidden])~:not([hidden]) {
+section.clients .area >:not([hidden])~:not([hidden]) {
 	margin-top:8vw;
 	   margin-bottom:8vw;
 }
 
-section.clients >:not([hidden])~:not([hidden]) {
+section.clients .area >:not([hidden])~:not([hidden]) {
 	margin-top:8vw;
 	   margin-bottom:8vw;
 }
 
-section.clients {
-	
-                        padding-top: 33.333333vh;
-	
-                        padding-bottom: 33.333333vh;
-	
+section.clients .area {
+	                        
                         text-align:center;
 	
                     ;
-}section.clients li {
+}section.clients .area li {
 	
                         font-weight: 500;
 	
                         font-family: 'Saol Display';
 	
-                        font-size: 5vw;
+                        font-size: 3vw;
 	
-                        line-height: 5.55555vw;
+                        line-height: 1.111111;
 	
-                        min-height: 8vw;
+                        min-height: 5vw;
 	
                         letter-spacing: -0.04ch;
 	
                     ;
-}section.clients li a {
+}section.clients .area li a {
 	position: relative;
 	z-index:10;
 }
 
-section.clients li a:not([href]) {
+section.clients .area li a:not([href]) {
 	text-decoration-line: none;
 }
 
-section.clients li .gallery {
+section.clients .area li .gallery {
 	position: absolute;
 }
 
-section.clients li .gallery {
+section.clients .area li .gallery {
 	
                             z-index:0;
 	
@@ -1901,11 +2050,11 @@ section.clients li .gallery {
                             height:100%;
 	
                         ;
-}section.clients li:hover {
+}section.clients .area li:hover {
 	font-style: italic;
 }
 
-section.clients li:hover .gallery {
+section.clients .area li:hover .gallery {
 	
                                 visibility:visible;
 	

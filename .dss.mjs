@@ -204,19 +204,23 @@ dss.install(dss.plugin_from_obj({
                 ['main',$`flex-v contain(${`style paint`}) backface-hidden style(${`
                     transform:translate3d(0px,0px,0px);
                 `})`],
+
+                // defaults
                 ['section', $`contain(style)`,// $`bg(${css.v('section-bg')})`,
+                    ['>.area', $`w.max(1400px) w(100vw) m(auto) flex-v gap(${css.vh(100/36)}) p.y(${css.vh(100/9)})`]                    
                 ],
-                ['section.intro',
-                    $`relative h(100vh) 
+                
+
+                ['section.intro', $`relative h(100vh) 
                         grid grid.cols(9) grid.rows(9)
                     `,
-                    ['> .graphic',$`flex-h zi(-1)`,
+                    ['> .graphic',$`flex-h zi(-1) bg(black)`,
                                          $`col.start(1) col.end(10) row.start(1) row.end(10) m.b(${css.vh(0/9)}) m.r(0)`,
                         // [css.media('md'),$`col.start(6) col.end(10) row.start(1) row.end(10) m.b(${css.vh(-100/9)}) m.r(${css.vw(-100/18)})`],
                         ['.graphic-item', $`w(100%) block bg.size(cover) bg.position(${'50% 50%'})`,`
                             object-fit: cover;
                             object-position: 50% 50%;
-                            opacity: .66;
+                            opacity: .5;
                         `],
                     ],
                     ['> .title', $`col.start(3) col.end(8) row.start(2) row.end(9)
@@ -230,7 +234,6 @@ dss.install(dss.plugin_from_obj({
                             max-width: calc((100vh+100vw)/12);
                         `], //flex:0;
                         ['.title-main',$`m(0) style(${`
-                            font-size: 13vw;
                             font-family: Saol Display, ivypresto-display, serif;
                             font-weight: 500;
                             font-size: 6vw;
@@ -249,27 +252,81 @@ dss.install(dss.plugin_from_obj({
 
                     ],
                 ],
-                ['section.quote',
-                    $`relative  m.y(${css.vw(100/9)}) w(100vw)
-                        grid grid.cols(9)
-                    `,
-                    ['>.figure-blockquote',$`col.start(1) col.end(10)  grid grid.cols(9)`,
-                        ['>blockquote',$`col.start(2) col.end(7) style(${`
-                            font-size: 13vw;
+                ['section.process-cards', $`flex p.t(${css.vh(100/9)})`,
+                    ['>.area',
+                        ['.title h1',`
                             font-family: Saol Display, ivypresto-display, serif;
                             font-weight: 500;
                             font-size: 6vw;
                             line-height: 1.1111111;
-                            letter-spacing: -0.231vw;
+                            letter-spacing: -0.131vw;
+                            pointer-events: none;
+                        `]
+                    ],
+                    ['.cards',$`flex-h justify-items-stretch w(100%) gap(${css.vw(100/72)})`],
+                    ['.card',$`p(${css.vw(100/36)}) flex-v`, `
+                        border: 1px solid black;
+                    `,
+                        ['> *',`pointer-events: none;`],
+                        ['h2',`
+                            text-transform: uppercase;
+                            font-size: 1rem;
+                            opacity: .5;
+                        `],
+                        ['h4', $`m.b(auto) m.t(1rem)`,`                            
+                            font-family: Saol Display, ivypresto-display, serif;
+                            font-weight: 500;
+                            font-size: 2vw;
+                            line-height: 1.1111111;
+                            letter-spacing: -0.131vw;
+                            pointer-events: none;
+                        `],
+                        ['p',$`m.t(4rem)`,`
+                            opacity: .5;
+                        `]
+                    ]                    
+                ],
+                ['section.quote',$`relative`,
+
+                    ['.figure-blockquote',$`flex-v items-end m.b(${css.vh(100/9)})`,
+                        ['>blockquote',$`order(0) m.x(3rem) m.y(1rem) style(${`
+                            font-family: Saol Display, ivypresto-display, serif;
+                            font-weight: 500;
+                            font-size: 3vw;
+                            line-height: 1.1111111;
+                            letter-spacing: -0.131vw;
                             pointer-events: none;
                         `})`],
-                        ['>figcaption',$`col.start(7) col.end(9) flex-v p(1.11111111rem) m.t(${css.vh(100*2/9)})
+                        ['>figcaption',$`order(1) flex-v items-end gap(1rem) p(1.11111111rem) 
                             text-center
-                        `,
-                            ['.avatar', $`m.b(1.11111111rem) w(100%) block rounded.t(999px) `],
-                            ['.author-meta', $`color(black) style(${`font-weight: 600;`})`],
+                        `, // m.t(${css.vh(100*2/9)})                            
+                            ['.author-meta', $`style(${`font-weight: 600; opacity:.5;`})`],
+                            ['.avatar', $`w(10rem) h(10rem) rounded(0) block `, `
+                                object-fit: cover;
+                            `],
                         ],
 
+                    ],
+                ],
+                ['section.profile-list',$`relative`,
+                    ['>.area',$`flex-h`],
+                    ['.title h1',`
+                        font-family: Saol Display, ivypresto-display, serif;
+                        font-weight: 500;
+                        font-size: 6vw;
+                        line-height: 1.1111111;
+                        letter-spacing: -0.131vw;
+                        pointer-events: none;
+                    `],
+                    ['ul',$`flex-h flex-wrap justify-items-stretch gap(3rem)`],
+                    ['li',$`flex-v w.min(40%) m.b(3rem)`,`
+                        flex:1; 
+                    `,
+                        ['.role', $`style(${`font-weight: 600; opacity:.5;`})`],
+                        ['.avatar', $`w(100%) rounded(0) block m.b(2rem)`, `
+                            object-fit: contain;
+                            aspect-ratio:1/1;
+                        `],
                     ],
                 ],
                 ['section.outro',
@@ -287,20 +344,43 @@ dss.install(dss.plugin_from_obj({
                     ],
                 ],
 
-                ['section.graphic-text',
-                    $`relative h(100vh) p.y(${css.vh(0/9)}) grid grid.cols(9) grid.rows(9)
-                    `,
-                    [css.media('lg'), $`h(111.11111vh) p.y(${css.vh(1/18)})`],
-                    ['> .graphic',        $`col.start(3) col.end(5) row.start(1) row.end(6) m.b(${css.vh(-100/9)})
-                        flex-h`,
-                        [css.media('lg'), $`col.start(1) col.end(4) row.start(1) row.end(6) m.b(${css.vh(-100/9)}) m.l(${css.vh(-100/18)})`],
+                ['section.graphic-text',$`relative`,`
+                    background: hsl(0 0% 100% / 0.6);
+                    color: black;
+                `,
+                    ['>.area',$`flex-h h.min(100vh) gap(6rem)`],
+                    // [css.media('lg'), $`h(111.11111vh) p.y(${css.vh(1/18)})`],
+                    ['.graphic',        $`w(50%) h(auto) flex-h`,
+                        // [css.media('lg'), $`col.start(1) col.end(4) row.start(1) row.end(6) m.b(${css.vh(-100/9)}) m.l(${css.vh(-100/18)})`],
                         ['.graphic-item', $`w(100%) block bg.size(contain) bg.repeat(none) bg.position(${'50% 50%'})`],
                     ],
-                    ['> .text',           $`col.start(6) col.end(8) row.start(6) row.end(auto)`,
-                        [css.media('lg'), $`col.start(5) col.end(9) row.start(6) row.end(auto)`],
+                    ['.text',           $`w(50%) h(auto) justify-center flex-v gap(3rem)`,
+                        // [css.media('lg'), $`col.start(5) col.end(9) row.start(6) row.end(auto)`],
+                        ['h2',`
+                            font-family: Saol Display, ivypresto-display, serif;
+                            font-weight: 500;
+                            font-size: 6vw;
+                            line-height: 1.1111111;
+                            letter-spacing: -0.231vw;
+                            pointer-events: none;
+                        `]
                     ],
-
                 ],
+                // ['section.graphic-text',
+                //     $`relative h(100vh) p.y(${css.vh(0/9)}) grid grid.cols(9) grid.rows(9)
+                //     `,
+                //     [css.media('lg'), $`h(111.11111vh) p.y(${css.vh(1/18)})`],
+                //     ['> .graphic',        $`col.start(3) col.end(5) row.start(1) row.end(6) m.b(${css.vh(-100/9)})
+                //         flex-h`,
+                //         [css.media('lg'), $`col.start(1) col.end(4) row.start(1) row.end(6) m.b(${css.vh(-100/9)}) m.l(${css.vh(-100/18)})`],
+                //         ['.graphic-item', $`w(100%) block bg.size(contain) bg.repeat(none) bg.position(${'50% 50%'})`],
+                //     ],
+                //     ['> .text',           $`col.start(6) col.end(8) row.start(6) row.end(auto)`,
+                //         [css.media('lg'), $`col.start(5) col.end(9) row.start(6) row.end(auto)`],
+                //     ],
+
+                // ],
+
                 ['section.graphic-text-alt',
                     $`relative h(100vh) p.y(${css.vh(0/9)})
                         grid grid.cols(9) grid.rows(9)
@@ -334,18 +414,16 @@ dss.install(dss.plugin_from_obj({
                         gap: 3.75vw;
                     `
                 ],
-                ['section.clients', css.class`relative flex-v items-center  space.y(8vw)`, //gap: 7vw;
-                    `
-                        padding-top: 33.333333vh;
-                        padding-bottom: 33.333333vh;
+                ['section.clients .area', $`relative flex-v items-center  space.y(8vw)`, //gap: 7vw;
+                    `                        
                         text-align:center;
                     `,
                     ['li',`
                         font-weight: 500;
                         font-family: 'Saol Display';
-                        font-size: 5vw;
-                        line-height: 5.55555vw;
-                        min-height: 8vw;
+                        font-size: 3vw;
+                        line-height: 1.111111;
+                        min-height: 5vw;
                         letter-spacing: -0.04ch;
                     `,
                         ['a',$`relative zi(10)`,['&:not([href])',$`textline-none`]],

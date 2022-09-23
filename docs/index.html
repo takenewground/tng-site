@@ -60,7 +60,7 @@
 			<main data-scroll-container>
 				<section id="s1" class="intro" data-scroll-section>
 					<div class="graphic" data-scroll>
-						<video id="bg_video" class="graphic-item" src="https://github.com/takenewground/tng-site/releases/download/bg-video-0.0.1/tng-bg.md.mp4" type="video/mp4" 
+						<video id="bg_video" class="graphic-item" src="vid/tng-bg.lo.mp4" poster="vid/tng-bg.jpg" type="video/mp4" 
 						playsinline="false" muted autoplay loop preload="metadata">
 						<!-- <div style="background-image: url(img/chair_w1200.png)" class="graphic-item hover-target"></div> -->
 						<script> (function(){
@@ -69,8 +69,7 @@
 							]
 							let start_idx = (localStorage.getItem('bg_video.start_idx') | 0) % starts.length;
 							// const start_idx = Math.round(Math.random()*(starts.length-1))
-							const start_time = starts[start_idx]
-																					
+							const start_time = starts[start_idx]												
 							bg_video.addEventListener("loadedmetadata", function() {
      							this.currentTime = starts[start_idx];
 								 localStorage.setItem('bg_video.start_idx', ++start_idx)
@@ -99,6 +98,9 @@
 							into
 							<span class="lowercase italic">leadership</span> 							
 						</h1>
+						<div class="text">
+							<p>Right now, what issues threaten the future of your organization? What if you are working to solve the wrong issues, would you want to know?</p>
+						</div>
 					</div>
 					<!-- <div class="social-links" >
 						<a href="https://www.linkedin.com/in/adriankoehler/">LinkedIn</a>
@@ -107,59 +109,109 @@
 						<a href="https://www.instagram.com/adrian.k/">Instagram</a>
 					</div> -->
 				</section>
-				<section id="s2" class="graphic-text" data-scroll-section>
-					<div class="graphic" data-scroll>
-						<div style="background-image: url(img/the-change-imperative.600x956.jpg)" class="graphic-item hover-target"></div>
+				<section class="process-cards" data-scroll-section>
+					<div class="area">
+						<div class="title">
+							<h1>How we do it.</h1>
+						</div>
+						<div class="cards">
+							<div class="card hover-target">
+								<h2>1. Rigorous Inquiry</h2>
+								<h4>Most assessments are bullshit.</h4>
+								<p>Our onboarding process connects to current reality through a combination of difficult conversations and scientific analysis. We reveal the team dynamics that are currently sabotaging outcomes. Before we talk "next", we must own "now".</p>					
+							</div>
+							<div class="card hover-target">
+								<h2>2. Hardcore Trainings</h2>
+								<h4>Most leadership off-sites are bullshit.</h4>
+								<p>Our trainings are uniquely crafted and unapologetically connected to the leaderships vision for your organization. With equal parts care for the person and conviction for the results we engage your team in the conversations that have been stifled or avoided.</p>					
+							</div>
+							<div class="card hover-target">
+								<h2>3. Real Accountability</h2>
+								<h4>Most coaching is bullshit.</h4>
+								<p>Our individual coaching will generate clarity, personal responsibility and team accountability. We utilize provocative questions, bold feedback, and trackable results to support each team member in delivering on their departmental contribution to the whole.</p>					
+							</div>
+						</div>
 					</div>
-					<p class="text">Growth, change & transition often come with confusion, frustration & resistance. You can flip those experiences into clarity and confidence with the Change Imperative e-book.</p>
+				</section>		
+				<section class="quote" data-scroll-section>
+					<div class="area">
+						<figure class="figure-blockquote">
+							<blockquote>"If you’re willing to actually operate differently and more effectively there is no one better – They give you the tools as long as you have the courage to use them."</blockquote>
+							<figcaption>
+								<!-- <img class="avatar" style="opacity:.7" src="img/avatar_josh.jpg" /> -->
+								<span class="author">Josh Giegel</span>
+								<span class="author-meta">Co-Founder & CTO, Virgin Hyperloop One</span>
+							</figcaption>
+						<figure>
+					</div>
+				</section>		
+				<section id="s2" class="graphic-text" data-scroll-section>
+					<div class="area">
+						<div class="graphic" data-scroll>
+							<div style="background-image: url(img/the-change-imperative.600x956.jpg)" class="graphic-item hover-target"></div>
+						</div>					
+						<div class="text">
+							<h2>Free eBook ⏤ Newsletter</h2>
+							<p>Growth, change & transition often come with confusion, frustration & resistance. You can flip those experiences into clarity and confidence with the Change Imperative e-book.</p>
+							<a>Signup to get your free copy</a>
+						</div>
+					</div>
+				</section>				
+				<section class="clients" data-scroll-section>
+					<div class="area">
+						<h3>Executive Clients</h3>
+						<ul>
+							<li>
+								<a>Nike</a>
+								<!-- <div class="gallery">
+									<img src="https://siegelgale.com/app/uploads/2019/02/About-Left-Pluses.jpg"/>
+								</div> -->
+							</li>
+							<li>
+								<a>Virgin Hyperloop One</a>
+							</li>
+							<li>
+								<a>Oprah Winfrey Network</a>
+							</li>
+							<li>
+								<a>Oppenheimer</a>
+							</li>
+							<li>
+								<a>Organifi</a>
+							</li>
+							<li>
+								<a>Jeni’s Ice Cream</a>
+							</li>
+							<li>
+								<a>Gavin De Becker & Associates</a>
+							</li>
+							<li>
+								<a>Smarty Pants Vitamins</a>
+							</li>
+						</ul>
+					</div>
 				</section>
 				<section class="quote" data-scroll-section>
-					<figure class="figure-blockquote">
-						<blockquote>"If you’re willing to actually operate differently and more effectively there is no one better – They give you the tools as long as you have the courage to use them."</blockquote>
-						<figcaption><img class="avatar" style="opacity:.7" src="img/avatar_josh.jpg" /><span class="author">Josh Giegel</span> <span class="author-meta">Co-Founder CTO Virgin Hyperloop One</span></figcaption>
-					<figure>
-				</section>
-				<section class="clients" data-scroll-section>
-					<h3>Executive Clients</h3>
-					<ul>
-						<li>
-							<a>Nike</a>
-							<!-- <div class="gallery">
-								<img src="https://siegelgale.com/app/uploads/2019/02/About-Left-Pluses.jpg"/>
-							</div> -->
-						</li>
-						<li>
-							<a>Virgin Hyperloop One</a>
-						</li>
-						<li>
-							<a>Oprah Winfrey Network</a>
-						</li>
-						<li>
-							<a>Oppenheimer</a>
-						</li>
-						<li>
-							<a>Organifi</a>
-						</li>
-						<li>
-							<a>Jeni’s Ice Cream</a>
-						</li>
-						<li>
-							<a>Gavin De Becker & Associates</a>
-						</li>
-						<li>
-							<a>Smarty Pants Vitamins</a>
-						</li>
-					</ul>
-				</section>
-				<section class="graphic-text-alt" data-scroll-section>
+					<div class="area">
+						<figure class="figure-blockquote">
+							<blockquote>"I could not have asked for a better pathfinder shining a light where I could not see as I wound my way through all my unconscious and conscious behaviors in service of becoming a better leader (and human), and for that, I will always be in his debt."</blockquote>
+							<figcaption>
+								<!-- <img class="avatar" style="opacity:.7" src="img/avatar_josh.jpg" /> -->
+								<span class="author">Courtney Nichols Gould</span>
+								<span class="author-meta">Co-Founder & Co-CEO, SmartyPants Vitamins</span>
+							</figcaption>
+						<figure>
+					</div>
+				</section>		
+				<!-- <section class="graphic-text-alt" data-scroll-section>
 					<div class="text">
 						<p>Drawing on his diverse background in philanthropy, ministry, activism, and medicine Adrian thrives in extreme environments and finds comfort and possibility in having “difficult conversations”.</p>
 					</div>
 					<div class="graphic">
 						<div class="graphic-item hover-target invert" style="background-image: url(img/ak-chair-right.jpg);"></div>
 					</div>
-				</section>
-				<section class="clients" data-scroll-section>
+				</section> -->
+				<!-- <section class="clients" data-scroll-section>
 					<h3>Links</h3>
 					<ul>
 						<li>
@@ -187,14 +239,69 @@
 							<a href="https://leadership.takenewground.com/">Intrepid <span class="italic">Leadership Academy</span></a>
 						</li>
 					</ul>
-				</section>
-
-				<section class="outro" data-scroll-section>
-					<div class="text">
-							<p>Adrian lives in Los Angeles with his fiance Alli and their four amazing kids.</p>
+				</section> -->
+				<section class="profile-list" data-scroll-section>
+					<div class="area">
+						<div class="title">
+							<h1>Our Team</h1>
+						</div>
+						<ul>
+							<li>
+								<img class="avatar" src="img/team-d3.500.jpg">
+								<span class="name">
+									Dan Tocchini
+								</span>
+								<span class="role">
+									Founding Partner, Team Integration
+								</span>		
+								<span class="links">
+									<a href="https://www.linkedin.com/in/dantocchini/">LinkedIn</a>
+									<a href="https://www.instagram.com/dan_tocchini/">Instagram</a>
+								</span>																			
+							</li>
+							<li>
+								<img class="avatar" src="img/team-adrian.500.jpg">
+								<span class="name">
+									Adrian Koehler
+								</span>
+								<span class="role">
+									Founding Partner, Founder Dynamics
+								</span>		
+								<span class="links">
+									<a href="https://www.linkedin.com/in/adriankoehler/">LinkedIn</a>
+									<a href="https://www.instagram.com/adrian.k/">Instagram</a>
+								</span>																			
+							</li>
+							<li>
+								<img class="avatar" src="img/team-aileen.500.jpg">
+								<span class="name">
+									Aileen Tocchini
+								</span>
+								<span class="role">
+									Founding Partner, Coaching
+								</span>		
+								<span class="links">
+									<a href="https://www.linkedin.com/in/aileen-tocchini-35080295/">LinkedIn</a>
+								</span>																			
+							</li>
+							<li>
+								<img class="avatar" src="img/team-mark.500.jpg">
+								<span class="name">
+									Mark Edwards
+								</span>
+								<span class="role">
+									Partner, Funding & Governance
+								</span>		
+								<span class="links">
+									<a href="https://www.linkedin.com/in/markrevealed/">LinkedIn</a>
+								</span>																			
+							</li>											
+						</ul>
 					</div>
-					<div class="graphic" data-scroll data-scroll-speed="-2">
-						<div style="background-image: url(img/ak-ali-lean_w900.jpg)" class="graphic-item hover-target"></div>
+				</section>				
+				<section class="footer">
+					<div class="area">
+
 					</div>
 				</section>
 			</main>
