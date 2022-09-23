@@ -26,24 +26,24 @@ import {ScrollRig, SCROLL_DIR_Y} from "./scroll/rig.js";
 const is_mobile = /Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(navigator.userAgent)
 let is_ready = false;
 
-if (is_mobile) {
-    window.PleaseRotateOptions = {
-        startOnPageLoad: true,
-        forcePortrait: false,
-        message: "CHANGE YOUR PERSPECTIVE",
-        subMessage: [
-            "Thats what you pay me for",
-            "or don't, but then how is that working out for you",
-            "Most people fail this test",
-        ][Math.round(Math.random()*2)],
-        allowClickBypass: false,
-        onlyMobile: true,
-        onHide: on_ready,
-        // onShow: on_ready,
-    };
-    import("./pleaserotate.js")
-}
-else
+// if (is_mobile) {
+//     window.PleaseRotateOptions = {
+//         startOnPageLoad: true,
+//         forcePortrait: false,
+//         message: "CHANGE YOUR PERSPECTIVE",
+//         subMessage: [
+//             "Thats what you pay me for",
+//             "or don't, but then how is that working out for you",
+//             "Most people fail this test",
+//         ][Math.round(Math.random()*2)],
+//         allowClickBypass: false,
+//         onlyMobile: true,
+//         onHide: on_ready,
+//         // onShow: on_ready,
+//     };
+//     import("./pleaserotate.js")
+// }
+// else
     on_ready()
 
 
