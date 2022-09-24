@@ -1791,7 +1791,37 @@ section.profile-list li .avatar {
                             aspect-ratio:1/1;
 	
                         ;
-}section.outro {
+}section.profile-list li .links >:not([hidden])~:not([hidden]) {
+	margin-right:2ch;
+	 margin-left:2ch;
+}
+
+section.profile-list li .links >:not([hidden])~:not([hidden]) {
+	margin-right:2ch;
+	 margin-left:2ch;
+}
+
+section.profile-list li .links {
+	margin-top:1.5em;
+}
+
+section.profile-list li .links {
+	opacity:.6;
+}
+
+section.profile-list li .links a {
+	padding-right:2ch;
+	 padding-left:2ch;
+	padding-top:1ch;
+	   padding-bottom:1ch;
+}
+
+section.profile-list li .links a {
+	background:black;
+	 color:white;
+}
+
+section.outro {
 	position: relative;
 	height:100vh;
 	padding-top:0;
@@ -1910,7 +1940,20 @@ section.graphic-text .text h2 {
                             pointer-events: none;
 	
                         ;
-}section.graphic-text-alt {
+}section.graphic-text .text a {
+	display:block;
+	padding-right:3ch;
+	 padding-left:3ch;
+	padding-top:1ch;
+	   padding-bottom:1ch;
+}
+
+section.graphic-text .text a {
+	background:black;
+	 color:white;
+}
+
+section.graphic-text-alt {
 	position: relative;
 	height:100vh;
 	padding-top:0vh;

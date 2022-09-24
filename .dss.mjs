@@ -256,9 +256,9 @@ dss.install(dss.plugin_from_obj({
                             none`,
                         // $`col.start(3) col.end(6) row.start(9) row.end(auto) flex-h items-end content-between gap(2em) text-center`,
                         // ['>a',$`w.max(9em)`],
-
                     ],
                 ],
+
                 ['section.process-cards', $`flex p.t(${css.vh(100/9)})`,
                     ['>.area',
                         ['.title h1',`
@@ -296,8 +296,8 @@ dss.install(dss.plugin_from_obj({
                         `]
                     ]                    
                 ],
-                ['section.quote',$`relative`,
 
+                ['section.quote',$`relative`,
                     ['.figure-blockquote',$`flex-v items-end m.b(${css.vh(100/9)})`,
                         ['>blockquote',$`order(0) m.x(${css.vw(100/36)}) m.y(1rem) style(${`
                             font-family: Saol Display, ivypresto-display, serif;
@@ -318,6 +318,7 @@ dss.install(dss.plugin_from_obj({
 
                     ],
                 ],
+
                 ['section.profile-list',$`relative`,
                     ['>.area',$`flex-h`,
                         [css.media('lg'),   $`flex-v`],
@@ -339,8 +340,13 @@ dss.install(dss.plugin_from_obj({
                             object-fit: contain;
                             aspect-ratio:1/1;
                         `],
+                        ['.links', $`space.x(2ch) m.t(1.5em)`,`opacity:.6;`,
+                            ['a', $`p.x(2ch) p.y(1ch)`,`background:black; color:white;`]
+                        ],
+
                     ],
                 ],
+
                 ['section.outro',
                     $`relative h(100vh) p.t(0)
                         grid grid.cols(9) grid.rows(9)
@@ -377,7 +383,8 @@ dss.install(dss.plugin_from_obj({
                             line-height: 1.1111111;
                             letter-spacing: -0.231vh;
                             pointer-events: none;
-                        `]
+                        `],
+                        ['a', $`block p.x(3ch) p.y(1ch)`,`background:black; color:white;`]
                     ],
                 ],
                 // ['section.graphic-text',
