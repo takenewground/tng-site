@@ -58,61 +58,65 @@
 		</div> -->
 		<div id="main-wrap"" class="mix-blend">
 			<main data-scroll-container>
+
 				<section id="s1" class="intro" data-scroll-section>
-					<div class="graphic" data-scroll>
-						<video id="bg_video" class="graphic-item" src="vid/tng-bg.lo.mp4" poster="vid/tng-bg.jpg" type="video/mp4" 
-						playsinline muted loop preload="metadata">
-						<!-- <div style="background-image: url(img/chair_w1200.png)" class="graphic-item hover-target"></div> -->
-						<script> (function(){
-							const bg_video = document.getElementById("bg_video");
-							const starts = [0,106,51,2*60+32,190,63,162,60,202,222, //317,
-							]
-							let start_idx = (localStorage.getItem('bg_video.start_idx') | 0) % starts.length;
-							// const start_idx = Math.round(Math.random()*(starts.length-1))
-							const start_time = starts[start_idx]												
-							bg_video.addEventListener("loadedmetadata", function() {
-     							this.currentTime = starts[start_idx];
-								 localStorage.setItem('bg_video.start_idx', ++start_idx)
-								this.play();
-							}, false);
-						})(); </script>
-					</div>
-					<div class="title" >
-						<svg class="logo" x="0px" y="0px" viewBox="0 0 115.7 110.5" >
-							<g>
-								<path style="fill:currentColor;" d="M98.3,25.1H84.8v-4.5v-4.5h-4.5h-4.5h-4.5v4.5v4.7c-1.7,0.3-3.2,1-4.5,2v0c0-6.2-5-11.2-11.2-11.2H39.8h-4.5
-								v4.5v4.5h-4.5H17.3h-4.5v4.5v0v4.5v0v4.5h4.5h9v31.5v0v4.5h4.5h4.5v4.5v4.5h4.5h4.5h4.5v-4.5V38.6h4.5V70v2.3
-								c0,6.2,5,11.2,11.2,11.2h15.8h4.5v-4.5v-4.5h9c2.3,0,4.4-0.9,5.9-2.3c0.3-0.3,0.6-0.5,0.8-0.8c1.4-1.6,2.2-3.7,2.2-5.9v-9v0v-4.5v0
-								h-4.5h-4.5h-4.5v0v4.5v0v4.5h-4.5V38.6h13.5h4.5v-4.5v-4.5v-4.5H98.3z M98.3,34.1H84.8v-4.5h13.5V34.1z M98.3,63.3
-								c0,3.7-3,6.7-6.8,6.7h-18h-6.8v0v-6.7v-27c0-2.9,1.9-5.4,4.5-6.4v6.4v27v2.2h2.2h15.8c2.5,0,4.5-2,4.5-4.5v-4.5h4.5V63.3z
-								 M80.3,79.1h-2.2H64.6c-3.7,0-6.8-3-6.8-6.7V70V38.6v-4.5v-4.5c0-2.5-2-4.5-4.5-4.5h-9h-4.5v-4.5h15.8c3.7,0,6.8,3,6.8,6.8v2.2v6.8
-								v27V70v0c0,2.5,2,4.5,4.5,4.5h4.5h2.2h2.2h4.5v2.2V79.1z M39.8,79.1v-4.5v-4.5V38.6h4.5v40.5H39.8z M35.3,34.1v36h-4.5v0v-36H17.3
-								v-4.5h13.5h4.5h13.5h4.5v4.5H35.3z M75.8,61.1V38.6V22.8v-2.2h4.5v2.2v38.2H75.8z"/>
-							</g>
-						</svg>
-						<!-- <h3 class="title-sub">Adrian Koehler</h3> -->
-						<h1 class="title-main">
-							Let's turn 
-							<span class="lowercase italic">leadershit</span>
-							<br/>
-							into
-							<span class="lowercase italic">leadership</span> 							
-						</h1>
-						<div class="text">
-							<p>Right now, what issues threaten the future of your organization? What if you are working to solve the wrong issues, would you want to know?</p>
+					<div class="area">
+						<div class="graphic" data-scroll>
+							<video id="bg_video" class="graphic-item" src="vid/tng-bg.lo.mp4" poster="vid/tng-bg.jpg" type="video/mp4" 
+							playsinline muted loop preload="metadata">
+							<!-- <div style="background-image: url(img/chair_w1200.png)" class="graphic-item hover-target"></div> -->
+							<script> (function(){
+								const bg_video = document.getElementById("bg_video");
+								const starts = [0,106,51,2*60+32,190,63,162,60,202,222, //317,
+								]
+								let start_idx = (localStorage.getItem('bg_video.start_idx') | 0) % starts.length;
+								// const start_idx = Math.round(Math.random()*(starts.length-1))
+								const start_time = starts[start_idx]												
+								bg_video.addEventListener("loadedmetadata", function() {
+									this.currentTime = starts[start_idx];
+									localStorage.setItem('bg_video.start_idx', ++start_idx)
+									this.play();
+								}, false);
+							})(); </script>
 						</div>
+						<div class="title" >
+							<svg class="logo" x="0px" y="0px" viewBox="0 0 115.7 110.5" >
+								<g>
+									<path style="fill:currentColor;" d="M98.3,25.1H84.8v-4.5v-4.5h-4.5h-4.5h-4.5v4.5v4.7c-1.7,0.3-3.2,1-4.5,2v0c0-6.2-5-11.2-11.2-11.2H39.8h-4.5
+									v4.5v4.5h-4.5H17.3h-4.5v4.5v0v4.5v0v4.5h4.5h9v31.5v0v4.5h4.5h4.5v4.5v4.5h4.5h4.5h4.5v-4.5V38.6h4.5V70v2.3
+									c0,6.2,5,11.2,11.2,11.2h15.8h4.5v-4.5v-4.5h9c2.3,0,4.4-0.9,5.9-2.3c0.3-0.3,0.6-0.5,0.8-0.8c1.4-1.6,2.2-3.7,2.2-5.9v-9v0v-4.5v0
+									h-4.5h-4.5h-4.5v0v4.5v0v4.5h-4.5V38.6h13.5h4.5v-4.5v-4.5v-4.5H98.3z M98.3,34.1H84.8v-4.5h13.5V34.1z M98.3,63.3
+									c0,3.7-3,6.7-6.8,6.7h-18h-6.8v0v-6.7v-27c0-2.9,1.9-5.4,4.5-6.4v6.4v27v2.2h2.2h15.8c2.5,0,4.5-2,4.5-4.5v-4.5h4.5V63.3z
+									M80.3,79.1h-2.2H64.6c-3.7,0-6.8-3-6.8-6.7V70V38.6v-4.5v-4.5c0-2.5-2-4.5-4.5-4.5h-9h-4.5v-4.5h15.8c3.7,0,6.8,3,6.8,6.8v2.2v6.8
+									v27V70v0c0,2.5,2,4.5,4.5,4.5h4.5h2.2h2.2h4.5v2.2V79.1z M39.8,79.1v-4.5v-4.5V38.6h4.5v40.5H39.8z M35.3,34.1v36h-4.5v0v-36H17.3
+									v-4.5h13.5h4.5h13.5h4.5v4.5H35.3z M75.8,61.1V38.6V22.8v-2.2h4.5v2.2v38.2H75.8z"/>
+								</g>
+							</svg>
+							<!-- <h3 class="title-sub">Adrian Koehler</h3> -->
+							<h1 class="title-main">
+								Let's turn 
+								<span class="lowercase italic">leadershit</span>
+								<br/>
+								into
+								<span class="lowercase italic">leadership</span> 							
+							</h1>
+							<div class="text">
+								<p>Right now, what issues threaten the future of your organization? What if you are working to solve the wrong issues, would you want to know?</p>
+							</div>
+						</div>
+						<!-- <div class="social-links" >
+							<a href="https://www.linkedin.com/in/adriankoehler/">LinkedIn</a>
+							<a href=https://open.spotify.com/show/73ZuLDaxdfhCNYXlmIQy01?si=LJnt5cmlTQ29b1v_wnhDGg">Naked Leadership Podcast</a>
+							<a href=https://open.spotify.com/show/2bIwzJAmvMQgRg3G5qHdge?si=aoyjUaoVRDG-eSKpYId_oQ">Raising the Bar Podcast</a>
+							<a href="https://www.instagram.com/adrian.k/">Instagram</a>
+						</div> -->
 					</div>
-					<!-- <div class="social-links" >
-						<a href="https://www.linkedin.com/in/adriankoehler/">LinkedIn</a>
-						<a href=https://open.spotify.com/show/73ZuLDaxdfhCNYXlmIQy01?si=LJnt5cmlTQ29b1v_wnhDGg">Naked Leadership Podcast</a>
-						<a href=https://open.spotify.com/show/2bIwzJAmvMQgRg3G5qHdge?si=aoyjUaoVRDG-eSKpYId_oQ">Raising the Bar Podcast</a>
-						<a href="https://www.instagram.com/adrian.k/">Instagram</a>
-					</div> -->
 				</section>
+
 				<section class="process-cards" data-scroll-section>
 					<div class="area">
 						<div class="title">
-							<h1>How we do it.</h1>
+							<h1>How we <span class="italic">do it.</span></h1>
 						</div>
 						<div class="cards">
 							<div class="card hover-target">
@@ -122,7 +126,7 @@
 							</div>
 							<div class="card hover-target">
 								<h2>2. Hardcore Trainings</h2>
-								<h4>Most leadership off-sites are bullshit.</h4>
+								<h4>Most off-sites are bullshit.</h4>
 								<p>Our trainings are uniquely crafted and unapologetically connected to the leaderships vision for your organization. With equal parts care for the person and conviction for the results we engage your team in the conversations that have been stifled or avoided.</p>					
 							</div>
 							<div class="card hover-target">
@@ -133,10 +137,11 @@
 						</div>
 					</div>
 				</section>		
+
 				<section class="quote" data-scroll-section>
 					<div class="area">
 						<figure class="figure-blockquote">
-							<blockquote>"If you’re willing to actually operate differently and more effectively there is no one better – They give you the tools as long as you have the courage to use them."</blockquote>
+							<blockquote>"If you’re willing to actually operate differently and more effectively <span class="italic">there is no one better</span> ⏤ They give you the tools as long as you have the courage to use them."</blockquote>
 							<figcaption>
 								<!-- <img class="avatar" style="opacity:.7" src="img/avatar_josh.jpg" /> -->
 								<span class="author">Josh Giegel</span>
@@ -145,18 +150,20 @@
 						<figure>
 					</div>
 				</section>		
+
 				<section id="s2" class="graphic-text" data-scroll-section>
 					<div class="area">
 						<div class="graphic" data-scroll>
 							<div style="background-image: url(img/the-change-imperative.600x956.jpg)" class="graphic-item hover-target"></div>
 						</div>					
 						<div class="text">
-							<h2>Free eBook ⏤ Newsletter</h2>
+							<h2><span class="italic">Free eBook</span> ⏤ Newsletter</h2>
 							<p>Growth, change & transition often come with confusion, frustration & resistance. You can flip those experiences into clarity and confidence with the Change Imperative e-book.</p>
-							<a>Signup to get your free copy</a>
+							<a href="https://change.takenewground.com">Signup to get your free copy</a>
 						</div>
 					</div>
 				</section>				
+
 				<section class="clients" data-scroll-section>
 					<div class="area">
 						<h3>Executive Clients</h3>
@@ -203,14 +210,7 @@
 						<figure>
 					</div>
 				</section>		
-				<!-- <section class="graphic-text-alt" data-scroll-section>
-					<div class="text">
-						<p>Drawing on his diverse background in philanthropy, ministry, activism, and medicine Adrian thrives in extreme environments and finds comfort and possibility in having “difficult conversations”.</p>
-					</div>
-					<div class="graphic">
-						<div class="graphic-item hover-target invert" style="background-image: url(img/ak-chair-right.jpg);"></div>
-					</div>
-				</section> -->
+			
 				<!-- <section class="clients" data-scroll-section>
 					<h3>Links</h3>
 					<ul>
@@ -304,6 +304,36 @@
 
 					</div>
 				</section>
+				<div id="texture"></div>
+				<svg>
+				  <filter id='noiseFilter'>
+					<feTurbulence 
+					  type='fractalNoise' 
+					  baseFrequency='6.01' 
+					  numOctaves='6' 
+					  stitchTiles='stitch'/>
+				  </filter>
+				</svg>			
+				<style>
+				  #texture {
+					  pointer-events: none;
+					  position: fixed;
+					  z-index: 99;
+					  top: 0;
+					  left: 0;
+					  margin: 0;
+					  padding: 0;
+					  width: 100%;
+					  height: 100%;
+					  /* background-image: url("data:image/svg+xml,%3Csvg id='texture' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='textureFilter' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='turbulence' baseFrequency='1'%3E%3C/feTurbulence%3E%3C/filter%3E%3Crect x='0' y='0' width='100%25' height='100%25' filter='url(%23textureFilter)' /%3E%3C/svg%3E"); */
+					  filter: url(#noiseFilter);
+					  background-repeat: repeat repeat;
+					  background-size: 256px 256px;
+					  mix-blend-mode: overlay;
+					  background-color: hsl(0 0% 50% / 0);
+					  opacity: .222;
+				  }
+				</style>
 			</main>
 		</div>
 		<script type="module" src="js/index.js"></script>
@@ -311,6 +341,6 @@
 
 		  </script>
 
-
+		
 	</body>
 </html>

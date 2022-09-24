@@ -35,6 +35,257 @@ a  {
 	text-decoration: none;
 }
 
+.font-thin {
+	font-weight: 100;
+}
+
+.font-extralight {
+	font-weight: 200;
+}
+
+.font-light {
+	font-weight: 300;
+}
+
+.font-normal {
+	font-weight: 400;
+}
+
+.font-medium {
+	font-weight: 500;
+}
+
+.font-semibold {
+	font-weight: 600;
+}
+
+.font-bold {
+	font-weight: 700;
+}
+
+.font-extrabold {
+	font-weight: 800;
+}
+
+.font-black {
+	font-weight: 900;
+}
+
+.kern-tighter {
+	letter-spacing: -0.05em;
+}
+
+.kern-tight {
+	letter-spacing: -0.025em;
+}
+
+.kern-normal {
+	letter-spacing: 0em;
+}
+
+.kern-wide {
+	letter-spacing: 0.025em;
+}
+
+.kern-wider {
+	letter-spacing: 0.05em;
+}
+
+.kern-widest {
+	letter-spacing: 0.1em;
+}
+
+.text-xs {
+	font-size: 0.75rem;
+	 line-height: 1rem;
+}
+
+.text-sm {
+	font-size: 0.875rem;
+	 line-height: 1.25rem;
+}
+
+.text-base {
+	font-size: 1rem;
+	 line-height: 1.5rem;
+}
+
+.text-lg {
+	font-size: 1.125rem;
+	 line-height: 1.75rem;
+}
+
+.text-xl {
+	font-size: 1.25rem;
+	 line-height: 1.75rem;
+}
+
+.text-2xl {
+	font-size: 1.5rem;
+	 line-height: 2rem;
+}
+
+.text-3xl {
+	font-size: 1.875rem;
+	 line-height: 2.25rem;
+}
+
+.text-4xl {
+	font-size: 2.25rem;
+	 line-height: 2.5rem;
+}
+
+.text-5xl {
+	font-size: 3rem;
+	 line-height: 1;
+}
+
+.text-6xl {
+	font-size: 3.75rem;
+	 line-height: 1;
+}
+
+.text-7xl {
+	font-size: 4.5rem;
+	 line-height: 1;
+}
+
+.text-8xl {
+	font-size: 6rem;
+	 line-height: 1;
+}
+
+.text-9xl {
+	font-size: 8rem;
+	 line-height: 1;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.not_italic {
+	font-style: normal;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.lowercase {
+	text-transform: lowercase;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+.normalcase {
+	text-transform: none;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-justify {
+	text-align: justify;
+}
+
+.truncate {
+	overflow: hidden;
+	 text-overflow: ellipsis;
+	 white-space: nowrap;
+}
+
+.text-ellipsis {
+	text-overflow: ellipsis;
+}
+
+.text-clip {
+	text-overflow: clip;
+}
+
+.numeric-normal {
+	font-variant-numeric: normal;
+}
+
+.numeric-ordinal {
+	font-variant-numeric: ordinal;
+}
+
+.numeric-slashed_zero {
+	font-variant-numeric: slashed-zero;
+}
+
+.numeric-lining {
+	font-variant-numeric: lining-nums;
+}
+
+.numeric-oldstyle {
+	font-variant-numeric: oldstyle-nums;
+}
+
+.numeric-proportional {
+	font-variant-numeric: proportional-nums;
+}
+
+.numeric-tabular {
+	font-variant-numeric: tabular-nums;
+}
+
+.numeric-diagonal_fractions {
+	font-variant-numeric: diagonal-fractions;
+}
+
+.numeric-stacked_fractions {
+	font-variant-numeric: stacked-fractions;
+}
+
+.textline-none {
+	text-decoration-line: none;
+}
+
+.textline-under {
+	text-decoration-line: underline;
+}
+
+.textline-over {
+	text-decoration-line: overline;
+}
+
+.textline-through {
+	text-decoration-line: line-through;
+}
+
+.textline-solid {
+	text-decoration-style: solid;
+}
+
+.textline-double {
+	text-decoration-style: double;
+}
+
+.textline-dotted {
+	text-decoration-style: dotted;
+}
+
+.textline-dashed {
+	text-decoration-style: dashed;
+}
+
+.textline-wavy {
+	text-decoration-style: wavy;
+}
+
 .backface-hidden {
 	backface-visibility:hidden;
 }
@@ -953,257 +1204,6 @@ a  {
 	overflow-y: scroll;
 }
 
-.font-thin {
-	font-weight: 100;
-}
-
-.font-extralight {
-	font-weight: 200;
-}
-
-.font-light {
-	font-weight: 300;
-}
-
-.font-normal {
-	font-weight: 400;
-}
-
-.font-medium {
-	font-weight: 500;
-}
-
-.font-semibold {
-	font-weight: 600;
-}
-
-.font-bold {
-	font-weight: 700;
-}
-
-.font-extrabold {
-	font-weight: 800;
-}
-
-.font-black {
-	font-weight: 900;
-}
-
-.kern-tighter {
-	letter-spacing: -0.05em;
-}
-
-.kern-tight {
-	letter-spacing: -0.025em;
-}
-
-.kern-normal {
-	letter-spacing: 0em;
-}
-
-.kern-wide {
-	letter-spacing: 0.025em;
-}
-
-.kern-wider {
-	letter-spacing: 0.05em;
-}
-
-.kern-widest {
-	letter-spacing: 0.1em;
-}
-
-.text-xs {
-	font-size: 0.75rem;
-	 line-height: 1rem;
-}
-
-.text-sm {
-	font-size: 0.875rem;
-	 line-height: 1.25rem;
-}
-
-.text-base {
-	font-size: 1rem;
-	 line-height: 1.5rem;
-}
-
-.text-lg {
-	font-size: 1.125rem;
-	 line-height: 1.75rem;
-}
-
-.text-xl {
-	font-size: 1.25rem;
-	 line-height: 1.75rem;
-}
-
-.text-2xl {
-	font-size: 1.5rem;
-	 line-height: 2rem;
-}
-
-.text-3xl {
-	font-size: 1.875rem;
-	 line-height: 2.25rem;
-}
-
-.text-4xl {
-	font-size: 2.25rem;
-	 line-height: 2.5rem;
-}
-
-.text-5xl {
-	font-size: 3rem;
-	 line-height: 1;
-}
-
-.text-6xl {
-	font-size: 3.75rem;
-	 line-height: 1;
-}
-
-.text-7xl {
-	font-size: 4.5rem;
-	 line-height: 1;
-}
-
-.text-8xl {
-	font-size: 6rem;
-	 line-height: 1;
-}
-
-.text-9xl {
-	font-size: 8rem;
-	 line-height: 1;
-}
-
-.italic {
-	font-style: italic;
-}
-
-.not_italic {
-	font-style: normal;
-}
-
-.uppercase {
-	text-transform: uppercase;
-}
-
-.lowercase {
-	text-transform: lowercase;
-}
-
-.capitalize {
-	text-transform: capitalize;
-}
-
-.normalcase {
-	text-transform: none;
-}
-
-.text-left {
-	text-align: left;
-}
-
-.text-center {
-	text-align: center;
-}
-
-.text-right {
-	text-align: right;
-}
-
-.text-justify {
-	text-align: justify;
-}
-
-.truncate {
-	overflow: hidden;
-	 text-overflow: ellipsis;
-	 white-space: nowrap;
-}
-
-.text-ellipsis {
-	text-overflow: ellipsis;
-}
-
-.text-clip {
-	text-overflow: clip;
-}
-
-.numeric-normal {
-	font-variant-numeric: normal;
-}
-
-.numeric-ordinal {
-	font-variant-numeric: ordinal;
-}
-
-.numeric-slashed_zero {
-	font-variant-numeric: slashed-zero;
-}
-
-.numeric-lining {
-	font-variant-numeric: lining-nums;
-}
-
-.numeric-oldstyle {
-	font-variant-numeric: oldstyle-nums;
-}
-
-.numeric-proportional {
-	font-variant-numeric: proportional-nums;
-}
-
-.numeric-tabular {
-	font-variant-numeric: tabular-nums;
-}
-
-.numeric-diagonal_fractions {
-	font-variant-numeric: diagonal-fractions;
-}
-
-.numeric-stacked_fractions {
-	font-variant-numeric: stacked-fractions;
-}
-
-.textline-none {
-	text-decoration-line: none;
-}
-
-.textline-under {
-	text-decoration-line: underline;
-}
-
-.textline-over {
-	text-decoration-line: overline;
-}
-
-.textline-through {
-	text-decoration-line: line-through;
-}
-
-.textline-solid {
-	text-decoration-style: solid;
-}
-
-.textline-double {
-	text-decoration-style: double;
-}
-
-.textline-dotted {
-	text-decoration-style: dotted;
-}
-
-.textline-dashed {
-	text-decoration-style: dashed;
-}
-
-.textline-wavy {
-	text-decoration-style: wavy;
-}
-
 body {
 	
                     --color-text: #fff;
@@ -1235,7 +1235,7 @@ body {
 	
                     -moz-osx-font-smoothing: grayscale;
 	
-                    font-size: 2.5vw;
+                    font-size: 2.5vh;
 	
 
                 --text-scale: 1.0;
@@ -1268,64 +1268,24 @@ body {
 
 }body {
 	
-                    --rfs: 0.938vw;
+                    --rfs: 0.938vh;
 	
                     --rlh: calc(var(--rfs) * 1.875 / 0.938);
 	
-                    font-weight: 400;
+                    font-weight: 500;
 	
-                    font-size: calc(1.0vw * var(--text-scale));
+                    font-size: calc((1.6666666vh + 1.0w) / 2 * var(--text-scale));
 	
                     line-height: 1.6666666;
 	
-                    letter-spacing: calc(0.034vw * var(--text-scale));
+                    letter-spacing: .1ch;
 	
                     ;
 }html.pleaserotate-showing {
 	overflow:hidden !important;
 }
 
-#pleaserotate-message {
-	text-align: center;
-	margin-top:1em;
-}
-
-#pleaserotate-message {
-	
-                font-family: Saol Display, ivypresto-display, serif;
-	
-                font-weight: 500;
-	
-                font-size: 12vw;
-	
-                line-height: 1.1111111;
-	
-                letter-spacing: -0.05ch;
-}
-
-#pleaserotate-message small {
-	display:block;
-	margin-top:3em;
-	   margin-bottom:3em;
-}
-
-#pleaserotate-message small {
-	
-                    font-weight: bold;
-	
-                    font-size: 3vw;
-	
-                    line-height: 2;
-	
-                    letter-spacing: 2ch;
-	 marging-left: 2ch;
-	
-                    text-transform: uppercase;
-	
-                    font-family: 'Aktiv Grotesk';
-	
-                    ;
-}.layer {
+.layer {
 	position: fixed;
 	top:0;
 	left:0;
@@ -1479,48 +1439,83 @@ section {
 }
 
 section >.area {
-	max-width:1400px;
+	max-width:1800px;
 	width:100vw;
+	height:100%;
 	margin:auto;
 	display:flex;
 	 flex-direction:column;
-	gap:2.7777778vh;
+	gap:5.5555556vh;
 	padding-top:11.1111111vh;
 	   padding-bottom:11.1111111vh;
 }
 
-section.intro {
-	position: relative;
-	height:100vh;
-	display:grid;
-	grid-template-columns: repeat(9, minmax(0, 1fr));
-	grid-template-rows: repeat(9, minmax(0, 1fr));
+section >.area {
+	padding-right:11.1111111vh;
+	 padding-left:11.1111111vh;
 }
 
-section.intro > .graphic {
+@media screen and (max-width:1200px)  {
+	 section >.area {
+	padding-right:11.1111111vh;
+	 padding-left:11.1111111vh;
+}
+
+}@media screen and (max-width:992px)  {
+	 section >.area {
+	padding-right:8.3333333vh;
+	 padding-left:8.3333333vh;
+}
+
+}@media screen and (max-width:768px)  {
+	 section >.area {
+	padding-right:6.6666667vh;
+	 padding-left:6.6666667vh;
+}
+
+}@media screen and (max-width:640px)  {
+	 section >.area {
+	padding-right:5.5555556vh;
+	 padding-left:5.5555556vh;
+}
+
+}@media screen and (max-width:480px)  {
+	 section >.area {
+	padding-right:4.7619048vh;
+	 padding-left:4.7619048vh;
+}
+
+}@media screen and (max-width:320px)  {
+	 section >.area {
+	padding-right:4.1666667vh;
+	 padding-left:4.1666667vh;
+}
+
+}section.intro {
+	position: relative;
+	height:100vh;
+}
+
+section.intro .graphic {
 	display:flex;
 	 flex-direction:row;
 	z-index:-1;
 	background:black;
+	position: absolute;
+	top:0;
+	left:0;
+	width:100vw;
+	height:100vh;
 }
 
-section.intro > .graphic {
-	grid-column-start: 1;
-	grid-column-end: 10;
-	grid-row-start: 1;
-	grid-row-end: 10;
-	margin-bottom:0vh;
-	margin-right:0;
-}
-
-section.intro > .graphic .graphic-item {
+section.intro .graphic .graphic-item {
 	width:100%;
 	display:block;
 	background-size:cover;
 	background-position:50% 50%;
 }
 
-section.intro > .graphic .graphic-item {
+section.intro .graphic .graphic-item {
 	
                             object-fit: cover;
 	
@@ -1529,12 +1524,8 @@ section.intro > .graphic .graphic-item {
                             opacity: .5;
 	
                         ;
-}section.intro > .title {
-	grid-column-start: 3;
-	grid-column-end: 8;
-	grid-row-start: 2;
-	grid-row-end: 9;
-	margin-top:5.5555556vh;
+}section.intro .title {
+	height:100%;
 	display:flex;
 	 flex-direction:column;
 	gap:6vw;
@@ -1544,29 +1535,29 @@ section.intro > .graphic .graphic-item {
 	text-align: center;
 }
 
-section.intro > .title {
+section.intro .title {
 	
                         text-transform: uppercase;
 	
                         text-align:center;
 	
                         ;
-}section.intro > .title .logo {
+}section.intro .title .logo {
 	min-height:6vw;
 	display:flex;
 	align-items: center;
 }
 
-section.intro > .title .logo {
+section.intro .title .logo {
 	                            
                             max-width: calc((100vh+100vw)/12);
 	
                         ;
-}section.intro > .title .title-main {
-	margin:0;
+}section.intro .title .title-main {
+	margin-bottom:auto;
 	font-family:Saol Display, ivypresto-display, serif;
-	font-weight:500;
-	font-size:6vw;
+	font-weight:600;
+	font-size:8vh;
 	line-height:1.1111111;
 	letter-spacing:-0.231vw;
 	pointer-events:none;
@@ -1594,9 +1585,9 @@ section.process-cards >.area .title h1 {
 	
                             font-family: Saol Display, ivypresto-display, serif;
 	
-                            font-weight: 500;
+                            font-weight: 600;
 	
-                            font-size: 6vw;
+                            font-size: 6vh;
 	
                             line-height: 1.1111111;
 	
@@ -1613,7 +1604,14 @@ section.process-cards >.area .title h1 {
 	gap:1.3888889vw;
 }
 
-section.process-cards .card {
+@media screen and (max-width:992px)  {
+	 section.process-cards .cards {
+	display:flex;
+	 flex-direction:column;
+	gap:5.5555556vh;
+}
+
+}section.process-cards .card {
 	padding:2.7777778vw;
 	display:flex;
 	 flex-direction:column;
@@ -1632,7 +1630,9 @@ section.process-cards .card h2 {
 	
                             text-transform: uppercase;
 	
-                            font-size: 1rem;
+                            font-size: .88888rem;
+	
+                            letter-spacing: .33333ch;
 	
                             opacity: .5;
 	
@@ -1646,13 +1646,13 @@ section.process-cards .card h4 {
 	                            
                             font-family: Saol Display, ivypresto-display, serif;
 	
-                            font-weight: 500;
+                            font-weight: 900;
 	
-                            font-size: 2vw;
+                            font-size: 3vh;
 	
                             line-height: 1.1111111;
 	
-                            letter-spacing: -0.131vw;
+                            letter-spacing: 0vw;
 	
                             pointer-events: none;
 	
@@ -1679,15 +1679,15 @@ section.quote .figure-blockquote {
 
 section.quote .figure-blockquote >blockquote {
 	order: 0;
-	margin-right:3rem;
-	 margin-left:3rem;
+	margin-right:2.7777778vw;
+	 margin-left:2.7777778vw;
 	margin-top:1rem;
 	   margin-bottom:1rem;
 	font-family:Saol Display, ivypresto-display, serif;
-	font-weight:500;
-	font-size:3vw;
+	font-weight:700;
+	font-size:3vh;
 	line-height:1.1111111;
-	letter-spacing:-0.131vw;
+	letter-spacing:0vw;
 	pointer-events:none;
 }
 
@@ -1698,7 +1698,7 @@ section.quote .figure-blockquote >figcaption {
 	align-items: flex-end;
 	gap:1rem;
 	padding:1.11111111rem;
-	text-align: center;
+	text-align: right;
 }
 
 section.quote .figure-blockquote >figcaption .author-meta {
@@ -1727,13 +1727,19 @@ section.profile-list >.area {
 	 flex-direction:row;
 }
 
-section.profile-list .title h1 {
+@media screen and (max-width:992px)  {
+	 section.profile-list >.area {
+	display:flex;
+	 flex-direction:column;
+}
+
+}section.profile-list .title h1 {
 	
                         font-family: Saol Display, ivypresto-display, serif;
 	
-                        font-weight: 500;
+                        font-weight: 600;
 	
-                        font-size: 6vw;
+                        font-size: 6vh;
 	
                         line-height: 1.1111111;
 	
@@ -1758,10 +1764,14 @@ section.profile-list li {
 }
 
 section.profile-list li {
-	
-                        flex:1;
-	 
-                    ;
+	flex:1;
+}
+
+@media screen and (max-width:992px)  {
+	 section.profile-list li {
+	min-width:80%;
+}
+
 }section.profile-list li .role {
 	font-weight:600;
 	opacity:.5;
@@ -1855,7 +1865,13 @@ section.graphic-text {
 	gap:6rem;
 }
 
-section.graphic-text .graphic {
+@media screen and (max-width:992px)  {
+	 section.graphic-text >.area {
+	display:flex;
+	 flex-direction:column;
+}
+
+}section.graphic-text .graphic {
 	width:50%;
 	height:auto;
 	display:flex;
@@ -1883,13 +1899,13 @@ section.graphic-text .text h2 {
 	
                             font-family: Saol Display, ivypresto-display, serif;
 	
-                            font-weight: 500;
+                            font-weight: 600;
 	
-                            font-size: 6vw;
+                            font-size: 6vh;
 	
                             line-height: 1.1111111;
 	
-                            letter-spacing: -0.231vw;
+                            letter-spacing: -0.231vh;
 	
                             pointer-events: none;
 	
@@ -2012,17 +2028,17 @@ section.clients .area {
                     ;
 }section.clients .area li {
 	
-                        font-weight: 500;
+                        font-weight: 700;
 	
                         font-family: 'Saol Display';
 	
-                        font-size: 3vw;
+                        font-size: 3vh;
 	
                         line-height: 1.111111;
 	
-                        min-height: 5vw;
+                        min-height: 5vh;
 	
-                        letter-spacing: -0.04ch;
+                        letter-spacing: 0ch;
 	
                     ;
 }section.clients .area li a {

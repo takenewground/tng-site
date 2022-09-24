@@ -212,11 +212,11 @@ function listen_mouse() {
             mtgt_has = true;
             mtgt_scroll_y = scroll_y;
             let {x,y,width,height,right,bottom} = target.getBoundingClientRect()
-            const pad = vw/144; //-(height >> 2);
-            mtgt_rect[0] = map_range(mx, x,right, x, x - pad);
-            mtgt_rect[1] = map_range(my, y,bottom, y, y - pad);
-            mtgt_rect[2] = width + (pad);
-            mtgt_rect[3] = height+ (pad);
+            const pad = (vw/72)|0; //-(height >> 2);
+            mtgt_rect[0] = x - pad; //map_range(mx, x,right, x, x - pad);
+            mtgt_rect[1] = y - pad; //map_range(my, y,bottom, y, y - pad);
+            mtgt_rect[2] = width + (pad << 1);
+            mtgt_rect[3] = height+ (pad << 1);
         }
         else {
             mtgt_has = false;
@@ -311,8 +311,8 @@ function roundedRect(ctx, x, y, width, height, radius) {
         sys.set('mx', tgt_x)
         sys.set('my', tgt_y)
         sys.set('rad', 0)
-        sys.set('w', 10000)
-        sys.set('h', 10000)
+        sys.set('w', 0)
+        sys.set('h', 0)
         sys.spring('rad',20,180)
         sys.spring('h',20,90)
         sys.spring('w',20,90)
@@ -371,10 +371,10 @@ function roundedRect(ctx, x, y, width, height, radius) {
         sys.update()
         clear();
         pill.x = sys.get('mx');
-        pill.y = sys.get('my');
-        pill.radius = Math.max(sys.get('rad'),1);
+        pill.y = sys.get('my');        
         pill.w = Math.max(sys.get('w'),0);
         pill.h = Math.max(sys.get('h'),0);
+        pill.radius = Math.max(sys.get('rad'),1);
         if (pill.radius >(pill.w >> 1))
             pill.radius = (pill.w >> 1)
 

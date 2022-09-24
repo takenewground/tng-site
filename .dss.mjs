@@ -95,7 +95,7 @@ dss.install(dss.plugin_from_obj({
                     font-family: 'Aktiv Grotesk', Nexa Text, brother-1816, sans-serif;
                     -webkit-font-smoothing: antialiased;
                     -moz-osx-font-smoothing: grayscale;
-                    font-size: 2.5vw;
+                    font-size: 2.5vh;
 
                 `,
                     `--text-scale: 1.0;`,
@@ -105,32 +105,33 @@ dss.install(dss.plugin_from_obj({
                     [css.media('sm'), `--text-scale: 2.3333333;`],
                     [css.media('xs'), `--text-scale: 2.6666666;`],
                     `
-                    --rfs: 0.938vw;
+                    --rfs: 0.938vh;
                     --rlh: calc(var(--rfs) * 1.875 / 0.938);
-                    font-weight: 400;
-                    font-size: calc(1.0vw * var(--text-scale));
+                    font-weight: 500;
+                    font-size: calc((1.6666666vh + 1.0w) / 2 * var(--text-scale));
                     line-height: 1.6666666;
-                    letter-spacing: calc(0.034vw * var(--text-scale));
+                    letter-spacing: .1ch;
                     `
                 ],
                 ['html.pleaserotate-showing',`overflow:hidden !important;`,
 
                 ],
-                ['#pleaserotate-message',$`text-center m.t(1em)`,`
-                font-family: Saol Display, ivypresto-display, serif;
-                font-weight: 500;
-                font-size: 12vw;
-                line-height: 1.1111111;
-                letter-spacing: -0.05ch;`,
-                    ['small', $`block m.y(3em)`, `
-                    font-weight: bold;
-                    font-size: 3vw;
-                    line-height: 2;
-                    letter-spacing: 2ch; marging-left: 2ch;
-                    text-transform: uppercase;
-                    font-family: 'Aktiv Grotesk';
-                    `]
-                ],
+                // ['#pleaserotate-message',$`text-center m.t(1em)`,`
+                //     font-family: Saol Display, ivypresto-display, serif;
+                //     font-weight: 500;
+                //     font-size: 12vw;
+                //     line-height: 1.1111111;
+                //     letter-spacing: -0.05ch;
+                // `,
+                //     ['small', $`block m.y(3em)`, `
+                //     font-weight: bold;
+                //     font-size: 3vw;
+                //     line-height: 2;
+                //     letter-spacing: 2ch; marging-left: 2ch;
+                //     text-transform: uppercase;
+                //     font-family: 'Aktiv Grotesk';
+                //     `]
+                // ],
                 ['.layer',$`fixed t(0) l(0) `],
                 ['a',$`color(${css.v('color-link')}) cursor(pointer)
                     textline-under textline-dotted textline.color(black) textline.h(.11em) textline.y(.33333333em)
@@ -181,6 +182,7 @@ dss.install(dss.plugin_from_obj({
                             transform-origin: 100% 100%;
                         `],
                 ],
+
                 ['[data-scroll-container].is-scrolling',
                     `will-change:transform;`,
                     // ['[data-scroll-section], [data-scroll], .c-scrollbar_thumb',`will-change:transform;`],
@@ -207,15 +209,21 @@ dss.install(dss.plugin_from_obj({
 
                 // defaults
                 ['section', $`contain(style)`,// $`bg(${css.v('section-bg')})`,
-                    ['>.area', $`w.max(1400px) w(100vw) m(auto) flex-v gap(${css.vh(100/36)}) p.y(${css.vh(100/9)})`]                    
+                    ['>.area', 
+                        $`w.max(1800px) w(100vw) h(100%) m(auto) flex-v gap(${css.vh(100/18)}) p.y(${css.vh(100/9)})`,                        
+                        $`p.x(${css.vh(100/9)})`,
+                        [css.media('xl'),   $`p.x(${css.vh(100/9)})`],
+                        [css.media('lg'),   $`p.x(${css.vh(100/12)})`],
+                        [css.media('md'),   $`p.x(${css.vh(100/15)})`],
+                        [css.media('sm'),   $`p.x(${css.vh(100/18)})`],
+                        [css.media('xs'),   $`p.x(${css.vh(100/21)})`],
+                        [css.media('xxs'),  $`p.x(${css.vh(100/24)})`],
+                    ]                    
                 ],
                 
 
-                ['section.intro', $`relative h(100vh) 
-                        grid grid.cols(9) grid.rows(9)
-                    `,
-                    ['> .graphic',$`flex-h zi(-1) bg(black)`,
-                                         $`col.start(1) col.end(10) row.start(1) row.end(10) m.b(${css.vh(0/9)}) m.r(0)`,
+                ['section.intro', $`relative h(100vh)`,
+                    ['.graphic',$`flex-h zi(-1) bg(black) absolute t(0) l(0) w(100vw) h(100vh)`,//$`m.b(${css.vh(0/9)})`,
                         // [css.media('md'),$`col.start(6) col.end(10) row.start(1) row.end(10) m.b(${css.vh(-100/9)}) m.r(${css.vw(-100/18)})`],
                         ['.graphic-item', $`w(100%) block bg.size(cover) bg.position(${'50% 50%'})`,`
                             object-fit: cover;
@@ -223,8 +231,7 @@ dss.install(dss.plugin_from_obj({
                             opacity: .5;
                         `],
                     ],
-                    ['> .title', $`col.start(3) col.end(8) row.start(2) row.end(9)
-                        m.t(${css.vh(100/18)})
+                    ['.title', $`h(100%)
                         flex-v gap(6vw) items-center justify-between
                         uppercase text-center`,`
                         text-transform: uppercase;
@@ -233,10 +240,10 @@ dss.install(dss.plugin_from_obj({
                         ['.logo',$`h.min(6vw) flex items-center `,`                            
                             max-width: calc((100vh+100vw)/12);
                         `], //flex:0;
-                        ['.title-main',$`m(0) style(${`
+                        ['.title-main',$`m.b(auto) style(${`
                             font-family: Saol Display, ivypresto-display, serif;
-                            font-weight: 500;
-                            font-size: 6vw;
+                            font-weight: 600;
+                            font-size: 8vh;
                             line-height: 1.1111111;
                             letter-spacing: -0.231vw;
                             pointer-events: none;
@@ -256,29 +263,32 @@ dss.install(dss.plugin_from_obj({
                     ['>.area',
                         ['.title h1',`
                             font-family: Saol Display, ivypresto-display, serif;
-                            font-weight: 500;
-                            font-size: 6vw;
+                            font-weight: 600;
+                            font-size: 6vh;
                             line-height: 1.1111111;
                             letter-spacing: -0.131vw;
                             pointer-events: none;
                         `]
                     ],
-                    ['.cards',$`flex-h justify-items-stretch w(100%) gap(${css.vw(100/72)})`],
+                    ['.cards',$`flex-h justify-items-stretch w(100%) gap(${css.vw(100/72)})`,
+                        [css.media('lg'),   $`flex-v gap(${css.vh(100/18)})`],
+                    ],
                     ['.card',$`p(${css.vw(100/36)}) flex-v`, `
                         border: 1px solid black;
                     `,
                         ['> *',`pointer-events: none;`],
                         ['h2',`
                             text-transform: uppercase;
-                            font-size: 1rem;
+                            font-size: .88888rem;
+                            letter-spacing: .33333ch;
                             opacity: .5;
                         `],
                         ['h4', $`m.b(auto) m.t(1rem)`,`                            
                             font-family: Saol Display, ivypresto-display, serif;
-                            font-weight: 500;
-                            font-size: 2vw;
+                            font-weight: 900;
+                            font-size: 3vh;
                             line-height: 1.1111111;
-                            letter-spacing: -0.131vw;
+                            letter-spacing: 0vw;
                             pointer-events: none;
                         `],
                         ['p',$`m.t(4rem)`,`
@@ -289,16 +299,16 @@ dss.install(dss.plugin_from_obj({
                 ['section.quote',$`relative`,
 
                     ['.figure-blockquote',$`flex-v items-end m.b(${css.vh(100/9)})`,
-                        ['>blockquote',$`order(0) m.x(3rem) m.y(1rem) style(${`
+                        ['>blockquote',$`order(0) m.x(${css.vw(100/36)}) m.y(1rem) style(${`
                             font-family: Saol Display, ivypresto-display, serif;
-                            font-weight: 500;
-                            font-size: 3vw;
+                            font-weight: 700;
+                            font-size: 3vh;
                             line-height: 1.1111111;
-                            letter-spacing: -0.131vw;
+                            letter-spacing: 0vw;
                             pointer-events: none;
                         `})`],
                         ['>figcaption',$`order(1) flex-v items-end gap(1rem) p(1.11111111rem) 
-                            text-center
+                            text-right
                         `, // m.t(${css.vh(100*2/9)})                            
                             ['.author-meta', $`style(${`font-weight: 600; opacity:.5;`})`],
                             ['.avatar', $`w(10rem) h(10rem) rounded(0) block `, `
@@ -309,19 +319,21 @@ dss.install(dss.plugin_from_obj({
                     ],
                 ],
                 ['section.profile-list',$`relative`,
-                    ['>.area',$`flex-h`],
+                    ['>.area',$`flex-h`,
+                        [css.media('lg'),   $`flex-v`],
+                    ],
                     ['.title h1',`
                         font-family: Saol Display, ivypresto-display, serif;
-                        font-weight: 500;
-                        font-size: 6vw;
+                        font-weight: 600;
+                        font-size: 6vh;
                         line-height: 1.1111111;
                         letter-spacing: -0.131vw;
                         pointer-events: none;
                     `],
                     ['ul',$`flex-h flex-wrap justify-items-stretch gap(3rem)`],
-                    ['li',$`flex-v w.min(40%) m.b(3rem)`,`
-                        flex:1; 
-                    `,
+                    ['li',$`flex-v w.min(40%) m.b(3rem)`,`flex:1;`,
+                        [css.media('lg'),   $`w.min(80%)`],
+                        
                         ['.role', $`style(${`font-weight: 600; opacity:.5;`})`],
                         ['.avatar', $`w(100%) rounded(0) block m.b(2rem)`, `
                             object-fit: contain;
@@ -348,7 +360,9 @@ dss.install(dss.plugin_from_obj({
                     background: hsl(0 0% 100% / 0.6);
                     color: black;
                 `,
-                    ['>.area',$`flex-h h.min(100vh) gap(6rem)`],
+                    ['>.area',$`flex-h h.min(100vh) gap(6rem)`,
+                        [css.media('lg'),   $`flex-v`],
+                    ],
                     // [css.media('lg'), $`h(111.11111vh) p.y(${css.vh(1/18)})`],
                     ['.graphic',        $`w(50%) h(auto) flex-h`,
                         // [css.media('lg'), $`col.start(1) col.end(4) row.start(1) row.end(6) m.b(${css.vh(-100/9)}) m.l(${css.vh(-100/18)})`],
@@ -358,10 +372,10 @@ dss.install(dss.plugin_from_obj({
                         // [css.media('lg'), $`col.start(5) col.end(9) row.start(6) row.end(auto)`],
                         ['h2',`
                             font-family: Saol Display, ivypresto-display, serif;
-                            font-weight: 500;
-                            font-size: 6vw;
+                            font-weight: 600;
+                            font-size: 6vh;
                             line-height: 1.1111111;
-                            letter-spacing: -0.231vw;
+                            letter-spacing: -0.231vh;
                             pointer-events: none;
                         `]
                     ],
@@ -419,12 +433,12 @@ dss.install(dss.plugin_from_obj({
                         text-align:center;
                     `,
                     ['li',`
-                        font-weight: 500;
+                        font-weight: 700;
                         font-family: 'Saol Display';
-                        font-size: 3vw;
+                        font-size: 3vh;
                         line-height: 1.111111;
-                        min-height: 5vw;
-                        letter-spacing: -0.04ch;
+                        min-height: 5vh;
+                        letter-spacing: 0ch;
                     `,
                         ['a',$`relative zi(10)`,['&:not([href])',$`textline-none`]],
                         ['.gallery', css.class`absolute`,`
