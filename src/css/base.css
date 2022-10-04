@@ -1218,6 +1218,8 @@ body {
 	
                     --main-bg: hsl(0deg 0% 23%);
 	
+                    --card-bg: hsl(0deg 0% 30%);
+	
 
                     --color-link: #fff;
 	
@@ -1281,11 +1283,74 @@ body {
                     letter-spacing: .1ch;
 	
                     ;
-}html.pleaserotate-showing {
-	overflow:hidden !important;
 }
-
-.layer {
+                .marquee  {
+	
+                    margin: 2rem 0;
+	
+                    left:0;
+	
+                    overflow: hidden;
+	
+                    
+                    font-size: calc((16vh + 16vw) / 2);
+	
+                    font-family: Saol Display, ivypresto-display, serif;
+	
+                            font-style: italic;
+	
+                            font-weight: 600;
+	                            
+                            line-height: 1.1111111;
+	
+                            letter-spacing: -0.05ch;
+	
+                            pointer-events: none;
+	
+                 ;
+}
+                 .marquee > span  {
+	   
+                     display: inline-block;
+	
+                     white-space: nowrap;
+	                     
+                     width: var(--tw);
+	
+                     text-shadow: var(--tw) 0 currentColor, 
+                                  calc(var(--tw) * 2) 0 currentColor;
+	
+                                  /*calc(var(--tw) * 4) 0 currentColor;
+	*/
+                    
+                     will-change: transform;
+	 transform: translate3d(0,0,0);
+	
+                     animation: marquee var(--ad) linear infinite;
+	
+                     animation-play-state: running;
+	
+                 ;
+}
+                 .marquee:hover span  {
+	
+                     animation-play-state: paused;
+	
+                 ;
+}
+                 @keyframes marquee  {
+	
+                     0%  {
+	 transform: translate3d(0,0,0);
+	 ;
+}
+                     100%  {
+	 transform: translate3d(-100%,0,0);
+	 ;
+}
+                 ;
+}
+                .layer {
 	position: fixed;
 	top:0;
 	left:0;
@@ -1436,10 +1501,11 @@ main {
 
 section {
 	contain:style;
+	display:flex;
+	 flex-direction:column;
 }
 
 section >.area {
-	max-width:1800px;
 	width:100vw;
 	height:100%;
 	margin:auto;
@@ -1453,9 +1519,16 @@ section >.area {
 section >.area {
 	padding-right:11.1111111vh;
 	 padding-left:11.1111111vh;
+	max-width:2400px;
 }
 
-@media screen and (max-width:1200px)  {
+@media screen and (max-width:1800px)  {
+	 section >.area {
+	padding-right:11.1111111vh;
+	 padding-left:11.1111111vh;
+}
+
+}@media screen and (max-width:1200px)  {
 	 section >.area {
 	padding-right:11.1111111vh;
 	 padding-left:11.1111111vh;
@@ -1491,6 +1564,120 @@ section >.area {
 	 padding-left:4.1666667vh;
 }
 
+}section {
+	display:flex;
+	padding-top:11.1111111vh;
+}
+
+section >.area .title h1 {
+	
+                            font-family: Saol Display, ivypresto-display, serif;
+	
+                            font-weight: 600;
+	
+                            font-size: calc((8vh + 8vw)/2);
+	
+                            line-height: 1.1111111;
+	
+                            letter-spacing: -0.131vw;
+	
+                            pointer-events: none;
+	
+                        ;
+}section .cards {
+	display:grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	width:100%;
+	gap:1.3888889vw;
+}
+
+@media screen and (max-width:992px)  {
+	 section .cards {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap:5.5555556vh;
+}
+
+}@media screen and (max-width:768px)  {
+	 section .cards {
+	display:flex;
+	 flex-direction:column;
+	gap:5.5555556vh;
+}
+
+}section .card {
+	padding:2.7777778vw;
+	display:flex;
+	 flex-direction:column;
+}
+
+@media screen and (max-width:768px)  {
+	 section .card {
+	padding:5.5555556vh;
+}
+
+}section .card {
+	                        
+                        background: var(--card-bg);
+	
+                        flex: 1;
+	
+                        box-shadow: 0 1px 2px hsl(0deg 0% 0% / 31%), 0 4px 8px hsl(0deg 0% 0% / 27%), inset 0 1px 1px hsl(0deg 0% 100% / 9%);
+	
+                        transition: box-shadow .75s .1s, background-color .75s .1s;
+	 
+                    ;
+}section .card:hover {
+	
+                            box-shadow: none;
+	
+                            background: hsl(0 0% 10%);
+	
+                        ;
+}section .card > * {
+	pointer-events: none;
+}
+
+section .card h2 {
+	
+                            text-transform: uppercase;
+	
+                            font-size: .88888rem;
+	
+                            letter-spacing: .33333ch;
+	
+                            opacity: .5;
+	
+                        ;
+}section .card h4 {
+	margin-bottom:auto;
+	margin-top:1rem;
+}
+
+section .card h4 {
+	                            
+                            font-family: Saol Display, ivypresto-display, serif;
+	
+                            font-weight: 900;
+	
+                            font-size: calc((4vh + 4vw)/2);
+	
+                            line-height: 1.1111111;
+	
+                            letter-spacing: 0vw;
+	
+                            pointer-events: none;
+	
+                        ;
+}section .card p {
+	margin-top:4em;
+	margin-bottom:8em;
+}
+
+section .card p {
+	
+                            opacity: .5;
+	
+                        ;
 }section.intro {
 	position: relative;
 	height:100vh;
@@ -1576,97 +1763,7 @@ section.intro > .social-links {
 	display:none;
 }
 
-section.process-cards {
-	display:flex;
-	padding-top:11.1111111vh;
-}
-
-section.process-cards >.area .title h1 {
-	
-                            font-family: Saol Display, ivypresto-display, serif;
-	
-                            font-weight: 600;
-	
-                            font-size: 6vh;
-	
-                            line-height: 1.1111111;
-	
-                            letter-spacing: -0.131vw;
-	
-                            pointer-events: none;
-	
-                        ;
-}section.process-cards .cards {
-	display:flex;
-	 flex-direction:row;
-	justify-items: stretch;
-	width:100%;
-	gap:1.3888889vw;
-}
-
-@media screen and (max-width:992px)  {
-	 section.process-cards .cards {
-	display:flex;
-	 flex-direction:column;
-	gap:5.5555556vh;
-}
-
-}section.process-cards .card {
-	padding:2.7777778vw;
-	display:flex;
-	 flex-direction:column;
-}
-
-section.process-cards .card {
-	
-                        border: 1px solid black;
-	
-                    ;
-}section.process-cards .card > * {
-	pointer-events: none;
-}
-
-section.process-cards .card h2 {
-	
-                            text-transform: uppercase;
-	
-                            font-size: .88888rem;
-	
-                            letter-spacing: .33333ch;
-	
-                            opacity: .5;
-	
-                        ;
-}section.process-cards .card h4 {
-	margin-bottom:auto;
-	margin-top:1rem;
-}
-
-section.process-cards .card h4 {
-	                            
-                            font-family: Saol Display, ivypresto-display, serif;
-	
-                            font-weight: 900;
-	
-                            font-size: 3vh;
-	
-                            line-height: 1.1111111;
-	
-                            letter-spacing: 0vw;
-	
-                            pointer-events: none;
-	
-                        ;
-}section.process-cards .card p {
-	margin-top:4rem;
-}
-
-section.process-cards .card p {
-	
-                            opacity: .5;
-	
-                        ;
-}section.quote {
+section.quote {
 	position: relative;
 }
 
@@ -1685,9 +1782,9 @@ section.quote .figure-blockquote >blockquote {
 	   margin-bottom:1rem;
 	font-family:Saol Display, ivypresto-display, serif;
 	font-weight:700;
-	font-size:3vh;
+	font-size:calc((4vh + 4vw)/2);
 	line-height:1.1111111;
-	letter-spacing:0vw;
+	letter-spacing:0;
 	pointer-events:none;
 }
 
@@ -1723,100 +1820,85 @@ section.quote .figure-blockquote >figcaption .avatar {
 }
 
 section.profile-list >.area {
-	display:flex;
-	 flex-direction:row;
+	display:grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 @media screen and (max-width:992px)  {
 	 section.profile-list >.area {
-	display:flex;
-	 flex-direction:column;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-}section.profile-list .title h1 {
-	
-                        font-family: Saol Display, ivypresto-display, serif;
-	
-                        font-weight: 600;
-	
-                        font-size: 6vh;
-	
-                        line-height: 1.1111111;
-	
-                        letter-spacing: -0.131vw;
-	
-                        pointer-events: none;
-	
-                    ;
-}section.profile-list ul {
-	display:flex;
-	 flex-direction:row;
-	flex-wrap: wrap;
-	justify-items: stretch;
-	gap:3rem;
+}section.profile-list .title {
+	grid-column-start:1;
 }
 
-section.profile-list li {
+@media screen and (max-width:992px)  {
+	 section.profile-list .title {
+	grid-column-end:2;
+}
+
+}section.profile-list .item {
 	display:flex;
 	 flex-direction:column;
 	min-width:40%;
 	margin-bottom:3rem;
 }
 
-section.profile-list li {
+section.profile-list .item {
 	flex:1;
 }
 
 @media screen and (max-width:992px)  {
-	 section.profile-list li {
+	 section.profile-list .item {
 	min-width:80%;
 }
 
-}section.profile-list li .role {
+}section.profile-list .item .role {
 	font-weight:600;
 	opacity:.5;
 }
 
-section.profile-list li .avatar {
+section.profile-list .item .avatar {
 	width:100%;
 	border-radius:0;
 	display:block;
 	margin-bottom:2rem;
 }
 
-section.profile-list li .avatar {
+section.profile-list .item .avatar {
 	
                             object-fit: contain;
 	
                             aspect-ratio:1/1;
 	
                         ;
-}section.profile-list li .links >:not([hidden])~:not([hidden]) {
+}section.profile-list .item .links >:not([hidden])~:not([hidden]) {
 	margin-right:2ch;
 	 margin-left:2ch;
 }
 
-section.profile-list li .links >:not([hidden])~:not([hidden]) {
+section.profile-list .item .links >:not([hidden])~:not([hidden]) {
 	margin-right:2ch;
 	 margin-left:2ch;
 }
 
-section.profile-list li .links {
+section.profile-list .item .links {
 	margin-top:1.5em;
 }
 
-section.profile-list li .links {
+section.profile-list .item .links {
 	opacity:.6;
 }
 
-section.profile-list li .links a {
+section.profile-list .item .links a {
 	padding-right:2ch;
 	 padding-left:2ch;
 	padding-top:1ch;
 	   padding-bottom:1ch;
 }
 
-section.profile-list li .links a {
+section.profile-list .item .links a {
 	background:black;
 	 color:white;
 }
@@ -1931,7 +2013,7 @@ section.graphic-text .text h2 {
 	
                             font-weight: 600;
 	
-                            font-size: 6vh;
+                            font-size: calc((8vh + 8vw)/2);
 	
                             line-height: 1.1111111;
 	
@@ -2047,75 +2129,34 @@ section.present {
                         gap: 3.75vw;
 	
                     ;
-}section.clients .area {
-	position: relative;
-	display:flex;
-	 flex-direction:column;
-	align-items: center;
+}section.client-logos .area .cards {
+	display:grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	width:100%;
+	gap:1.3888889vw;
 }
 
-section.clients .area >:not([hidden])~:not([hidden]) {
-	margin-top:8vw;
-	   margin-bottom:8vw;
+@media screen and (max-width:1200px)  {
+	 section.client-logos .area .cards {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap:5.5555556vh;
 }
 
-section.clients .area >:not([hidden])~:not([hidden]) {
-	margin-top:8vw;
-	   margin-bottom:8vw;
+}@media screen and (max-width:992px)  {
+	 section.client-logos .area .cards {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap:4.7619048vw;
 }
 
-section.clients .area {
-	                        
-                        text-align:center;
-	
-                    ;
-}section.clients .area li {
-	
-                        font-weight: 700;
-	
-                        font-family: 'Saol Display';
-	
-                        font-size: 3vh;
-	
-                        line-height: 1.111111;
-	
-                        min-height: 5vh;
-	
-                        letter-spacing: 0ch;
-	
-                    ;
-}section.clients .area li a {
-	position: relative;
-	z-index:10;
+}@media screen and (max-width:768px)  {
+	 section.client-logos .area .cards {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap:4.1666667vw;
 }
 
-section.clients .area li a:not([href]) {
-	text-decoration-line: none;
+}@media screen and (max-width:640px)  {
+	 section.client-logos .area .cards {
+	grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
-section.clients .area li .gallery {
-	position: absolute;
-}
-
-section.clients .area li .gallery {
-	
-                            z-index:0;
-	
-                            visibility:hidden;
-	
-                            left:0;
-	 right:0;
-	
-                            height:100%;
-	
-                        ;
-}section.clients .area li:hover {
-	font-style: italic;
-}
-
-section.clients .area li:hover .gallery {
-	
-                                visibility:visible;
-	
-                            ;
 }

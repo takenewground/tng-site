@@ -12,6 +12,7 @@ dss.install(dss.plugin_from_obj({
     },
     async configure() {
         const {set,set_multi_band,set_merge} = dss;
+        
         set('xxs',320)      // 200 'xxs' Mobile portait (320px to 414px) — For devices with 4" to 6.9" screens.
         set('xs',480)       // 300 'xs' Mobile landscape
         set('sm',640)       // 400 'sm'
@@ -73,6 +74,7 @@ dss.install(dss.plugin_from_obj({
         writeFile("./src/css/base.css", css.beautify(out))
         // console.log(css.beautify(out));
 
+        // css.mixin("color-dodge","mixin-blend-mode:color-dodge;");
 
         function app_css()
         {
@@ -85,6 +87,7 @@ dss.install(dss.plugin_from_obj({
                     --color-bg: hsl(0 0% 0%);
                     --color-bg-shift:  #e1ddd8;
                     --main-bg: hsl(0deg 0% 23%);
+                    --card-bg: hsl(0deg 0% 30%);
 
                     --color-link: #fff;
                     --color-link-hover: #fff;
@@ -113,9 +116,42 @@ dss.install(dss.plugin_from_obj({
                     letter-spacing: .1ch;
                     `
                 ],
-                ['html.pleaserotate-showing',`overflow:hidden !important;`,
-
-                ],
+                `
+                .marquee {
+                    margin: 2rem 0;
+                    left:0;
+                    overflow: hidden;
+                    
+                    font-size: calc((16vh + 16vw) / 2);
+                    font-family: Saol Display, ivypresto-display, serif;
+                            font-style: italic;
+                            font-weight: 600;                            
+                            line-height: 1.1111111;
+                            letter-spacing: -0.05ch;
+                            pointer-events: none;
+                 }
+                 .marquee > span {   
+                     display: inline-block;
+                     white-space: nowrap;                     
+                     width: var(--tw);
+                     text-shadow: var(--tw) 0 currentColor, 
+                                  calc(var(--tw) * 2) 0 currentColor;
+                                  /*calc(var(--tw) * 4) 0 currentColor;*/
+                    
+                     will-change: transform; transform: translate3d(0,0,0);
+                     animation: marquee var(--ad) linear infinite;
+                     animation-play-state: running;
+                 }
+                 .marquee:hover span {
+                     animation-play-state: paused;
+                 }
+                 @keyframes marquee {
+                     0% { transform: translate3d(0,0,0); }
+                     100% { transform: translate3d(-100%,0,0); }
+                 }
+                `,
+                // ['html.pleaserotate-showing',`overflow:hidden !important;`,
+                // ],
                 // ['#pleaserotate-message',$`text-center m.t(1em)`,`
                 //     font-family: Saol Display, ivypresto-display, serif;
                 //     font-weight: 500;
@@ -208,10 +244,13 @@ dss.install(dss.plugin_from_obj({
                 `})`],
 
                 // defaults
-                ['section', $`contain(style)`,// $`bg(${css.v('section-bg')})`,
+                ['section', $`contain(style) flex-v`,// $`bg(${css.v('section-bg')})`,
                     ['>.area', 
-                        $`w.max(1800px) w(100vw) h(100%) m(auto) flex-v gap(${css.vh(100/18)}) p.y(${css.vh(100/9)})`,                        
-                        $`p.x(${css.vh(100/9)})`,
+                        $`w(100vw) h(100%) m(auto) flex-v gap(${css.vh(100/18)}) p.y(${css.vh(100/9)})`,                        
+                        
+                        // $`p.x(0)`,
+                        $`p.x(${css.vh(100/9)}) w.max(2400px)`,
+                        [css.media('xxl'),  $`p.x(${css.vh(100/9)})`],
                         [css.media('xl'),   $`p.x(${css.vh(100/9)})`],
                         [css.media('lg'),   $`p.x(${css.vh(100/12)})`],
                         [css.media('md'),   $`p.x(${css.vh(100/15)})`],
@@ -219,6 +258,54 @@ dss.install(dss.plugin_from_obj({
                         [css.media('xs'),   $`p.x(${css.vh(100/21)})`],
                         [css.media('xxs'),  $`p.x(${css.vh(100/24)})`],
                     ]                    
+                ],
+
+                ['section', $`flex p.t(${css.vh(100/9)})`,
+                    ['>.area',
+                        ['.title h1',`
+                            font-family: Saol Display, ivypresto-display, serif;
+                            font-weight: 600;
+                            font-size: calc((8vh + 8vw)/2);
+                            line-height: 1.1111111;
+                            letter-spacing: -0.131vw;
+                            pointer-events: none;
+                        `]
+                    ],
+                    ['.cards',$`grid grid-cols-3 w(100%) gap(${css.vw(100/72)})`,
+                        [css.media('lg'),   $`grid-cols-2 gap(${css.vh(100/18)})`],
+                        [css.media('md'),   $`flex-v gap(${css.vh(100/18)})`],
+                    ],
+                    ['.card',$`p(${css.vw(100/36)}) flex-v`, 
+                        [css.media('md'),   $`p(${css.vh(100/18)})`],
+                    `                        
+                        background: var(--card-bg);
+                        flex: 1;
+                        box-shadow: 0 1px 2px hsl(0deg 0% 0% / 31%), 0 4px 8px hsl(0deg 0% 0% / 27%), inset 0 1px 1px hsl(0deg 0% 100% / 9%);
+                        transition: box-shadow .75s .1s, background-color .75s .1s; 
+                    `, // border: 1px solid black;
+                        ["&:hover",`
+                            box-shadow: none;
+                            background: hsl(0 0% 10%);
+                        `],
+                        ['> *',`pointer-events: none;`],
+                        ['h2',`
+                            text-transform: uppercase;
+                            font-size: .88888rem;
+                            letter-spacing: .33333ch;
+                            opacity: .5;
+                        `],
+                        ['h4', $`m.b(auto) m.t(1rem)`,`                            
+                            font-family: Saol Display, ivypresto-display, serif;
+                            font-weight: 900;
+                            font-size: calc((4vh + 4vw)/2);
+                            line-height: 1.1111111;
+                            letter-spacing: 0vw;
+                            pointer-events: none;
+                        `],
+                        ['p',$`m.t(4em) m.b(8em)`,`
+                            opacity: .5;
+                        `]
+                    ]          
                 ],
                 
 
@@ -259,52 +346,18 @@ dss.install(dss.plugin_from_obj({
                     ],
                 ],
 
-                ['section.process-cards', $`flex p.t(${css.vh(100/9)})`,
-                    ['>.area',
-                        ['.title h1',`
-                            font-family: Saol Display, ivypresto-display, serif;
-                            font-weight: 600;
-                            font-size: 6vh;
-                            line-height: 1.1111111;
-                            letter-spacing: -0.131vw;
-                            pointer-events: none;
-                        `]
-                    ],
-                    ['.cards',$`flex-h justify-items-stretch w(100%) gap(${css.vw(100/72)})`,
-                        [css.media('lg'),   $`flex-v gap(${css.vh(100/18)})`],
-                    ],
-                    ['.card',$`p(${css.vw(100/36)}) flex-v`, `
-                        border: 1px solid black;
-                    `,
-                        ['> *',`pointer-events: none;`],
-                        ['h2',`
-                            text-transform: uppercase;
-                            font-size: .88888rem;
-                            letter-spacing: .33333ch;
-                            opacity: .5;
-                        `],
-                        ['h4', $`m.b(auto) m.t(1rem)`,`                            
-                            font-family: Saol Display, ivypresto-display, serif;
-                            font-weight: 900;
-                            font-size: 3vh;
-                            line-height: 1.1111111;
-                            letter-spacing: 0vw;
-                            pointer-events: none;
-                        `],
-                        ['p',$`m.t(4rem)`,`
-                            opacity: .5;
-                        `]
-                    ]                    
-                ],
+                // ['section.process-cards', $`flex p.t(${css.vh(100/9)})`,                   
+                //     ['.card > img', `width:50%; align-self:`],
+                // ],
 
                 ['section.quote',$`relative`,
                     ['.figure-blockquote',$`flex-v items-end m.b(${css.vh(100/9)})`,
                         ['>blockquote',$`order(0) m.x(${css.vw(100/36)}) m.y(1rem) style(${`
                             font-family: Saol Display, ivypresto-display, serif;
                             font-weight: 700;
-                            font-size: 3vh;
+                            font-size: calc((4vh + 4vw)/2);
                             line-height: 1.1111111;
-                            letter-spacing: 0vw;
+                            letter-spacing: 0;
                             pointer-events: none;
                         `})`],
                         ['>figcaption',$`order(1) flex-v items-end gap(1rem) p(1.11111111rem) 
@@ -320,19 +373,19 @@ dss.install(dss.plugin_from_obj({
                 ],
 
                 ['section.profile-list',$`relative`,
-                    ['>.area',$`flex-h`,
-                        [css.media('lg'),   $`flex-v`],
+                    ['>.area',$`grid grid-cols-3`,
+                        // [css.media('lg'),   $`flex-v`],
+                        [css.media('lg'),   $`grid-cols-2`],
                     ],
-                    ['.title h1',`
-                        font-family: Saol Display, ivypresto-display, serif;
-                        font-weight: 600;
-                        font-size: 6vh;
-                        line-height: 1.1111111;
-                        letter-spacing: -0.131vw;
-                        pointer-events: none;
-                    `],
-                    ['ul',$`flex-h flex-wrap justify-items-stretch gap(3rem)`],
-                    ['li',$`flex-v w.min(40%) m.b(3rem)`,`flex:1;`,
+                    ['.title',`grid-column-start:1;`,
+                        [css.media('lg'),   `grid-column-end:2;`],
+                    ],
+                    
+                    // ['.title h1',`white-space: nowrap;                        
+                    //     pointer-events: none;
+                    // `],
+                    // ['ul',$`flex-h flex-wrap justify-items-stretch gap(4rem)`],
+                    ['.item',$`flex-v w.min(40%) m.b(3rem)`,`flex:1;`,
                         [css.media('lg'),   $`w.min(80%)`],
                         
                         ['.role', $`style(${`font-weight: 600; opacity:.5;`})`],
@@ -379,7 +432,7 @@ dss.install(dss.plugin_from_obj({
                         ['h2',`
                             font-family: Saol Display, ivypresto-display, serif;
                             font-weight: 600;
-                            font-size: 6vh;
+                            font-size: calc((8vh + 8vw)/2);
                             line-height: 1.1111111;
                             letter-spacing: -0.231vh;
                             pointer-events: none;
@@ -435,31 +488,13 @@ dss.install(dss.plugin_from_obj({
                         gap: 3.75vw;
                     `
                 ],
-                ['section.clients .area', $`relative flex-v items-center  space.y(8vw)`, //gap: 7vw;
-                    `                        
-                        text-align:center;
-                    `,
-                    ['li',`
-                        font-weight: 700;
-                        font-family: 'Saol Display';
-                        font-size: 3vh;
-                        line-height: 1.111111;
-                        min-height: 5vh;
-                        letter-spacing: 0ch;
-                    `,
-                        ['a',$`relative zi(10)`,['&:not([href])',$`textline-none`]],
-                        ['.gallery', css.class`absolute`,`
-                            z-index:0;
-                            visibility:hidden;
-                            left:0; right:0;
-                            height:100%;
-                        `],
-                        ['&:hover', css.class`italic`,
-                            ['.gallery',`
-                                visibility:visible;
-                            `],
-                        ]
-                    ]
+                ['section.client-logos .area',                     
+                    ['.cards',$`grid grid-cols-3  w(100%) gap(${css.vw(100/72)})`,
+                        [css.media('xl'),   $`grid-cols-2 gap(${css.vh(100/18)})`],                        
+                        [css.media('lg'),   $`grid-cols-2 gap(${css.vw(100/21)})`],
+                        [css.media('md'),   $`grid-cols-2 gap(${css.vw(100/24)})`],
+                        [css.media('sm'),   $`grid-cols-1 `],
+                    ],
                 ],
             ])
         }
