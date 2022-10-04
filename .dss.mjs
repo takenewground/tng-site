@@ -297,7 +297,7 @@ dss.install(dss.plugin_from_obj({
                         ['h4', $`m.b(auto) m.t(1rem)`,`                            
                             font-family: Saol Display, ivypresto-display, serif;
                             font-weight: 900;
-                            font-size: calc((4vh + 4vw)/2);
+                            font-size: calc((3.666666vh + 3.666666vw)/2);
                             line-height: 1.1111111;
                             letter-spacing: 0vw;
                             pointer-events: none;
