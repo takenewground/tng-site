@@ -246,6 +246,7 @@ function roundedRect(ctx, x, y, width, height, radius) {
     // ctx.stroke();
 }
 
+if (!is_mobile)
 (function(){
     let canvas;
     let canvas_w = 0;
