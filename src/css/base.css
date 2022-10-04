@@ -1517,15 +1517,15 @@ section >.area {
 }
 
 section >.area {
-	padding-right:11.1111111vh;
-	 padding-left:11.1111111vh;
+	padding-right:14.2857143vh;
+	 padding-left:14.2857143vh;
 	max-width:2400px;
 }
 
 @media screen and (max-width:1800px)  {
 	 section >.area {
-	padding-right:11.1111111vh;
-	 padding-left:11.1111111vh;
+	padding-right:12.5vh;
+	 padding-left:12.5vh;
 }
 
 }@media screen and (max-width:1200px)  {
@@ -1741,12 +1741,11 @@ section.intro .title .logo {
 	
                         ;
 }section.intro .title .title-main {
-	margin-bottom:auto;
 	font-family:Saol Display, ivypresto-display, serif;
 	font-weight:600;
-	font-size:8vh;
+	font-size:calc( 3vh + 3vw);
 	line-height:1.1111111;
-	letter-spacing:-0.231vw;
+	letter-spacing:-0.01ch;
 	pointer-events:none;
 }
 

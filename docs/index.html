@@ -80,7 +80,9 @@
 							})(); </script>
 						</div>
 						<div class="title" >
-							<svg class="logo" x="0px" y="0px" viewBox="0 0 115.7 110.5" >
+							<svg class="logo" 
+								style="color:#fff; mix-blend-mode:difference;"
+								x="0px" y="0px" viewBox="0 0 115.7 110.5" >
 								<g>
 									<path style="fill:currentColor;" d="M98.3,25.1H84.8v-4.5v-4.5h-4.5h-4.5h-4.5v4.5v4.7c-1.7,0.3-3.2,1-4.5,2v0c0-6.2-5-11.2-11.2-11.2H39.8h-4.5
 									v4.5v4.5h-4.5H17.3h-4.5v4.5v0v4.5v0v4.5h4.5h9v31.5v0v4.5h4.5h4.5v4.5v4.5h4.5h4.5h4.5v-4.5V38.6h4.5V70v2.3
@@ -93,14 +95,55 @@
 								</g>
 							</svg>
 							<!-- <h3 class="title-sub">Adrian Koehler</h3> -->
-							<h1 class="title-main">
+							<!-- <h1 class="title-main">
 								Let's turn 
 								<span class="lowercase italic">leadershit</span>
 								<br/>
 								into
 								<span class="lowercase italic">leadership</span> 							
-							</h1>
-							<div class="text">
+							</h1> -->
+					
+								<h1 class="title-main" style=" 
+									margin-top: auto;
+									display: flex;  flex-direction: row;     justify-content: flex-end;
+									flex-wrap: wrap;
+									gap: .5ch;
+								">
+								<style>
+									.title-main > * {
+										white-space: nowrap;
+									}
+									.break-col {
+										flex-basis: 100%;
+										width: 0;
+									}
+									.title-line-span {
+										width:auto; min-width:1ch;
+										display: block;
+										flex: 1;
+										height: .11111111ch;
+										align-self: center;
+										border: solid 0.1111ch #ccc; box-sizing: content-box;
+										margin-bottom: 0.311ch;
+										mix-blend-mode: difference;
+									}
+								</style>								
+								<span class="title-line-span"></span>
+								<span>We turn </span>
+								<span class="title-line-span"></span>
+								<span class="lowercase italic">leadershit</span>
+								<div class="break-col"></div>
+								<span>into</span>
+								<span class="title-line-span"></span>
+								<span class="lowercase italic">leadership</span> 							
+								</h1>
+															
+							<div class="text" style="
+								    text-align: left;
+									width: calc(100%/3);
+									margin-bottom: auto;
+									align-self: end;
+							">
 								<p>What if you are working on the wrong issues, would you want to know?</p>
 							</div>
 						</div>

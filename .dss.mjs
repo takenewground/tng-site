@@ -249,8 +249,8 @@ dss.install(dss.plugin_from_obj({
                         $`w(100vw) h(100%) m(auto) flex-v gap(${css.vh(100/18)}) p.y(${css.vh(100/9)})`,                        
                         
                         // $`p.x(0)`,
-                        $`p.x(${css.vh(100/9)}) w.max(2400px)`,
-                        [css.media('xxl'),  $`p.x(${css.vh(100/9)})`],
+                        $`p.x(${css.vh(100/7)}) w.max(2400px)`,
+                        [css.media('xxl'),  $`p.x(${css.vh(100/8)})`],
                         [css.media('xl'),   $`p.x(${css.vh(100/9)})`],
                         [css.media('lg'),   $`p.x(${css.vh(100/12)})`],
                         [css.media('md'),   $`p.x(${css.vh(100/15)})`],
@@ -327,12 +327,12 @@ dss.install(dss.plugin_from_obj({
                         ['.logo',$`h.min(6vw) flex items-center `,`                            
                             max-width: calc((100vh+100vw)/12);
                         `], //flex:0;
-                        ['.title-main',$`m.b(auto) style(${`
+                        ['.title-main',$`style(${`
                             font-family: Saol Display, ivypresto-display, serif;
                             font-weight: 600;
-                            font-size: 8vh;
+                            font-size: calc( 3vh + 3vw);
                             line-height: 1.1111111;
-                            letter-spacing: -0.231vw;
+                            letter-spacing: -0.01ch;
                             pointer-events: none;
                         `})`],
                     ],
