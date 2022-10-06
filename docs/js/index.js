@@ -23,7 +23,7 @@ import {map_range, spring_system_create} from "./spring/index.js"
 import {ScrollRig, SCROLL_DIR_Y} from "./scroll/rig.js";
 
 
-const is_mobile = /Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(navigator.userAgent)
+const is_mobile = /Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(navigator.userAgent);
 let is_ready = false;
 
 // if (is_mobile) {
@@ -147,6 +147,7 @@ document.body.appendChild(section_style)
 
 let scroll_y = 0;
 
+if(!is_mobile) {
 const scrollrig = new ScrollRig();
 scrollrig.jack('main', document.querySelector('main'), {
     dir:SCROLL_DIR_Y,
@@ -160,6 +161,7 @@ scrollrig.jack('main', document.querySelector('main'), {
         // console.log($.dim_y[0]);
     }
 })
+}
 
 // sections.add(document.querySelector('section.intro'),
 //     function () {
@@ -527,7 +529,8 @@ function start_tick() {
 
 
 function init() {
-    listen_mouse();
+    if (!is_mobile) 
+        listen_mouse();
     listen_viewport();
     // start_tick();
     ready();

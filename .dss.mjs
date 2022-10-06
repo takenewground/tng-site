@@ -98,20 +98,22 @@ dss.install(dss.plugin_from_obj({
                     font-family: 'Aktiv Grotesk', Nexa Text, brother-1816, sans-serif;
                     -webkit-font-smoothing: antialiased;
                     -moz-osx-font-smoothing: grayscale;
-                    font-size: 2.5vh;
+                    
 
                 `,
-                    `--text-scale: 1.0;`,
+                    `--text-scale: .666666;`,
+                    [css.media('xxxl'), `--text-scale: 1.111111;`],
+                    [css.media('xxl'), `--text-scale: 1.222222;`],
                     [css.media('xl'), `--text-scale: 1.3333333;`],
                     [css.media('lg'), `--text-scale: 1.6666666;`],
-                    [css.media('md'), `--text-scale: 2.0000000;`],
-                    [css.media('sm'), `--text-scale: 2.3333333;`],
-                    [css.media('xs'), `--text-scale: 2.6666666;`],
+                    // [css.media('md'), `--text-scale: 2.0000000;`],
+                    // [css.media('sm'), `--text-scale: 2.3333333;`],
+                    // [css.media('xs'), `--text-scale: 2.6666666;`],
                     `
                     --rfs: 0.938vh;
                     --rlh: calc(var(--rfs) * 1.875 / 0.938);
                     font-weight: 500;
-                    font-size: calc((1.6666666vh + 1.0w) / 2 * var(--text-scale));
+                    font-size: calc((1.1111111vh + 1.1111111vw) / 2 * var(--text-scale));
                     line-height: 1.6666666;
                     letter-spacing: .1ch;
                     `
@@ -120,6 +122,7 @@ dss.install(dss.plugin_from_obj({
                 .marquee {
                     margin: 2rem 0;
                     left:0;
+                    display:flex; flex-direction:row;
                     overflow: hidden;
                     
                     font-size: calc((16vh + 16vw) / 2);
@@ -134,9 +137,8 @@ dss.install(dss.plugin_from_obj({
                      display: inline-block;
                      white-space: nowrap;                     
                      width: var(--tw);
-                     text-shadow: var(--tw) 0 currentColor, 
-                                  calc(var(--tw) * 2) 0 currentColor;
-                                  /*calc(var(--tw) * 4) 0 currentColor;*/
+                     /*text-shadow: var(--tw) 0 currentColor, 
+                                  calc(var(--tw) * 2) 0 currentColor;*/                                  
                     
                      will-change: transform; transform: translate3d(0,0,0);
                      animation: marquee var(--ad) linear infinite;
@@ -265,7 +267,7 @@ dss.install(dss.plugin_from_obj({
                         ['.title h1',`
                             font-family: Saol Display, ivypresto-display, serif;
                             font-weight: 600;
-                            font-size: calc((8vh + 8vw)/2);
+                            font-size: calc((4vh + 4vw) * var(--text-scale));
                             line-height: 1.1111111;
                             letter-spacing: -0.131vw;
                             pointer-events: none;
@@ -290,14 +292,14 @@ dss.install(dss.plugin_from_obj({
                         ['> *',`pointer-events: none;`],
                         ['h2',`
                             text-transform: uppercase;
-                            font-size: .88888rem;
+                            font-size: .77777777rem;
                             letter-spacing: .33333ch;
                             opacity: .5;
                         `],
                         ['h4', $`m.b(auto) m.t(1rem)`,`                            
                             font-family: Saol Display, ivypresto-display, serif;
                             font-weight: 900;
-                            font-size: calc((3.666666vh + 3.666666vw)/2);
+                            font-size: calc((3.333333vh + 3.333333vw)/2 * var(--text-scale));
                             line-height: 1.1111111;
                             letter-spacing: 0vw;
                             pointer-events: none;
@@ -309,8 +311,9 @@ dss.install(dss.plugin_from_obj({
                 ],
                 
 
-                ['section.intro', $`relative h(100vh)`,
-                    ['.graphic',$`flex-h zi(-1) bg(black) absolute t(0) l(0) w(100vw) h(100vh)`,//$`m.b(${css.vh(0/9)})`,
+                ['section.intro', $`relative h.min(100vh) p(0)`,
+                    ['>.area', $`h(100vh) flex-v justify-items-stretch`],
+                    ['.graphic',$`flex-h zi(-1) bg(black) absolute t(0) l(0) w(100%) h(100%)`,//$`m.b(${css.vh(0/9)})`,
                         // [css.media('md'),$`col.start(6) col.end(10) row.start(1) row.end(10) m.b(${css.vh(-100/9)}) m.r(${css.vw(-100/18)})`],
                         ['.graphic-item', $`w(100%) block bg.size(cover) bg.position(${'50% 50%'})`,`
                             object-fit: cover;
@@ -320,17 +323,17 @@ dss.install(dss.plugin_from_obj({
                     ],
                     ['.title', $`h(100%)
                         flex-v gap(6vw) items-center justify-between
-                        uppercase text-center`,`
-                        text-transform: uppercase;
-                        text-align:center;
+                        `,`
+                        text-align: left;
                         `,
                         ['.logo',$`h.min(6vw) flex items-center `,`                            
-                            max-width: calc((100vh+100vw)/12);
+                            width: calc((100vh + 100vw) / 36);
+                            min-width: 72px;
                         `], //flex:0;
                         ['.title-main',$`style(${`
                             font-family: Saol Display, ivypresto-display, serif;
                             font-weight: 600;
-                            font-size: calc( 3vh + 3vw);
+                            font-size: calc(3vh + 3vw);
                             line-height: 1.1111111;
                             letter-spacing: -0.01ch;
                             pointer-events: none;
@@ -420,14 +423,16 @@ dss.install(dss.plugin_from_obj({
                     color: black;
                 `,
                     ['>.area',$`flex-h h.min(100vh) gap(6rem)`,
-                        [css.media('lg'),   $`flex-v`],
+                        [css.media('lg'),   $`flex-v h.min(150vh)`],
                     ],
                     // [css.media('lg'), $`h(111.11111vh) p.y(${css.vh(1/18)})`],
-                    ['.graphic',        $`w(50%) h(auto) flex-h`,
+                    ['.graphic',        $`w(50%) h(auto) flex-h`, `flex:1;`,
+                        [css.media('lg'),   $`w(100%)`,`order:1;`],
                         // [css.media('lg'), $`col.start(1) col.end(4) row.start(1) row.end(6) m.b(${css.vh(-100/9)}) m.l(${css.vh(-100/18)})`],
                         ['.graphic-item', $`w(100%) block bg.size(contain) bg.repeat(none) bg.position(${'50% 50%'})`],
                     ],
                     ['.text',           $`w(50%) h(auto) justify-center flex-v gap(3rem)`,
+                        [css.media('lg'),   $`w(100%)`],
                         // [css.media('lg'), $`col.start(5) col.end(9) row.start(6) row.end(auto)`],
                         ['h2',`
                             font-family: Saol Display, ivypresto-display, serif;
@@ -437,7 +442,7 @@ dss.install(dss.plugin_from_obj({
                             letter-spacing: -0.231vh;
                             pointer-events: none;
                         `],
-                        ['a', $`block p.x(3ch) p.y(1ch)`,`background:black; color:white;`]
+                        ['a', $`block p.x(3ch) p.y(1ch)`,`background:black; color:white; width:max-content;`]
                     ],
                 ],
                 // ['section.graphic-text',

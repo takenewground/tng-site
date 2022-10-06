@@ -35,257 +35,6 @@ a  {
 	text-decoration: none;
 }
 
-.font-thin {
-	font-weight: 100;
-}
-
-.font-extralight {
-	font-weight: 200;
-}
-
-.font-light {
-	font-weight: 300;
-}
-
-.font-normal {
-	font-weight: 400;
-}
-
-.font-medium {
-	font-weight: 500;
-}
-
-.font-semibold {
-	font-weight: 600;
-}
-
-.font-bold {
-	font-weight: 700;
-}
-
-.font-extrabold {
-	font-weight: 800;
-}
-
-.font-black {
-	font-weight: 900;
-}
-
-.kern-tighter {
-	letter-spacing: -0.05em;
-}
-
-.kern-tight {
-	letter-spacing: -0.025em;
-}
-
-.kern-normal {
-	letter-spacing: 0em;
-}
-
-.kern-wide {
-	letter-spacing: 0.025em;
-}
-
-.kern-wider {
-	letter-spacing: 0.05em;
-}
-
-.kern-widest {
-	letter-spacing: 0.1em;
-}
-
-.text-xs {
-	font-size: 0.75rem;
-	 line-height: 1rem;
-}
-
-.text-sm {
-	font-size: 0.875rem;
-	 line-height: 1.25rem;
-}
-
-.text-base {
-	font-size: 1rem;
-	 line-height: 1.5rem;
-}
-
-.text-lg {
-	font-size: 1.125rem;
-	 line-height: 1.75rem;
-}
-
-.text-xl {
-	font-size: 1.25rem;
-	 line-height: 1.75rem;
-}
-
-.text-2xl {
-	font-size: 1.5rem;
-	 line-height: 2rem;
-}
-
-.text-3xl {
-	font-size: 1.875rem;
-	 line-height: 2.25rem;
-}
-
-.text-4xl {
-	font-size: 2.25rem;
-	 line-height: 2.5rem;
-}
-
-.text-5xl {
-	font-size: 3rem;
-	 line-height: 1;
-}
-
-.text-6xl {
-	font-size: 3.75rem;
-	 line-height: 1;
-}
-
-.text-7xl {
-	font-size: 4.5rem;
-	 line-height: 1;
-}
-
-.text-8xl {
-	font-size: 6rem;
-	 line-height: 1;
-}
-
-.text-9xl {
-	font-size: 8rem;
-	 line-height: 1;
-}
-
-.italic {
-	font-style: italic;
-}
-
-.not_italic {
-	font-style: normal;
-}
-
-.uppercase {
-	text-transform: uppercase;
-}
-
-.lowercase {
-	text-transform: lowercase;
-}
-
-.capitalize {
-	text-transform: capitalize;
-}
-
-.normalcase {
-	text-transform: none;
-}
-
-.text-left {
-	text-align: left;
-}
-
-.text-center {
-	text-align: center;
-}
-
-.text-right {
-	text-align: right;
-}
-
-.text-justify {
-	text-align: justify;
-}
-
-.truncate {
-	overflow: hidden;
-	 text-overflow: ellipsis;
-	 white-space: nowrap;
-}
-
-.text-ellipsis {
-	text-overflow: ellipsis;
-}
-
-.text-clip {
-	text-overflow: clip;
-}
-
-.numeric-normal {
-	font-variant-numeric: normal;
-}
-
-.numeric-ordinal {
-	font-variant-numeric: ordinal;
-}
-
-.numeric-slashed_zero {
-	font-variant-numeric: slashed-zero;
-}
-
-.numeric-lining {
-	font-variant-numeric: lining-nums;
-}
-
-.numeric-oldstyle {
-	font-variant-numeric: oldstyle-nums;
-}
-
-.numeric-proportional {
-	font-variant-numeric: proportional-nums;
-}
-
-.numeric-tabular {
-	font-variant-numeric: tabular-nums;
-}
-
-.numeric-diagonal_fractions {
-	font-variant-numeric: diagonal-fractions;
-}
-
-.numeric-stacked_fractions {
-	font-variant-numeric: stacked-fractions;
-}
-
-.textline-none {
-	text-decoration-line: none;
-}
-
-.textline-under {
-	text-decoration-line: underline;
-}
-
-.textline-over {
-	text-decoration-line: overline;
-}
-
-.textline-through {
-	text-decoration-line: line-through;
-}
-
-.textline-solid {
-	text-decoration-style: solid;
-}
-
-.textline-double {
-	text-decoration-style: double;
-}
-
-.textline-dotted {
-	text-decoration-style: dotted;
-}
-
-.textline-dashed {
-	text-decoration-style: dashed;
-}
-
-.textline-wavy {
-	text-decoration-style: wavy;
-}
-
 .backface-hidden {
 	backface-visibility:hidden;
 }
@@ -1204,6 +953,257 @@ a  {
 	overflow-y: scroll;
 }
 
+.font-thin {
+	font-weight: 100;
+}
+
+.font-extralight {
+	font-weight: 200;
+}
+
+.font-light {
+	font-weight: 300;
+}
+
+.font-normal {
+	font-weight: 400;
+}
+
+.font-medium {
+	font-weight: 500;
+}
+
+.font-semibold {
+	font-weight: 600;
+}
+
+.font-bold {
+	font-weight: 700;
+}
+
+.font-extrabold {
+	font-weight: 800;
+}
+
+.font-black {
+	font-weight: 900;
+}
+
+.kern-tighter {
+	letter-spacing: -0.05em;
+}
+
+.kern-tight {
+	letter-spacing: -0.025em;
+}
+
+.kern-normal {
+	letter-spacing: 0em;
+}
+
+.kern-wide {
+	letter-spacing: 0.025em;
+}
+
+.kern-wider {
+	letter-spacing: 0.05em;
+}
+
+.kern-widest {
+	letter-spacing: 0.1em;
+}
+
+.text-xs {
+	font-size: 0.75rem;
+	 line-height: 1rem;
+}
+
+.text-sm {
+	font-size: 0.875rem;
+	 line-height: 1.25rem;
+}
+
+.text-base {
+	font-size: 1rem;
+	 line-height: 1.5rem;
+}
+
+.text-lg {
+	font-size: 1.125rem;
+	 line-height: 1.75rem;
+}
+
+.text-xl {
+	font-size: 1.25rem;
+	 line-height: 1.75rem;
+}
+
+.text-2xl {
+	font-size: 1.5rem;
+	 line-height: 2rem;
+}
+
+.text-3xl {
+	font-size: 1.875rem;
+	 line-height: 2.25rem;
+}
+
+.text-4xl {
+	font-size: 2.25rem;
+	 line-height: 2.5rem;
+}
+
+.text-5xl {
+	font-size: 3rem;
+	 line-height: 1;
+}
+
+.text-6xl {
+	font-size: 3.75rem;
+	 line-height: 1;
+}
+
+.text-7xl {
+	font-size: 4.5rem;
+	 line-height: 1;
+}
+
+.text-8xl {
+	font-size: 6rem;
+	 line-height: 1;
+}
+
+.text-9xl {
+	font-size: 8rem;
+	 line-height: 1;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.not_italic {
+	font-style: normal;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.lowercase {
+	text-transform: lowercase;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+.normalcase {
+	text-transform: none;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-justify {
+	text-align: justify;
+}
+
+.truncate {
+	overflow: hidden;
+	 text-overflow: ellipsis;
+	 white-space: nowrap;
+}
+
+.text-ellipsis {
+	text-overflow: ellipsis;
+}
+
+.text-clip {
+	text-overflow: clip;
+}
+
+.numeric-normal {
+	font-variant-numeric: normal;
+}
+
+.numeric-ordinal {
+	font-variant-numeric: ordinal;
+}
+
+.numeric-slashed_zero {
+	font-variant-numeric: slashed-zero;
+}
+
+.numeric-lining {
+	font-variant-numeric: lining-nums;
+}
+
+.numeric-oldstyle {
+	font-variant-numeric: oldstyle-nums;
+}
+
+.numeric-proportional {
+	font-variant-numeric: proportional-nums;
+}
+
+.numeric-tabular {
+	font-variant-numeric: tabular-nums;
+}
+
+.numeric-diagonal_fractions {
+	font-variant-numeric: diagonal-fractions;
+}
+
+.numeric-stacked_fractions {
+	font-variant-numeric: stacked-fractions;
+}
+
+.textline-none {
+	text-decoration-line: none;
+}
+
+.textline-under {
+	text-decoration-line: underline;
+}
+
+.textline-over {
+	text-decoration-line: overline;
+}
+
+.textline-through {
+	text-decoration-line: line-through;
+}
+
+.textline-solid {
+	text-decoration-style: solid;
+}
+
+.textline-double {
+	text-decoration-style: double;
+}
+
+.textline-dotted {
+	text-decoration-style: dotted;
+}
+
+.textline-dashed {
+	text-decoration-style: dashed;
+}
+
+.textline-wavy {
+	text-decoration-style: wavy;
+}
+
 body {
 	
                     --color-text: #fff;
@@ -1237,13 +1237,22 @@ body {
 	
                     -moz-osx-font-smoothing: grayscale;
 	
-                    font-size: 2.5vh;
-	
+                    
 
-                --text-scale: 1.0;
+                --text-scale: .666666;
 }
 
-@media screen and (max-width:1200px)  {
+@media screen and (max-width:2400px)  {
+	 body {
+	--text-scale: 1.111111;
+}
+
+}@media screen and (max-width:1800px)  {
+	 body {
+	--text-scale: 1.222222;
+}
+
+}@media screen and (max-width:1200px)  {
 	 body {
 	--text-scale: 1.3333333;
 }
@@ -1251,21 +1260,6 @@ body {
 }@media screen and (max-width:992px)  {
 	 body {
 	--text-scale: 1.6666666;
-}
-
-}@media screen and (max-width:768px)  {
-	 body {
-	--text-scale: 2.0000000;
-}
-
-}@media screen and (max-width:640px)  {
-	 body {
-	--text-scale: 2.3333333;
-}
-
-}@media screen and (max-width:480px)  {
-	 body {
-	--text-scale: 2.6666666;
 }
 
 }body {
@@ -1276,7 +1270,7 @@ body {
 	
                     font-weight: 500;
 	
-                    font-size: calc((1.6666666vh + 1.0w) / 2 * var(--text-scale));
+                    font-size: calc((1.1111111vh + 1.1111111vw) / 2 * var(--text-scale));
 	
                     line-height: 1.6666666;
 	
@@ -1289,6 +1283,9 @@ body {
                     margin: 2rem 0;
 	
                     left:0;
+	
+                    display:flex;
+	 flex-direction:row;
 	
                     overflow: hidden;
 	
@@ -1317,11 +1314,9 @@ body {
 	                     
                      width: var(--tw);
 	
-                     text-shadow: var(--tw) 0 currentColor, 
+                     /*text-shadow: var(--tw) 0 currentColor, 
                                   calc(var(--tw) * 2) 0 currentColor;
-	
-                                  /*calc(var(--tw) * 4) 0 currentColor;
-	*/
+	*/                                  
                     
                      will-change: transform;
 	 transform: translate3d(0,0,0);
@@ -1575,7 +1570,7 @@ section >.area .title h1 {
 	
                             font-weight: 600;
 	
-                            font-size: calc((8vh + 8vw)/2);
+                            font-size: calc((4vh + 4vw) * var(--text-scale));
 	
                             line-height: 1.1111111;
 	
@@ -1641,7 +1636,7 @@ section .card h2 {
 	
                             text-transform: uppercase;
 	
-                            font-size: .88888rem;
+                            font-size: .77777777rem;
 	
                             letter-spacing: .33333ch;
 	
@@ -1659,7 +1654,7 @@ section .card h4 {
 	
                             font-weight: 900;
 	
-                            font-size: calc((3.666666vh + 3.666666vw)/2);
+                            font-size: calc((3.333333vh + 3.333333vw)/2 * var(--text-scale));
 	
                             line-height: 1.1111111;
 	
@@ -1680,7 +1675,15 @@ section .card p {
                         ;
 }section.intro {
 	position: relative;
+	min-height:100vh;
+	padding:0;
+}
+
+section.intro >.area {
 	height:100vh;
+	display:flex;
+	 flex-direction:column;
+	justify-items: stretch;
 }
 
 section.intro .graphic {
@@ -1691,8 +1694,8 @@ section.intro .graphic {
 	position: absolute;
 	top:0;
 	left:0;
-	width:100vw;
-	height:100vh;
+	width:100%;
+	height:100%;
 }
 
 section.intro .graphic .graphic-item {
@@ -1718,15 +1721,11 @@ section.intro .graphic .graphic-item {
 	gap:6vw;
 	align-items: center;
 	justify-content: space-between;
-	text-transform: uppercase;
-	text-align: center;
 }
 
 section.intro .title {
 	
-                        text-transform: uppercase;
-	
-                        text-align:center;
+                        text-align: left;
 	
                         ;
 }section.intro .title .logo {
@@ -1737,13 +1736,15 @@ section.intro .title {
 
 section.intro .title .logo {
 	                            
-                            max-width: calc((100vh+100vw)/12);
+                            width: calc((100vh + 100vw) / 36);
+	
+                            min-width: 72px;
 	
                         ;
 }section.intro .title .title-main {
 	font-family:Saol Display, ivypresto-display, serif;
 	font-weight:600;
-	font-size:calc( 3vh + 3vw);
+	font-size:calc(3vh + 3vw);
 	line-height:1.1111111;
 	letter-spacing:-0.01ch;
 	pointer-events:none;
@@ -1980,6 +1981,7 @@ section.graphic-text {
 	 section.graphic-text >.area {
 	display:flex;
 	 flex-direction:column;
+	min-height:150vh;
 }
 
 }section.graphic-text .graphic {
@@ -1989,7 +1991,21 @@ section.graphic-text {
 	 flex-direction:row;
 }
 
-section.graphic-text .graphic .graphic-item {
+section.graphic-text .graphic {
+	flex:1;
+}
+
+@media screen and (max-width:992px)  {
+	 section.graphic-text .graphic {
+	width:100%;
+}
+
+}@media screen and (max-width:992px)  {
+	 section.graphic-text .graphic {
+	order:1;
+}
+
+}section.graphic-text .graphic .graphic-item {
 	width:100%;
 	display:block;
 	background-size:contain;
@@ -2006,7 +2022,12 @@ section.graphic-text .text {
 	gap:3rem;
 }
 
-section.graphic-text .text h2 {
+@media screen and (max-width:992px)  {
+	 section.graphic-text .text {
+	width:100%;
+}
+
+}section.graphic-text .text h2 {
 	
                             font-family: Saol Display, ivypresto-display, serif;
 	
@@ -2032,6 +2053,7 @@ section.graphic-text .text h2 {
 section.graphic-text .text a {
 	background:black;
 	 color:white;
+	 width:max-content;
 }
 
 section.graphic-text-alt {
