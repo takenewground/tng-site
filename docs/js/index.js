@@ -354,11 +354,11 @@ if (!is_mobile) {
     }
     
     function draw() {
-        if (canvas_w !== vw || canvas_h !== vh) {
-            canvas.width = canvas_w = vw;
-            canvas.height = canvas_h = vh;
-            tgt_update()
-        }
+        // if (canvas_w !== vw || canvas_h !== vh) {
+        //     canvas.width = canvas_w = vw;
+        //     canvas.height = canvas_h = vh;
+        //     tgt_update()
+        // }
         if (mtgt_has) {            
             const w = mtgt_rect[2];
             const h = mtgt_rect[3];
