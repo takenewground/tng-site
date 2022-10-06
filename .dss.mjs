@@ -312,9 +312,11 @@ dss.install(dss.plugin_from_obj({
                     ]          
                 ],
                 
+                ['svg *', `pointer-events:none;`],
+
                 ['.seal',`                            
                     width: calc((100vh + 100vw) / 36); min-width: 72px; 
-                `],
+                `,],
                 ['.obseal',`                            
                     width: calc((100vh + 100vw) / 18); min-width: 90px; max-width:180px;
                 `],

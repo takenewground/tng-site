@@ -258,6 +258,7 @@ if (!is_mobile) {
     const _2PI = Math.PI * 2;
     let sys
     let tgt
+    let tgt_rect
     let tgt_x
     let tgt_y
     const pill = {
@@ -314,18 +315,20 @@ if (!is_mobile) {
         sys.set('mx', tgt_x)
         sys.set('my', tgt_y)
         sys.set('rad', 0)
-        sys.set('w', 0)
-        sys.set('h', 0)
+        sys.set('w', vw<<1)
+        sys.set('h', vh<<1)
         sys.spring('rad',20,180)
         sys.spring('h',20,90)
         sys.spring('w',20,90)
         sys.spring('mx',20,80)
-        sys.spring('my',20,80)
+        sys.spring('my',20,80)        
 
         draw();
+
+        tgt.dispatchEvent(new MouseEvent('mousemove', { 'bubbles': true }))
     }
     function tgt_update() {
-        let tgt_rect = tgt.getBoundingClientRect();
+        tgt_rect = tgt.getBoundingClientRect();
         tgt_x = tgt_rect.left + (tgt_rect.width>>1);
         tgt_y = tgt_rect.top + (tgt_rect.height>>1) - scroll_y;
     }
@@ -341,7 +344,7 @@ if (!is_mobile) {
             canvas.height = canvas_h = vh;
             tgt_update()
         }
-        if (mtgt_has) {
+        if (mtgt_has) {            
             const w = mtgt_rect[2];
             const h = mtgt_rect[3];
             sys.set('w', w)
@@ -350,19 +353,29 @@ if (!is_mobile) {
             sys.set('my', mtgt_rect[1] + (h>>1) - (mtgt_scroll_y - scroll_y))
             sys.set('rad', 0)//Math.max(0, Math.min(pill.w,pill.h)>>1 ))
         }
-        // else if (!_DID_INIT) { // scroll_y > -100) {
+        else if (scroll_y > -100) {
+            // if (!_DID_INIT) {
+                tgt.dispatchEvent(new MouseEvent('mousemove', { 'bubbles': true }))
+            // }
+            _DID_INIT = 1
+
+        }
+        // else if (!_DID_INIT || scroll_y > -100) { // scroll_y > -100) {
         //     _DID_INIT = 1;
         //     const r = vw > vh ?
         //         vw/18 : vh/18
         //     // sys.set('w', r<<1)
         //     // sys.set('h', r<<1)
-        //     sys.set('w', 0)
-        //     sys.set('h', 0)
+        //     // sys.set('w', 0)
+        //     // sys.set('h', 0)
+        //     const w = mtgt_rect[2];
+        //     const h = mtgt_rect[3];
         //     sys.set('rad', 0)
         //     sys.set('mx', tgt_x)
         //     sys.set('my', tgt_y)
         // }
         else {
+            _DID_INIT = 0
             const r = Math.abs(map_range(Math.abs(pill.x + pill.y - (mx + my)), 500,0, vw/36,vw/18))
             sys.set('w', 0)
             sys.set('h', 0)
