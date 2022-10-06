@@ -1746,6 +1746,10 @@ section.intro .title {
 	align-items: center;
 }
 
+section.intro .title .logo {
+	align-self:start;
+}
+
 section.intro .title .title-main {
 	font-family:Saol Display, ivypresto-display, serif;
 	font-weight:600;

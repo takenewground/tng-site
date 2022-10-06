@@ -332,7 +332,7 @@ dss.install(dss.plugin_from_obj({
                         `,`
                         text-align: left;
                         `,
-                        ['.logo',$`flex items-center `], //flex:0;
+                        ['.logo',$`flex items-center `, `align-self:start;`], //flex:0;
                         ['.title-main',$`style(${`
                             font-family: Saol Display, ivypresto-display, serif;
                             font-weight: 600;
