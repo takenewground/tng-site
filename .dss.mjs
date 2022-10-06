@@ -366,7 +366,7 @@ dss.install(dss.plugin_from_obj({
                             letter-spacing: 0;
                             pointer-events: none;
                         `})`],
-                        ['>figcaption',$`order(1) flex-v items-end gap(1rem) p(1.11111111rem) 
+                        ['>figcaption',$`order(1) flex-v items-end  p(1.11111111rem) 
                             text-right
                         `, // m.t(${css.vh(100*2/9)})                            
                             ['.author-meta', $`style(${`font-weight: 600; opacity:.5;`})`],
