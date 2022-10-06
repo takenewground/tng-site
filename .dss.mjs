@@ -310,6 +310,12 @@ dss.install(dss.plugin_from_obj({
                     ]          
                 ],
                 
+                ['.seal',`                            
+                    width: calc((100vh + 100vw) / 36); min-width: 72px; 
+                `],
+                ['.obseal',`                            
+                    width: calc((100vh + 100vw) / 18); min-width: 90px; max-width:180px;
+                `],
 
                 ['section.intro', $`relative h.min(100vh) p(0)`,
                     ['>.area', $`h(100vh) flex-v justify-items-stretch`],
@@ -326,10 +332,7 @@ dss.install(dss.plugin_from_obj({
                         `,`
                         text-align: left;
                         `,
-                        ['.logo',$`h.min(6vw) flex items-center `,`                            
-                            width: calc((100vh + 100vw) / 36);
-                            min-width: 72px;
-                        `], //flex:0;
+                        ['.logo',$`flex items-center `], //flex:0;
                         ['.title-main',$`style(${`
                             font-family: Saol Display, ivypresto-display, serif;
                             font-weight: 600;
