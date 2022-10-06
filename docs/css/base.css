@@ -1244,20 +1244,30 @@ body {
 
 @media screen and (max-width:2400px)  {
 	 body {
-	--text-scale: 1.111111;
+	--text-scale: 1.0;
 }
 
 }@media screen and (max-width:1800px)  {
 	 body {
-	--text-scale: 1.222222;
+	--text-scale: 1.11111;
 }
 
 }@media screen and (max-width:1200px)  {
 	 body {
-	--text-scale: 1.3333333;
+	--text-scale: 1.222222;
 }
 
 }@media screen and (max-width:992px)  {
+	 body {
+	--text-scale: 1.333333;
+}
+
+}@media screen and (max-width:768px)  {
+	 body {
+	--text-scale: 1.444444;
+}
+
+}@media screen and (max-width:640px)  {
 	 body {
 	--text-scale: 1.6666666;
 }
