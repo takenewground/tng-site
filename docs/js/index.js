@@ -146,13 +146,19 @@ document.body.appendChild(section_style)
 
 
 let scroll_y = 0;
-
+let scroll_delta = 0;
 if(!is_mobile) {
 const scrollrig = new ScrollRig();
 scrollrig.jack('main', document.querySelector('main'), {
     dir:SCROLL_DIR_Y,
+    onrest() {
+        scroll_delta = 0;
+    },
     onrender($) {
-        scroll_y = $.dim_y[0];
+        const _y =  $.dim_y[0];
+        scroll_delta = Math.abs(scroll_y - _y);
+        scroll_y =  _y;
+        
         let styles = `
             #s1>.graphic {transform:translate3d(0,${map_range(scroll_y, 0,vh, 0,-vh/4)}px,0);}
             
@@ -194,10 +200,15 @@ function listen_mouse() {
             handle_move(t.clientX,t.clientY,t.target);
         }, listen_opts)
     }
-    function handle_move(clientX, clientY, target) {
+    function handle_move(clientX, clientY, target) {                            
         mx = clientX;
         my = clientY;
-        const tag = target.tagName.toLowerCase();
+        if (scroll_delta > 10) {
+            mtgt_has = false;
+            mtgt_is_graphic = false;
+            return
+        }
+        const tag = target.tagName.toLowerCase();        
         if (tag === 'a') {
             mtgt_is_graphic = false;
             const pad = vw >> 6;
@@ -293,6 +304,7 @@ if (!is_mobile) {
         //   }
         }
     };
+    let _DID_INIT = 0;
     requestAnimationFrame(init);
     function init() {
 
@@ -315,17 +327,20 @@ if (!is_mobile) {
         sys.set('mx', tgt_x)
         sys.set('my', tgt_y)
         sys.set('rad', 0)
-        sys.set('w', vw<<1)
-        sys.set('h', vh<<1)
+        sys.set('w', vw<<2)
+        sys.set('h', vh<<2)
         sys.spring('rad',20,180)
-        sys.spring('h',20,90)
-        sys.spring('w',20,90)
+        sys.spring('h',18,90)
+        sys.spring('w',20,70)
         sys.spring('mx',20,80)
         sys.spring('my',20,80)        
 
         draw();
 
-        tgt.dispatchEvent(new MouseEvent('mousemove', { 'bubbles': true }))
+        // setTimeout(function(){
+        //     tgt.dispatchEvent(new MouseEvent('mousemove', { 'bubbles': true }))
+        // },1000)
+        
     }
     function tgt_update() {
         tgt_rect = tgt.getBoundingClientRect();
@@ -337,7 +352,7 @@ if (!is_mobile) {
         ctx.fillRect(0,0,vw,vh);
         // ctx.clearRect(0,0, vw, vh);
     }
-    let _DID_INIT = 0;
+    
     function draw() {
         if (canvas_w !== vw || canvas_h !== vh) {
             canvas.width = canvas_w = vw;
