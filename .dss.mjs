@@ -284,9 +284,10 @@ dss.install(dss.plugin_from_obj({
                     `                        
                         background: var(--card-bg);
                         flex: 1;
-                        box-shadow: 0 1px 2px hsl(0deg 0% 0% / 31%), 0 4px 8px hsl(0deg 0% 0% / 27%), inset 0 1px 1px hsl(0deg 0% 100% / 9%);
-                        transition: box-shadow .75s .1s, background-color .75s .1s; 
-                    `, // border: 1px solid black;
+                        
+                        transition: background-color .75s .1s; 
+                    `,  // box-shadow: 0 1px 2px hsl(0deg 0% 0% / 31%), 0 4px 8px hsl(0deg 0% 0% / 27%), inset 0 1px 1px hsl(0deg 0% 100% / 9%);
+                        // border: 1px solid black;
                         ["&:hover",`
                             box-shadow: none;
                             background: hsl(0 0% 10%);
