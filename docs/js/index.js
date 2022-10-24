@@ -1,4 +1,6 @@
 
+const app = (function app(){}).prototype;
+window.app = app;
 
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js');
@@ -24,6 +26,11 @@ import {ScrollRig, SCROLL_DIR_Y} from "./scroll/rig.js";
 
 
 const is_mobile = /Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(navigator.userAgent);
+app.is_mobile = is_mobile;
+
+if (is_mobile)
+    window["html"].classList.add("is_mobile")
+
 let is_ready = false;
 
 // if (is_mobile) {
@@ -353,13 +360,17 @@ if (!is_mobile) {
         // ctx.clearRect(0,0, vw, vh);
     }
     
+    let frame_num = 0
+    let DID_HAVE_TARGET = 0;
     function draw() {
+        ++frame_num
         // if (canvas_w !== vw || canvas_h !== vh) {
         //     canvas.width = canvas_w = vw;
         //     canvas.height = canvas_h = vh;
         //     tgt_update()
         // }
-        if (mtgt_has) {            
+        if (mtgt_has) {
+                     
             const w = mtgt_rect[2];
             const h = mtgt_rect[3];
             sys.set('w', w)
@@ -368,7 +379,7 @@ if (!is_mobile) {
             sys.set('my', mtgt_rect[1] + (h>>1) - (mtgt_scroll_y - scroll_y))
             sys.set('rad', 0)//Math.max(0, Math.min(pill.w,pill.h)>>1 ))
         }
-        else if (scroll_y > -100) {
+        else if (scroll_y > -100 && frame_num < 120) {
             // if (!_DID_INIT) {
                 tgt.dispatchEvent(new MouseEvent('mousemove', { 'bubbles': true }))
             // }

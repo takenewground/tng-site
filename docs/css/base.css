@@ -1364,11 +1364,6 @@ body {
 a {
 	color:var(--color-link);
 	cursor:pointer;
-	text-decoration-line: underline;
-	text-decoration-style: dotted;
-	text-decoration-color:black;
-	text-decoration-thickness:.11em;
-	text-underline-offset:.33333333em;
 }
 
 a:hover {
@@ -1504,7 +1499,33 @@ main {
 	transform:translate3d(0px,0px,0px);
 }
 
-section {
+html {
+	--area_p_y: 11.1111111vh;
+	--area_p_x: 14.2857143vh;
+}
+
+@media screen and (max-width:1800px)  {
+	 html {
+	--area_p_x: 12.5vh;
+}}@media screen and (max-width:1200px)  {
+	 html {
+	--area_p_x: 11.1111111vh;
+}}@media screen and (max-width:992px)  {
+	 html {
+	--area_p_x: 8.3333333vh;
+}}@media screen and (max-width:768px)  {
+	 html {
+	--area_p_x: 6.6666667vh;
+}}@media screen and (max-width:640px)  {
+	 html {
+	--area_p_x: 5.5555556vh;
+}}@media screen and (max-width:480px)  {
+	 html {
+	--area_p_x: 4.7619048vh;
+}}@media screen and (max-width:320px)  {
+	 html {
+	--area_p_x: 4.1666667vh;
+}}section {
 	contain:style;
 	display:flex;
 	 flex-direction:column;
@@ -1517,13 +1538,16 @@ section >.area {
 	display:flex;
 	 flex-direction:column;
 	gap:5.5555556vh;
-	padding-top:11.1111111vh;
-	   padding-bottom:11.1111111vh;
 }
 
 section >.area {
-	padding-right:14.2857143vh;
-	 padding-left:14.2857143vh;
+	padding-top:var(--area_p_y);
+	   padding-bottom:var(--area_p_y);
+}
+
+section >.area {
+	padding-right:var(--area_p_x);
+	 padding-left:var(--area_p_x);
 	max-width:2400px;
 }
 
@@ -2067,8 +2091,8 @@ section.graphic-text .text {
 	display:block;
 	padding-right:3ch;
 	 padding-left:3ch;
-	padding-top:1ch;
-	   padding-bottom:1ch;
+	padding-top:2ch;
+	   padding-bottom:2ch;
 }
 
 section.graphic-text .text a {

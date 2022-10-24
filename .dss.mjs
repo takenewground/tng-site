@@ -173,9 +173,8 @@ dss.install(dss.plugin_from_obj({
                 //     `]
                 // ],
                 ['.layer',$`fixed t(0) l(0) `],
-                ['a',$`color(${css.v('color-link')}) cursor(pointer)
-                    textline-under textline-dotted textline.color(black) textline.h(.11em) textline.y(.33333333em)
-                `,
+                ['a',$`color(${css.v('color-link')}) cursor(pointer)                    
+                `, //textline-under textline-dotted textline.color(black) textline.h(.11em) textline.y(.33333333em)
                     ['&:hover',$`textline-solid`],
                 ],
                 ['p',$`w.max(64ch)`,
@@ -248,12 +247,25 @@ dss.install(dss.plugin_from_obj({
                 `})`],
 
                 // defaults
+                ['html', 
+                    `--area_p_y: ${css.vh(100/9)};`,
+                                        `--area_p_x: ${css.vh(100/7)};`,    
+                    [css.media('xxl'),  `--area_p_x: ${css.vh(100/8)}`],
+                    [css.media('xl'),   `--area_p_x: ${css.vh(100/9)}`],
+                    [css.media('lg'),   `--area_p_x: ${css.vh(100/12)}`],
+                    [css.media('md'),   `--area_p_x: ${css.vh(100/15)}`],
+                    [css.media('sm'),   `--area_p_x: ${css.vh(100/18)}`],
+                    [css.media('xs'),   `--area_p_x: ${css.vh(100/21)}`],
+                    [css.media('xxs'),  `--area_p_x: ${css.vh(100/24)}`],
+                ],
+
                 ['section', $`contain(style) flex-v`,// $`bg(${css.v('section-bg')})`,
                     ['>.area', 
-                        $`w(100vw) h(100%) m(auto) flex-v gap(${css.vh(100/18)}) p.y(${css.vh(100/9)})`,                        
+                        $`w(100vw) h(100%) m(auto) flex-v gap(${css.vh(100/18)})`,                        
                         
                         // $`p.x(0)`,
-                        $`p.x(${css.vh(100/7)}) w.max(2400px)`,
+                        $`p.y(${"var(--area_p_y)"})`,
+                        $`p.x(${"var(--area_p_x)"}) w.max(2400px)`,
                         [css.media('xxl'),  $`p.x(${css.vh(100/8)})`],
                         [css.media('xl'),   $`p.x(${css.vh(100/9)})`],
                         [css.media('lg'),   $`p.x(${css.vh(100/12)})`],
@@ -450,7 +462,7 @@ dss.install(dss.plugin_from_obj({
                             letter-spacing: -0.231vh;
                             pointer-events: none;
                         `],
-                        ['a', $`block p.x(3ch) p.y(1ch)`,`background:black; color:white; width:max-content;`]
+                        ['a', $`block p.x(3ch) p.y(2ch)`,`background:black; color:white; width:max-content;`]
                     ],
                 ],
                 // ['section.graphic-text',
