@@ -476,7 +476,15 @@
 					if (el.is_shown()) 
 						_toggle(el, true);		
 					
+					el.addEventListener("formwillsubmit", function(){
+						el.classList.add("submitting");
+					})
+					el.addEventListener("formerror", function(){
+						el.classList.remove("submitting");
+						// el.hide();
+					})
 					el.addEventListener("formsuccess", function(){
+						el.classList.remove("submitting");
 						el.hide();
 					})
 					// el.querySelector(".button_close").onclick = function () {
@@ -544,6 +552,7 @@
 					display: none;
 					width: 0vw; height: 0vh;
 				}
+				
 				tng-contact > .panel {					
 					position: absolute;
 					height: 100vh;
@@ -586,7 +595,7 @@
 
 					-webkit-backdrop-filter: blur(12px) brightness(2);  					
 					backdrop-filter: blur(12px) brightness(2);  					
-    				background: hsl(0deg 0% 80% / 90%);
+    				background: hsl(0deg 0% 88% / 90%);
 /* 					
 					-webkit-backdrop-filter: saturate(10000) grayscale(1);
 						    backdrop-filter: saturate(10000) grayscale(1);					
@@ -602,6 +611,27 @@
 					-webkit-backdrop-filter:blur(2.3px) saturate(10000) contrast(0.09)  brightness(0.422222)  grayscale(1);
 					backdrop-filter:blur(2.3px) saturate(10000) contrast(0.09)  brightness(0.422222)  grayscale(1);
 					background: hsl(45deg 0% 0% / 0); */
+
+					-webkit-transition-duration: 1.5s;
+    						transition-duration: 1.5s;
+    				-webkit-transition-property: color, background-color;
+    						transition-property: color, background-color;
+				}				
+				@keyframes form-back-pulse { 
+					50% {background-color: hsl(0deg 0% 70% / 90%);} 
+				}
+				tng-contact.submitting .area {
+					pointer-events: none;					
+					-webkit-animation-name: form-back-pulse;
+    					    animation-name: form-back-pulse;
+					-webkit-animation-iteration-count: infinite;
+    						animation-iteration-count: infinite;
+    				-webkit-animation-duration: 1.5s;
+    						animation-duration: 1.5s;
+    				-webkit-animation-delay: 0.5s;
+    						animation-delay: 0.5s;
+    				-webkit-animation-timing-function: linear;
+    						animation-timing-function: linear;
 				}				
 				tng-contact     	.field { transition: transform .9s cubic-bezier(0.22, 1, 0.36, 1), opacity 1.0s ease-out; }				
 				tng-contact			.field:nth-child(4n)  		{ transition-delay: .0s, .0s; }

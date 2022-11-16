@@ -58,33 +58,84 @@ function el_init(el)
 
 }
 
-
-async function _submit(el, event) 
-{
-    const fdata = new FormData(event.target);
-
-    let idata = {};
-    for (let entry of fdata.entries()) 
-        idata[entry[0]] = entry[1];
-    // let idata = `{`
-    // for (let entry of fdata.entries()) 
-    //     idata += `"${entry[0]}": "${entry[1].replaceAll('"','//"')}",`
-    // idata = idata.replace(/,$/,'}');
-    const body = JSON.stringify(idata);
-    
-        
-    // const data = 
+function el_data(el) 
     // {
     //     name: 'John',
     //     email: 'john@domain.com',
     //     message: 'Receiving forms is easy and simple now!',
     // };
+{
+    const fdata = new FormData(event.target);
 
+    let data = {};
+    for (let entry of fdata.entries()) 
+        data[entry[0]] = entry[1];
+
+    return data;
+    
+    // let idata = `{`
+    // for (let entry of fdata.entries()) 
+    //     idata += `"${entry[0]}": "${entry[1].replaceAll('"','//"')}",`
+    // idata = idata.replace(/,$/,'}');
+}
+
+function el_will_submit(el, data)
+{
+    el.dispatchEvent(new CustomEvent('formwillsubmit', {
+        detail: {data},
+        bubbles: true,
+        cancelable: true,
+        composed: true
+    }));    
+}
+
+function el_did_submit(el, ok, data)
+{
+    // TODO: data.status.ok specific to formeasy            
+    ok = ok && data.status == "OK";
+
+    if (ok) {
+            
+        // TODO: status.innerHTML = "Thanks for your submission!";            
+        const event = new CustomEvent('formsuccess', {
+            detail: {ok}, // TODO:
+            bubbles: true,
+            cancelable: true,
+            composed: true
+        }); 
+        el.dispatchEvent(event);
+        el.reset();  
+    }
+    else {
+        const event = new CustomEvent('formerror', {
+            detail: {ok}, // TODO:
+            bubbles: true,
+            cancelable: true,
+            composed: true
+        }); 
+        el.dispatchEvent(event);        
+        alert("Oops, something went wrong. Make sure you are connected to the Internet & try again...")
+        // TODO:
+        // res.json().then(data => {
+        //   if (Object.hasOwn(data, 'errors')) {
+        //     status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+        //   } else {
+        //     status.innerHTML = "Oops! There was a problem submitting your form"
+        //   }
+        // })
+    }
+}
+
+async function _submit(el, event) 
+{
+    const idata = el_data(el);
+    el_will_submit(el, idata);
+
+    const body = JSON.stringify(idata);
+    
     const DEPLOYMENT_ID = "AKfycbybWK0ZjrcnO5TMYZCkX1q9fzUXl3Mp0RyR0sja0AqPJTqAczH30OBD28_7FHBgYbmu";
     const url = `https://script.google.com/macros/s/${DEPLOYMENT_ID}/exec`;
-
     try {
-        
         const res = await fetch(url, 
             {
                 method: 'POST',
@@ -93,34 +144,8 @@ async function _submit(el, event)
             }
         );
         const data = await res.json();
-
-        if (res.ok && data.status == "OK") { // TODO: data.status.ok specific to formeasy
-            // status.innerHTML = "Thanks for your submission!";            
-            let event = new CustomEvent('formsuccess', {
-                detail: {},
-                bubbles: true,
-                cancelable: true,
-                composed: true
-            }); 
-            el.dispatchEvent(event);
-            el.reset();                       
-            
-            
-        } else {
-            alert("Oops, something went wrong. Make sure you are connected to the Internet & try again...")
-            // res.json().then(data => {
-            //   if (Object.hasOwn(data, 'errors')) {
-            //     status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-            //   } else {
-            //     status.innerHTML = "Oops! There was a problem submitting your form"
-            //   }
-            // })
-        }
+        el_did_submit(el, res.ok, data);                   
     } catch (err) {
         console.error(err);
-    }
-    // const odata = await res.json();
-    // .then((res) => res.json())
-    // .then((data) => console.log('data', data))
-    // .catch((err) => console.log('err', err));
+    }    
 }
