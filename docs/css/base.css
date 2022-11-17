@@ -1880,7 +1880,7 @@ section.profile-list >.area {
 
 @media screen and (max-width:992px)  {
 	 section.profile-list .title {
-	grid-column-end:2;
+	grid-column-end:3;
 }
 
 }section.profile-list .item {

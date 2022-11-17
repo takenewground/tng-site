@@ -401,7 +401,7 @@ dss.install(dss.plugin_from_obj({
                         [css.media('lg'),   $`grid-cols-2`],
                     ],
                     ['.title',`grid-column-start:1;`,
-                        [css.media('lg'),   `grid-column-end:2;`],
+                        [css.media('lg'),   `grid-column-end:3;`],
                     ],
                     
                     // ['.title h1',`white-space: nowrap;                        
