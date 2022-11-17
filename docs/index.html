@@ -2,7 +2,7 @@
 <html lang="en" class="no-js" id="html">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<title>TNG</title>
 		<link rel="manifest" href="app.webmanifest">
 		<meta name="robots" content="index, follow">
@@ -707,8 +707,7 @@
 				}
 			</style>
 			<script type="module"> 
-				import {define} from "./el/form.js"; 
-				define("el-form");								
+				import "./el/form.js"; 											
 			</script>		
 
 			<tng-contact id="tng_contact"></tng-contact>
@@ -716,9 +715,11 @@
 			<template id="tmpl_contact_panel">
 				<div class="panel" data-scroll-section>		
 						
-					<div class="area">						
-						<form id="contact-form" is="el-form" class="flex-v" action="" method="POST">
-							
+					<div class="area">
+						<el-form id="el_contact_form">
+						<form id="contact-form" class="flex-v" 
+							style="font-size: 16px;"> <!-- 16px for iOS zoom issue -->
+
 							<div class="fields flex-v">									
 								<div 		class="field flex-v"> 	<label>Name, Company</label>
 									<input 	class="input" type="text" name="name" placeholder="Johnny Curious, Visitor Inc." required
@@ -729,12 +730,14 @@
 										oninput="const v= this.value; setTimeout(()=>{this.value = v + ' '; this.value=v;},0)"
 									/>
 								</div>				
-								<div 		class="field flex-v"> 	<label>Message</label>
+								<div class="field flex-v" style="margin-bottom: calc(100vh / 9);"> 	
+									<label>Message</label>
 									<div 	class="input textarea-wrap">	<textarea type="text" name="message" placeholder="How did you hear about us?" required oninput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
 									</div>										
 								</div>									
 							</div>														
-						</form>			
+						</form>		
+						</el-form>							
 					</div>
 					<div class="panel-nav flex">					
 						<p form-status></p>				
@@ -742,7 +745,10 @@
 					</div>		
 					<div class="panel-footer flex">					
 						<p form-status></p>				
-						<button class="button_submit hover-target" form="contact-form" style="">SEND NOW</button>								
+						<button class="button_submit hover-target" 
+							onclick="document.getElementById('el_contact_form').submit()">
+							SEND NOW							
+						</button>														
 					</div>
 				</div>
 			</template>

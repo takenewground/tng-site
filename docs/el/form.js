@@ -20,9 +20,12 @@
 
 const _defs = new Set();
 
-class FormEl extends HTMLFormElement 
+
+
+class FormEl extends HTMLElement 
 {
-    constructor() { super(); el_init(this); }
+    constructor() { super(); el_init(this);}
+    submit() {el_submit(this);} // override b/c fuck iOS (https://community.hubspot.com/t5/APIs-Integrations/iOS-Form-Submission-Always-Reloads-Page/m-p/241016)
 }
 
 export function define(name) 
@@ -30,15 +33,26 @@ export function define(name)
     if (_defs.has(name))
         return;
     _defs.add(name);
-    customElements.define(name, FormEl, { extends: "form" });
+    customElements.define(name, FormEl
+        // , { extends: "div" }
+    );
 }
+
+define("el-form");	
 
 // const proto = FormEl.prototype;
 // proto._init = _init;
 // proto._onsubmit = _onsubmit;
 
+function el_form(el) 
+{
+    return el.children[0];
+}
+
 function el_init(el) 
 {
+    const form = el_form(el);
+
     // const shadow = el.attachShadow({ mode: "open" });
     
     // // const div = document.createElement("div");
@@ -47,14 +61,21 @@ function el_init(el)
     // // shadow.appendChild(div);
     // shadow.appendChild(style);
 
-    el.addEventListener("submit", _onsubmit);   
+    // FIXES: iOS bullshit
+    if (form.hasAttribute("action")) 
+        form.removeAttribute("action")
+    if (form.getAttribute("method") !== "dialog") // TODO?
+        form.setAttribute("method", "dialog");
     
-    function _onsubmit(event) 
-    {
-        event.preventDefault();
-        _submit(el, event);
-        return false;
-    }
+    // NOTE: this should never actually fire!
+    // form.addEventListener("submit", _onsubmit);   
+    // function _onsubmit(event) 
+    // {
+    //     event.preventDefault();
+    //     el_submit(el);
+    //     return false;
+    // }
+    
 
 }
 
@@ -65,7 +86,7 @@ function el_data(el)
     //     message: 'Receiving forms is easy and simple now!',
     // };
 {
-    const fdata = new FormData(event.target);
+    const fdata = new FormData(el_form(el));
 
     let data = {};
     for (let entry of fdata.entries()) 
@@ -104,7 +125,7 @@ function el_did_submit(el, ok, data)
             composed: true
         }); 
         el.dispatchEvent(event);
-        el.reset();  
+        el_form(el).reset();  
     }
     else {
         const event = new CustomEvent('formerror', {
@@ -126,8 +147,13 @@ function el_did_submit(el, ok, data)
     }
 }
 
-async function _submit(el, event) 
-{
+async function el_submit(el) 
+{    
+    const form = el_form(el);
+    if (form.checkValidity() === false) {
+        form.reportValidity();   
+        return; 
+    }    
     const idata = el_data(el);
     el_will_submit(el, idata);
 
