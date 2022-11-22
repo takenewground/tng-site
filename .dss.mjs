@@ -416,8 +416,8 @@ dss.install(dss.plugin_from_obj({
                             object-fit: contain;
                             aspect-ratio:1/1;
                         `],
-                        ['.links', $`space.x(2ch) m.t(1.5em)`,`opacity:.6;`,
-                            ['a', $`p.x(2ch) p.y(1ch)`,`background:black; color:white;`]
+                        ['.links', $`flex-h flex-wrap`,`opacity:.6;`,
+                            ['a', $`m.t(1.5em) p.x(2ch) p.y(1ch)`,`background:black; color:white;`]
                         ],
 
                     ],
