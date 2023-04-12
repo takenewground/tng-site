@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" id="html">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>TNG</title>
+		<link rel="manifest" href="app.webmanifest">
+		<meta name="robots" content="index, follow">
+		<meta name="description" content="let's turn LEADERSHIT into LEADERSHIP" />
+		<meta name="keywords" content="executive coach, consultant, leadership, innovation" />
+		<meta name="author" content="Dan Tocchini" />
+		<meta name="theme-color" content="hsl(0deg 0% 23%)" />
+		<meta name="msapplication-TileColor" content="hsl(0deg 0% 23%)">
+		<link rel="icon" type="image/png" sizes="16x16" href="icon/favicon16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon32x32.png">
+		<link rel="apple-touch-icon" sizes="192x192" href="icon/appicon192.png">
+		<!-- <link rel="mask-icon" href="safari-pinned-tab.svg" color="#000000"> -->
+
+		
+		<meta property="og:image" content="https://takenewground.github.io/tng-site/icon/og-image.png">
+        <meta property="og:description" content="let's turn LEADERSHIT into LEADERSHIP"/>
+        <meta property="og:site_name" content="Take New Ground"/>
+        <meta property="og:title" content="Take New Ground"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://takenewground.github.io/tng-site/"/>
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:creator" content="Take New Ground">
+        <meta name="twitter:url" content="https://takenewground.github.io/tng-site/">
+        <meta name="twitter:title" content="Take New Ground">
+        <meta name="twitter:description" content="let's turn LEADERSHIT into LEADERSHIP">
+        <meta name="twitter:image:src" content="https://takenewground.github.io/tng-site/icon/og-image.png">
+
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<style>
+			::selection { background-color: hsl(47deg 60% 60% / .8); }
+		</style>
+		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+
+		<!-- Google Tag Manager -->
+		<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-56NJP83');</script> -->
+
+	</head>
+	<body class="demo-1 loading" style="--card-bg:transparent;">
+		
+		<!-- Google Tag Manager (noscript) -->
+		<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56NJP83"
+			height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+
+		<div class="bg"></div>
+		<!-- <div class="shift shift--horizontal">
+			<div class="shift__layer"><div class="shift__layer-inner"></div></div>
+			<div class="shift__layer"><div class="shift__layer-inner"></div></div>
+			<div class="shift__layer"><div class="shift__layer-inner"></div></div>
+			<div class="shift__layer"><div class="shift__layer-inner"></div></div>
+			<div class="shift__layer"><div class="shift__layer-inner"></div></div>
+		</div> -->
+		<div id="main-wrap"" class="mix-blend">
+			<main data-scroll-container>
+				
+				<section id="s1" class="intro" data-scroll-section>
+					<div class="area">
+						<div class="graphic" data-scroll>
+							<video id="bg_video" class="graphic-item" src="vid/tng-bg.lo.mp4" poster="vid/tng-bg.jpg" type="video/mp4" 
+							playsinline muted loop preload="metadata">
+							<!-- <div style="background-image: url(img/chair_w1200.png)" class="graphic-item hover-target"></div> -->
+							<script> (function(){
+								const bg_video = document.getElementById("bg_video");
+								const starts = [0,106,51,2*60+32,190,63,162,60,202,222, //317,
+								]
+								let start_idx = (localStorage.getItem('bg_video.start_idx') | 0) % starts.length;
+								// const start_idx = Math.round(Math.random()*(starts.length-1))
+								const start_time = starts[start_idx]												
+								bg_video.addEventListener("loadedmetadata", function() {
+									this.currentTime = starts[start_idx];
+									localStorage.setItem('bg_video.start_idx', ++start_idx)
+									this.play();
+								}, false);
+							})(); </script>
+						</div>
+						<div class="title" >
+
+							<a href="https://takenewground.com/" style="display:contents;"><svg class="logo seal absolute hover-target" 
+								style="color:#fff; mix-blend-mode:difference;"
+								x="0px" y="0px" viewBox="0 0 115.7 110.5">
+								<g>
+									<path style="fill:currentColor;" d="M98.3,25.1H84.8v-4.5v-4.5h-4.5h-4.5h-4.5v4.5v4.7c-1.7,0.3-3.2,1-4.5,2v0c0-6.2-5-11.2-11.2-11.2H39.8h-4.5
+									v4.5v4.5h-4.5H17.3h-4.5v4.5v0v4.5v0v4.5h4.5h9v31.5v0v4.5h4.5h4.5v4.5v4.5h4.5h4.5h4.5v-4.5V38.6h4.5V70v2.3
+									c0,6.2,5,11.2,11.2,11.2h15.8h4.5v-4.5v-4.5h9c2.3,0,4.4-0.9,5.9-2.3c0.3-0.3,0.6-0.5,0.8-0.8c1.4-1.6,2.2-3.7,2.2-5.9v-9v0v-4.5v0
+									h-4.5h-4.5h-4.5v0v4.5v0v4.5h-4.5V38.6h13.5h4.5v-4.5v-4.5v-4.5H98.3z M98.3,34.1H84.8v-4.5h13.5V34.1z M98.3,63.3
+									c0,3.7-3,6.7-6.8,6.7h-18h-6.8v0v-6.7v-27c0-2.9,1.9-5.4,4.5-6.4v6.4v27v2.2h2.2h15.8c2.5,0,4.5-2,4.5-4.5v-4.5h4.5V63.3z
+									M80.3,79.1h-2.2H64.6c-3.7,0-6.8-3-6.8-6.7V70V38.6v-4.5v-4.5c0-2.5-2-4.5-4.5-4.5h-9h-4.5v-4.5h15.8c3.7,0,6.8,3,6.8,6.8v2.2v6.8
+									v27V70v0c0,2.5,2,4.5,4.5,4.5h4.5h2.2h2.2h4.5v2.2V79.1z M39.8,79.1v-4.5v-4.5V38.6h4.5v40.5H39.8z M35.3,34.1v36h-4.5v0v-36H17.3
+									v-4.5h13.5h4.5h13.5h4.5v4.5H35.3z M75.8,61.1V38.6V22.8v-2.2h4.5v2.2v38.2H75.8z"/>
+								</g>
+							</svg></a>
+							<h1 class="title-main" style=" 
+								margin-top: auto; margin-bottom: auto;
+								display: flex;  flex-direction: row;     justify-content: flex-end;
+								flex-wrap: wrap;
+								gap: .5ch;
+								display: block;  
+								text-align:center;									
+							">
+								<style>
+									.title-main > * {
+										white-space: nowrap;
+									}
+									.break-col {
+										flex-basis: 100%;
+										width: 0;
+									}
+									.title-line-span {
+										width:auto; min-width:1ch;
+										display: block;
+										flex: 1;
+										height: .11111111ch;
+										align-self: center;
+										border: solid 0.1111ch #ccc; box-sizing: content-box;
+										margin-bottom: 0.311ch;
+										mix-blend-mode: difference;
+									}
+								</style>								
+								<span>LIFE ISN'T FAIR</span>
+								<!-- <span class="lowercase italic">leadershit</span> -->
+								
+								<!-- <span style="
+									color: hsl(0deg 0% 50%);
+									transform-origin: right;
+									transform: scaleX(2);
+									display: inline-block;
+									mix-blend-mode: difference;
+								">⏤ </span> -->
+
+								<div class="break-col"></div>
+								<!-- <span>into</span> -->
+								<!-- <span class="title-line-span"></span> -->
+								<span class="lowercase italic" >
+									it's what you negotiate</span> 							
+							</h1>
+															
+							<div class="text" style="
+								    text-align: left;									
+									width: 34ch;
+									align-self: end;
+							">
+								<p>The Negotiation Lab is where you get to experiment. You'll make profound discoveries about where you are currently, and where you want to go with your team, clients, vendors, community, and even family. <br/><br/>Never leave value on the table again! </p>
+							</div>
+
+																			
+						</div>
+						<!-- <div class="social-links" >
+							<a href="https://www.linkedin.com/in/adriankoehler/">LinkedIn</a>
+							<a href=https://open.spotify.com/show/73ZuLDaxdfhCNYXlmIQy01?si=LJnt5cmlTQ29b1v_wnhDGg">Naked Leadership Podcast</a>
+							<a href=https://open.spotify.com/show/2bIwzJAmvMQgRg3G5qHdge?si=aoyjUaoVRDG-eSKpYId_oQ">Raising the Bar Podcast</a>
+							<a href="https://www.instagram.com/adrian.k/">Instagram</a>
+						</div> -->
+					</div>
+				</section>
+
+
+
+				<section id="s2" class="graphic-text" data-scroll-section>
+					<div class="area">
+						<div class="graphic" data-scroll>
+							<!-- <div style="background-image: url(img/the-change-imperative.600x956.jpg)" class="graphic-item hover-target"></div> -->
+						</div>					
+						<div class="text">
+							<!-- <h2><span class="italic">Free eBook</span> ⏤</h2>
+							<p>Growth, change & transition often come with confusion, frustration & resistance. You can flip those experiences into clarity and confidence with the Change Imperative e-book.</p>
+							<a href="https://change.takenewground.com">Signup to get your free copy</a> -->
+						</div>
+					</div>
+				</section>				
+
+
+				<section class="process-cards" data-scroll-section>
+					<div class="area">
+						<div class="title">
+							<svg style="height:1rem; margin-bottom: 1rem;" 	 viewBox="0 0 600 68.9" version="1.1" x="0px" y="0px">	
+								<polygon style="fill:#fff;" points="39.8,0 0,68.9 79.6,68.9 	"/>	
+								<!-- <g><path style="fill:#fff;"" d="M141.7,10l-22.5,38.9L96.8,10H141.7 M159.1,0H79.5l39.8,68.9L159.1,0L159.1,0z"/></g> -->
+								<line style="fill:none;stroke:#000;stroke-width:10;stroke-miterlimit:10;" x1="163.3" y1="34.5" x2="600" y2="34.5"/>
+							</svg>
+							<h1>What to expect?<span class="italic">.</span></h1>
+						</div>
+						<div class="cards cards-stagger-lr">
+							<div class="card hover-target">
+								<h2>1.</h2>
+								<h4>Managing Self</h4>
+								<p>
+									Effective negotiation begins with a deep awareness of one self as well as the Impact of one’s attitude on the other parties to the negotiation.
+								</p>					
+							</div>
+							<div class="card hover-target">
+								<h2>2.</h2>
+								<h4>Engaging Others</h4>
+								<p>
+									How you show up to others correlates with your ability to understand the other side’s needs, interest & perspective, without necessarily agreeing.
+								</p>
+							</div>
+							<div class="card hover-target">
+								<h2>3.</h2>
+								<h4>Integrating Resources</h4>
+								<p>
+									Integrating is the process of utilizing like and differing resources to maximize mutual gains in a negotiation. 
+								</p>
+							</div>
+						</div>						
+					</div>					
+				</section>
+
+				<section class="process-cards" data-scroll-section>
+					<div class="area">
+						<div class="title" style="
+							    display: flex;
+								flex-direction: column;
+								align-items: end;
+							">
+							<svg viewBox="0 0 600 68.9" version="1.1" x="0px" y="0px" style="
+								height:1rem; margin-bottom: 1rem; transform: scaleX(-100%);
+							">	
+								<polygon style="fill:#fff;" points="39.8,0 0,68.9 79.6,68.9 	"/>	
+								<!-- <g><path style="fill:#fff;"" d="M141.7,10l-22.5,38.9L96.8,10H141.7 M159.1,0H79.5l39.8,68.9L159.1,0L159.1,0z"/></g> -->
+								<line style="fill:none;stroke:#000;stroke-width:10;stroke-miterlimit:10;" x1="163.3" y1="34.5" x2="600" y2="34.5"/>
+							</svg>
+							<h1>You will discover…<span class="italic">.</span></h1>
+						</div>
+						<div class="cards cards-stagger-lr" style="--text-scale:.88888;">
+							<div class="card hover-target" style="order:3;">
+								<h2>1.</h2>
+								<h4>What it takes to get more of what you want when you’re not sure it’s available.</h4>
+							</div>
+							<div class="card hover-target" style="order:2;">
+								<h2>2.</h2>
+								<h4>When something is worth the effort and risk.</h4>
+								<!-- <p></p> -->
+							</div>
+							<div class="card hover-target">
+								<h2>3.</h2>
+								<h4>How to create flexibility in situations that get stuck.</h4>
+								<!-- <p></p> -->
+							</div>
+						</div>						
+					</div>					
+				</section>
+
+				
+
+				<section class="" data-scroll-section>
+					<div class="area">
+						<div class="title">
+							<svg style="height:1rem; margin-bottom: 1rem;" 	 viewBox="0 0 600 68.9" version="1.1" x="0px" y="0px">	
+								<polygon style="fill:#fff;" points="39.8,0 0,68.9 79.6,68.9 	"/>	
+								<!-- <g><path style="fill:#fff;"" d="M141.7,10l-22.5,38.9L96.8,10H141.7 M159.1,0H79.5l39.8,68.9L159.1,0L159.1,0z"/></g> -->
+								<line style="fill:none;stroke:#000;stroke-width:10;stroke-miterlimit:10;" x1="163.3" y1="34.5" x2="600" y2="34.5"/>
+							</svg>
+							<h1>In case you were wondering... <span class="italic"></span></h1>
+						</div>
+						<div class="cards cards-stagger-lr -cols-max-2">
+							<div class="card hover-target">
+								<h2>1.</h2>
+								<h4>No Silver Spoons Here</h4>
+								<p>If you're used to getting exactly what you want, when you want it - this isn't for you. We deal with real problems and hurdles when it comes to negotiations. It ain’t easy, but it is simple.</p>					
+								<!-- <img class="obseal" style="mix-blend-mode:plus-lighter; aspect-ratio:1; align-self:center;" src="img/obverse.300/eye.jpg"> -->
+							</div>
+							<div class="card hover-target">
+								<h2>2.</h2>
+								<h4>Bitching Is For Bitches</h4>
+								<p>Bitching is how the entitled negotiate. They're mediocre  and miserable. Don't believe us? Just ask Harry and Megan. </p>
+							</div>
+							<div class="card hover-target">
+								<h2>3.</h2>
+								<h4>Life Is Not Fair</h4>
+								<p>Without the right tools and mindset negotiation is a daunting endeavor. We give you the right tools and train you how to reinvent your approach over and over.</p>
+							</div>
+						</div>						
+					</div>
+				</section>		
+
+				<section id="s2" class="graphic-text" data-scroll-section>
+					<div class="area">
+						<div class="graphic" data-scroll>
+							<!-- <div style="background-image: url(img/the-change-imperative.600x956.jpg)" class="graphic-item hover-target"></div> -->
+						</div>					
+						<div class="text">
+							<!-- <h2><span class="italic">Free eBook</span> ⏤</h2>
+							<p>Growth, change & transition often come with confusion, frustration & resistance. You can flip those experiences into clarity and confidence with the Change Imperative e-book.</p>
+							<a href="https://change.takenewground.com">Signup to get your free copy</a> -->
+						</div>
+					</div>
+				</section>				
+
+
+				
+
+
+							
+				<section class="profile-list" data-scroll-section>
+					<div class="area">
+						<div class="title" style="
+								grid-column-end: 3;
+							">
+							<svg style="height:1rem; margin-bottom: 1rem;" 	 viewBox="0 0 600 68.9" version="1.1" x="0px" y="0px">	
+								<polygon style="fill:#fff;" points="39.8,0 0,68.9 79.6,68.9 	"/>	
+								<!-- <g><path style="fill:#fff;"" d="M141.7,10l-22.5,38.9L96.8,10H141.7 M159.1,0H79.5l39.8,68.9L159.1,0L159.1,0z"/></g> -->
+								<line style="fill:none;stroke:#000;stroke-width:10;stroke-miterlimit:10;" x1="163.3" y1="34.5" x2="600" y2="34.5"/>
+							</svg>
+							<h1>The Negotiation Lab Leaders</h1>
+						</div>
+						
+						<div class="item" style="
+							    grid-column-start: 2;
+								transform:translateY(33.3333333%);
+						">
+							<img class="avatar" src="img/team-d3.500x750.jpg" style="aspect-ratio:2/3;">
+							<span class="name">
+								Dan Tocchini
+							</span>
+							<span class="role">
+								Founding Partner, Team Integration
+							</span>		
+							<span class="links">
+								<a href="https://www.linkedin.com/in/dantocchini/">LinkedIn</a>
+								<a href="https://www.instagram.com/dan_tocchini/">Instagram</a>
+							</span>																			
+						</div>
+						<div class="item" style="
+							transform:translateY(-33.3333333%);
+						">
+							<img class="avatar" src="img/team-adrian.500x750.jpg" style="aspect-ratio:2/3;">
+							<span class="name">
+								Adrian Koehler
+							</span>
+							<span class="role">
+								Founding Partner, Founder Dynamics
+							</span>		
+							<span class="links">
+								<a href="https://www.linkedin.com/in/adriankoehler/">LinkedIn</a>
+								<a href="https://www.instagram.com/adrian.k/">Instagram</a>
+							</span>																			
+						</div>										
+					</div>
+				</section>				
+
+
+				<section class="quote" data-scroll-section style="
+					    background: hsl(0deg 0% 0% / .7);
+						margin-top: 11rem;
+				">
+					<div class="area">
+						<figure class="figure-blockquote">
+							<blockquote style="
+									font-size: calc((3vh + 3vw));
+									margin-left: 0; margin-right: 0;
+							">
+								"In times of change the <span class="italic">'learners'</span> will inherit the future,
+								while the <span class="italic">'knowers'</span> will find themselves perfectly equipped
+								to live in a world that no longer exists."
+							</blockquote>
+							<figcaption>
+								<!-- <img class="avatar" style="opacity:.7" src="img/avatar_josh.jpg" /> -->
+								<span class="author">⏤ Eric Hoffer</span>
+								<!-- <span class="author-meta">Co-Founder & CTO, Virgin Hyperloop One</span> -->
+							</figcaption>
+						<figure>
+					</div>
+				</section>
+
+				<section class="quote" data-scroll-section style="
+					background: hsl(0 0% 100% / 0.4);
+				">
+					<div class="area">
+						<figure class="figure-blockquote">
+							<blockquote style="
+									font-size: calc((3vh + 3vw));
+    								color: black;
+									margin-left: 0; margin-right: 0;
+							">
+								"I think there is a world market for about <span class="italic">five</span> computers."
+							</blockquote>
+							<figcaption>
+								<!-- <img class="avatar" style="opacity:.7" src="img/avatar_josh.jpg" /> -->
+								<span class="author">⏤ Thomas J. Watson, chairman of IBM, 1943</span>
+								<!-- <span class="author-meta">Co-Founder & CTO, Virgin Hyperloop One</span> -->
+							</figcaption>
+						<figure>
+					</div>
+				</section>
+				
+				
+
+
+				<section class="footer" style="background-color:hsl(0deg 0% 10%);">
+					<div class="area">
+						<img class="obseal hover-target" src="img/obverse.300/seal.jpg"
+							style="mix-blend-mode:plus-lighter; aspect-ratio:1; margin:auto;">
+											
+					</div>
+				</section>
+				<div id="texture"></div>
+				<svg style="display:none;">
+				  <filter id='noiseFilter'>
+					<feTurbulence 
+					  type='fractalNoise' 
+					  baseFrequency='6.01' 
+					  numOctaves='6' 
+					  stitchTiles='stitch'/>
+				  </filter>
+				</svg>			
+				<style>
+				  #texture {
+					  pointer-events: none;
+					  position: fixed;
+					  z-index: 99;
+					  top: 0;
+					  left: 0;
+					  margin: 0;
+					  padding: 0;
+					  width: 100%;
+					  height: 100%;
+					  /* background-image: url("data:image/svg+xml,%3Csvg id='texture' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='textureFilter' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='turbulence' baseFrequency='1'%3E%3C/feTurbulence%3E%3C/filter%3E%3Crect x='0' y='0' width='100%25' height='100%25' filter='url(%23textureFilter)' /%3E%3C/svg%3E"); */
+					  filter: url(#noiseFilter);
+					  background-repeat: repeat repeat;
+					  background-size: 256px 256px;
+					  mix-blend-mode: overlay;
+					  background-color: hsl(0 0% 50% / 0);
+					  opacity: .222;
+				  }
+				</style>
+				
+			</main>
+
+
+			<!-- tng contact -->
+
+			<div style="position: fixed; top: 11.111111vh; right: 11.1111111vw; z-index:999999;">
+				<a onclick="alert('this will open the registration URL...');/*tng_contact.show()*/"
+					style="display: block;
+						backdrop-filter: blur(8px) brightness(0.8); -webkit-backdrop-filter: blur(8px) brightness(0.8);
+						padding: 2ch 3ch;"
+				>REGISTER NOW</a>
+			</div>
+
+			<script type="module">								
+				const TAG = "tng-contact";				
+				const SHOW_DELAY = 1600;
+				const HIDE_DELAY = 1600;
+				const raf = requestAnimationFrame;
+				const delay = function(ms, fn) { return setTimeout(fn, ms); };
+				const undelay = clearTimeout;
+				
+				class TNG_Contact extends HTMLElement 
+				{
+					constructor() 	{ super(); _init(this);}
+					is_shown() 		{ return this.classList.contains("show"); }
+					toggle() 		{ _toggle(this, !this.is_shown()); }
+					show() 			{ if (!this.is_shown()) _toggle(this, true); }
+					hide() 			{ if (this.is_shown()) _toggle(this, false); }
+				}
+
+				customElements.define(TAG, TNG_Contact);
+
+				let FRAGMENT;
+				
+				function _init(el)
+				{
+					el._delay = 0;					
+					el.onclick = function (e) 
+					{ 
+						if (el === e.target) el.hide();
+						if (e.target.classList.contains("button_close")) {
+							el.hide()
+						}
+					}			
+					if (el.is_shown()) 
+						_toggle(el, true);		
+					
+					el.addEventListener("formwillsubmit", function(){
+						el.classList.add("submitting");
+					})
+					el.addEventListener("formerror", function(){
+						el.classList.remove("submitting");
+						// el.hide();
+					})
+					el.addEventListener("formsuccess", function(){
+						el.classList.remove("submitting");
+						el.hide();
+					})
+					// el.querySelector(".button_close").onclick = function () {
+					// 	el.hide();
+					// }
+				}
+
+				function _toggle(el, show) 
+				{		
+					if (el._delay) 
+						return
+													
+					if (show) 
+					{	
+						raf(function() 
+						{					
+						FRAGMENT || (FRAGMENT = window.tmpl_contact_panel.content.firstElementChild.cloneNode(true));			
+						el.classList.remove("hidden");
+						el.appendChild(FRAGMENT);						
+						raf(function() 
+						{																		
+							el.classList.add("show");							
+							// el._delay = delay(SHOW_DELAY, function() 
+							// {						
+							// 	el.classList.add("shown");										
+							// 	el._delay = 0;
+							// });
+						});
+						});
+					}
+					else 
+					{
+						raf(function() 
+						{
+							el.classList.remove("show");							
+							// el.classList.remove("shown");
+							el._delay = delay(HIDE_DELAY, function() 
+							{
+								raf(function() { 
+									el.classList.add("hidden");
+									el.removeChild(FRAGMENT); 
+								})
+								el._delay = 0;
+							});
+						});
+					}
+				}
+			</script>
+			<style>						
+				tng-contact { 	
+					display: block;
+					position: fixed; top: 0px; left: 0px; 
+					width: 100vw; height: 100vh;
+					z-index: 9999999;					
+					
+					transition: background-color .3s;
+					background-color: hsl(0 0% 0% / 0);
+					pointer-events: none;
+				}
+				tng-contact.show { 					
+					background-color: hsl(0 0% 0% / .444444);												
+					pointer-events: inherit;					
+				}				
+				tng-contact.hidden { 	
+					display: none;
+					width: 0vw; height: 0vh;
+				}
+				
+				tng-contact > .panel {					
+					position: absolute;
+					height: 100vh;
+					width: 81ch; max-width: 100vw;
+					top: 0px;
+					right: 0px;					
+					transform: translate3d(100%,0px,0px);							
+					transition: transform .7s cubic-bezier(0.22, 1, 0.36, 1); 		
+				}
+				tng-contact.show > .panel {
+					transform: translate3d(0px,0px,0px);
+				}
+				tng-contact:not(.show) > .panel {
+					transition: transform 1.33333s cubic-bezier(0.22, 1, 0.36, 1);
+				}
+				tng-contact .panel-footer {					
+					position: absolute;					
+					bottom: 0px;
+					left: 0;	right:0;		
+					transform: translate3d(0px,100%,0px);				
+					transition: transform 1.333s cubic-bezier(0.22, 1, 0.36, 1);				
+				}
+				tng-contact.show .panel-footer {
+					transform: translate3d(0px,0px,0px);
+				}
+				tng-contact .panel-nav {					
+					position: absolute;					
+					top: 0px;
+					left: 0;	right:0;		
+					transform: translate3d(0px,-100%,0px);				
+					transition: transform 1.333s cubic-bezier(0.22, 1, 0.36, 1);				
+				}				
+				tng-contact.show .panel-nav {
+					transform: translate3d(0px,0px,0px);
+				}
+				tng-contact .area {
+					overflow-y: auto;
+					height: 100%; width: 100%;
+    				padding: 11.1111vh 6ch;
+
+					-webkit-backdrop-filter: blur(12px) brightness(2);  					
+					backdrop-filter: blur(12px) brightness(2);  					
+    				background: hsl(0deg 0% 88% / 90%);
+/* 					
+					-webkit-backdrop-filter: saturate(10000) grayscale(1);
+						    backdrop-filter: saturate(10000) grayscale(1);					
+    				background: hsl(45deg 0% 37% / 0.933333);
+
+					-webkit-backdrop-filter: blur(1.2px) saturate(10000) grayscale(1) contrast(0.3);
+							backdrop-filter: blur(1.2px) saturate(10000) grayscale(1) contrast(0.3);					
+    				background: hsl(45deg 0% 37% / 0.8);
+
+					backdrop-filter: blur(5px) saturate(10000) grayscale(1) brightness(0.3);
+    				background: hsl(45deg 0% 0% / 0.8);
+
+					-webkit-backdrop-filter:blur(2.3px) saturate(10000) contrast(0.09)  brightness(0.422222)  grayscale(1);
+					backdrop-filter:blur(2.3px) saturate(10000) contrast(0.09)  brightness(0.422222)  grayscale(1);
+					background: hsl(45deg 0% 0% / 0); */
+
+					-webkit-transition-duration: 1.5s;
+    						transition-duration: 1.5s;
+    				-webkit-transition-property: color, background-color;
+    						transition-property: color, background-color;
+				}				
+				@keyframes form-back-pulse { 
+					50% {background-color: hsl(0deg 0% 70% / 90%);} 
+				}
+				tng-contact.submitting .area {
+					pointer-events: none;					
+					-webkit-animation-name: form-back-pulse;
+    					    animation-name: form-back-pulse;
+					-webkit-animation-iteration-count: infinite;
+    						animation-iteration-count: infinite;
+    				-webkit-animation-duration: 1.5s;
+    						animation-duration: 1.5s;
+    				-webkit-animation-delay: 0.5s;
+    						animation-delay: 0.5s;
+    				-webkit-animation-timing-function: linear;
+    						animation-timing-function: linear;
+				}				
+				tng-contact     	.field { transition: transform .9s cubic-bezier(0.22, 1, 0.36, 1), opacity 1.0s ease-out; }				
+				tng-contact			.field:nth-child(4n)  		{ transition-delay: .0s, .0s; }
+				tng-contact			.field:nth-child(4n + 1) 	{ transition-delay: .1s, .1s; }
+				tng-contact			.field:nth-child(4n + 2) 	{ transition-delay: .2s, .2s; }
+				tng-contact			.field:nth-child(4n + 3) 	{ transition-delay: .3s, .3s; }
+				tng-contact 		.field 						{ transform: translate3d(0px,-5ch,0px); opacity:0; }			
+				tng-contact.show 	.field 						{ transform: translate3d(0px,0px,0px); opacity:1; }  
+				tng-contact:not(.show) 	.field 					{ transition-delay: 1.0s, 0.0s; }  
+
+
+				tng-contact button {
+					backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+					padding: 3ch 6ch;
+					text-transform: uppercase;
+					background: hsl(0deg 0% 100% / 70%);
+					color: black;
+					margin-left: auto;
+				}
+				.is_mobile tng-contact .button_submit {					
+					padding: 3ch 6ch 16ch;
+				}
+			</style>
+			<style>
+				input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus,
+				textarea:-webkit-autofill, textarea:-webkit-autofill:hover, textarea:-webkit-autofill:focus,
+				select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus {
+  					border: none; background-color: black !important; background-image: none !important; -webkit-box-shadow: none !important;
+				}
+
+				button, input, textarea, textarea-wrap::after { color: inherit; font-family: inherit; font-size: inherit; font-weight: inherit; line-height: inherit; letter-spacing: inherit; background: none; outline: none;	}
+
+				.field input::placeholder, .field textarea::placeholder { color:hsl(0deg 0% 50%); }		
+				.field input			 , .field textarea 				{ color: hsl(0deg 0% 0%); }						
+
+				form .field { 
+					padding-bottom: 0em; 
+					padding-top: 1em; 
+				}
+
+				.field:focus-within > label { border-color:white; }
+												
+				.field > label, .field > .input { padding-bottom: 1em; padding-top: 1em; }
+				.field > label { 
+					width: 100%;
+					text-transform: uppercase;
+                            font-size: .77777777rem;
+                            letter-spacing: .33333ch;
+					color: hsl(0deg 0% 30%);
+    				border-bottom: 2px dotted hsl(0deg 0% 50%);
+				}								
+				.field > .input { 
+					width: auto; flex: 1; 
+					background-color: transparent !important;
+				}								
+				
+				.textarea-wrap {									
+					display: grid; /* easy way to plop the elements on top of each other and have them both sized based on the tallest one's height */
+				}
+				.textarea-wrap::after {									
+					content: attr(data-replicated-value) " "; /* Note the weird space! Needed to preventy jumpy behavior */
+					white-space: pre-wrap; /* This is how textarea text behaves */
+					visibility: hidden; /* Hidden from view, clicks, and screen readers */
+					overflow-wrap: anywhere;
+				}
+				.textarea-wrap > textarea {									
+					resize: none;	  /* You could leave this, but after a user resizes, then it ruins the auto sizing */				
+					overflow: hidden; /* Firefox shows scrollbar on growth, you can hide like this. */
+					overflow-wrap: anywhere;
+				}
+				.textarea-wrap > textarea,	.textarea-wrap::after {	
+					grid-area: 1 / 1 / 2 / 2; /* Place on top of each other */  
+				}
+			</style>
+			<script type="module"> 
+				import "./el/form.js"; 											
+			</script>		
+
+			<tng-contact id="tng_contact"></tng-contact>
+
+			<template id="tmpl_contact_panel">
+				<div class="panel" data-scroll-section>		
+						
+					<div class="area">
+						<el-form id="el_contact_form">
+						<form id="contact-form" class="flex-v" 
+							style="font-size: 16px;"> <!-- 16px for iOS zoom issue -->
+
+							<div class="fields flex-v">									
+								<div 		class="field flex-v"> 	<label>Name, Company</label>
+									<input 	class="input" type="text" name="name" placeholder="Johnny Curious, Visitor Inc." required
+										oninput="const v= this.value; setTimeout(()=>{this.value = v + ' '; this.value=v;},0)"/>
+								</div>									
+								<div 		class="field flex-v"> 	<label>Email</label>
+									<input 	class="input" type="email" name="email" placeholder="curious@visitor.com" required 
+										oninput="const v= this.value; setTimeout(()=>{this.value = v + ' '; this.value=v;},0)"
+									/>
+								</div>				
+								<div class="field flex-v" style="margin-bottom: calc(100vh / 9);"> 	
+									<label>Message</label>
+									<div 	class="input textarea-wrap">	<textarea type="text" name="message" placeholder="How did you hear about us?" required oninput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
+									</div>										
+								</div>									
+							</div>														
+						</form>		
+						</el-form>							
+					</div>
+					<div class="panel-nav flex">					
+						<p form-status></p>				
+						<button class="button_close hover-target" >X</button>								
+					</div>		
+					<div class="panel-footer flex">					
+						<p form-status></p>				
+						<button class="button_submit hover-target" 
+							onclick="document.getElementById('el_contact_form').submit()">
+							SEND NOW							
+						</button>														
+					</div>
+				</div>
+			</template>
+			
+
+		</div>
+		<script type="module" src="js/index.js"></script>
+		
+	</body>
+</html>
