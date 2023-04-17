@@ -21,6 +21,7 @@ dss.install(dss.plugin_from_obj({
         set('xl',1200)      // 700 'xl' // Laptops (and langer)
         set('xxl',1800)     // 800 'xxl' ... or 1920 '1536px' '2xl'
         set('xxxl',2400)    // 900 'xxxl'
+
         // dark fg
         set_multi_band('clr.dark.fg', {
             range: [100, 900], step: 100, default: 500,
@@ -102,12 +103,25 @@ dss.install(dss.plugin_from_obj({
 
                 `,
                     `--text-scale: .666666;`,
-                    [css.media('xxxl'), `--text-scale: 1.0;`],
-                    [css.media('xxl'), `--text-scale: 1.11111;`],
-                    [css.media('xl'), `--text-scale: 1.222222;`],
-                    [css.media('lg'), `--text-scale: 1.333333;`],
-                    [css.media('md'), `--text-scale: 1.444444;`],
-                    [css.media('sm'), `--text-scale: 1.6666666;`],
+                    [css.media('xxxl'), `
+                        --text-scale: 1.0;
+                        --p_
+                    `],
+                    [css.media('xxl'), `
+                        --text-scale: 1.11111;
+                    `],
+                    [css.media('xl'), `
+                        --text-scale: 1.333333;
+                    `],
+                    [css.media('lg'), `
+                        --text-scale: 1.444444;
+                    `],
+                    [css.media('md'), `
+                        --text-scale: 1.666666;
+                    `],
+                    [css.media('sm'), `
+                        --text-scale: 1.999999;
+                    `],
                     // [css.media('md'), `--text-scale: 2.0000000;`],
                     // [css.media('sm'), `--text-scale: 2.3333333;`],
                     // [css.media('xs'), `--text-scale: 2.6666666;`],
@@ -185,6 +199,10 @@ dss.install(dss.plugin_from_obj({
 	                    hyphens: auto;
                     `],
                 ],
+                ['h1, h2, h3, h4, h5, h6', `
+                    -webkit-hyphens: auto;
+                    hyphens: auto;
+                `],
                 ['h3', $`relative`, `
                             font-weight: bold;
                             font-size: calc(0.77777777vw * var(--text-scale));
@@ -287,9 +305,34 @@ dss.install(dss.plugin_from_obj({
                             pointer-events: none;
                         `]
                     ],
-                    ['.cards',$`grid grid-cols-3 w(100%) gap(${css.vw(100/72)})`,
-                        [css.media('lg'),   $`grid-cols-2 gap(${css.vh(100/18)})`],
-                        [css.media('md'),   $`flex-v gap(${css.vh(100/18)})`],
+                    ['.cards',
+                        // ['&:not(.-cols-max-2)', 
+                            $`grid grid-cols-3 w(100%) gap(${css.vw(100/72)})`,
+                        // ],
+                        [css.media('lg'),   
+                            $`grid-cols-2 gap(${css.vh(100/18)})`,
+                        ],
+                        [css.media('md'),   
+                            $`flex-v gap(${css.vh(100/18)})`,
+                        ],
+                        ['&.cards-stagger-lr',
+                            // ['&:not(.-cols-max-2)',                           
+                                ['.card:nth-child(3n+1)', `transform:translateY(0rem)`],
+                                ['.card:nth-child(3n+2)', `transform:translateY(7rem)`],
+                                ['.card:nth-child(3n+3)', `transform:translateY(14rem)`],
+                            // ],
+                            [css.media('lg'),                            
+                                ['.card:nth-child(2n+1)', `transform:translateY(0rem)`],
+                                ['.card:nth-child(2n+2)', `transform:translateY(50%)`],
+                            ],
+                            [css.media('md'),                            
+                                // ['.card:nth-child(n)', `transform:translateY(0rem)`],
+                                ['.card', `width:88%;`],
+                                ['.card:nth-child(3n+1)', `transform:translateX(0rem)`],
+                                ['.card:nth-child(3n+2)', `transform:translateX(11%)`],
+                                ['.card:nth-child(3n+3)', `transform:translateX(22%)`],
+                            ],
+                        ],
                     ],
                     ['.card',$`p(${css.vw(100/36)}) flex-v`, 
                         [css.media('md'),   $`p(${css.vh(100/18)})`],
@@ -309,9 +352,10 @@ dss.install(dss.plugin_from_obj({
                             text-transform: uppercase;
                             font-size: .77777777rem;
                             letter-spacing: .33333ch;
-                            opacity: .5;
+                            opacity: 1;
+                            color: hsl(0deg 0% 0%);
                         `],
-                        ['h4', $`m.b(auto) m.t(1rem)`,`                            
+                        ['h4', $`m.t(1rem)`,`                            
                             font-family: Saol Display, ivypresto-display, serif;
                             font-weight: 900;
                             font-size: calc((3.333333vh + 3.333333vw)/2 * var(--text-scale));
@@ -320,7 +364,8 @@ dss.install(dss.plugin_from_obj({
                             pointer-events: none;
                         `],
                         ['p',$`m.t(4em) m.b(8em)`,`
-                            opacity: .5;
+                            opacity: 1;
+                            color: hsl(0deg 0% 80%);
                         `]
                     ]          
                 ],
@@ -396,7 +441,7 @@ dss.install(dss.plugin_from_obj({
                 ],
 
                 ['section.profile-list',$`relative`,
-                    ['>.area',$`grid grid-cols-3`,
+                    ['>.area',$`grid grid-cols-3`, `grid-auto-flow: row;`,
                         // [css.media('lg'),   $`flex-v`],
                         [css.media('lg'),   $`grid-cols-2`],
                     ],
