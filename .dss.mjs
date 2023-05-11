@@ -81,6 +81,35 @@ dss.install(dss.plugin_from_obj({
         {
             const $ = css.class;
             return  css.flatten([
+
+                ['.mx-auto', `margin-left: auto; margin-right: auto;`],
+                ['.m-auto', `margin: auto;`],
+                ['.text-l', `font-size: ${3/2}rem;`],
+                // ['.prose', $`grid grid-cols-9 items-start`,`
+                ['.prosed', $`m.x(auto) w.max(100%)`,`
+                `,  
+                    ['h2', `
+                        margin-top: 6rem;
+                        margin-bottom: 2rem;
+                        font-size: 4rem;
+                        font-family: Saol Display, ivypresto-display, serif;
+                        font-weight: 600;
+                        line-height: 1.1111111;
+                        letter-spacing: -0.131vw;
+                    `],
+                    ['h3', `font-size: 2.5rem;`],
+                    ['h4', `font-size: 1.5rem;`],
+                    ['.proses', $`flex-v gap(1.5rem)`, `
+                        max-width: 72ch;                
+                    `],                  
+                    // [':where(p):not(:where([class~=not-prose] *))', `
+                    //     margin-top: 1.25em;
+                    //     margin-bottom: 1.25em;
+                    // `],
+                    // ['p+p',`margin-top:0;`],
+                ],
+                
+
                 ['body',`
                     --color-text: #fff;
                     --color-bg: #1e2227;
@@ -88,7 +117,7 @@ dss.install(dss.plugin_from_obj({
                     --color-bg: hsl(0 0% 0%);
                     --color-bg-shift:  #e1ddd8;
                     --main-bg: hsl(0deg 0% 23%);
-                    --card-bg: hsl(0deg 0% 30%);
+                    --card-bg: hsl(0deg 0% 24%);
 
                     --color-link: #fff;
                     --color-link-hover: #fff;
@@ -134,40 +163,7 @@ dss.install(dss.plugin_from_obj({
                     letter-spacing: .1ch;
                     `
                 ],
-                `
-                .marquee {
-                    margin: 2rem 0;
-                    left:0;
-                    display:flex; flex-direction:row;
-                    overflow: hidden;
-                    
-                    font-size: calc((16vh + 16vw) / 2);
-                    font-family: Saol Display, ivypresto-display, serif;
-                            font-style: italic;
-                            font-weight: 600;                            
-                            line-height: 1.1111111;
-                            letter-spacing: -0.05ch;
-                            pointer-events: none;
-                 }
-                 .marquee > span {   
-                     display: inline-block;
-                     white-space: nowrap;                     
-                     width: var(--tw);
-                     /*text-shadow: var(--tw) 0 currentColor, 
-                                  calc(var(--tw) * 2) 0 currentColor;*/                                  
-                    
-                     will-change: transform; transform: translate3d(0,0,0);
-                     animation: marquee var(--ad) linear infinite;
-                     animation-play-state: running;
-                 }
-                 .marquee:hover span {
-                     animation-play-state: paused;
-                 }
-                 @keyframes marquee {
-                     0% { transform: translate3d(0,0,0); }
-                     100% { transform: translate3d(-100%,0,0); }
-                 }
-                `,
+                
                 // ['html.pleaserotate-showing',`overflow:hidden !important;`,
                 // ],
                 // ['#pleaserotate-message',$`text-center m.t(1em)`,`
@@ -279,7 +275,7 @@ dss.install(dss.plugin_from_obj({
 
                 ['section', $`contain(style) flex-v`,// $`bg(${css.v('section-bg')})`,
                     ['>.area', 
-                        $`w(100vw) h(100%) m(auto) flex-v gap(${css.vh(100/18)})`,                        
+                        $`w(100%) h(100%) m(auto) flex-v gap(${css.vh(100/18)})`,                        
                         
                         // $`p.x(0)`,
                         $`p.y(${"var(--area_p_y)"})`,
@@ -529,28 +525,28 @@ dss.install(dss.plugin_from_obj({
                     $`relative h(100vh) p.y(${css.vh(0/9)})
                         grid grid.cols(9) grid.rows(9)
                 `,
-                ['> .graphic',        $`col.start(1) col.end(6) row.start(1) row.end(7) m.b(${css.vh(-100/9)})
-                    flex-h`,
-                    [css.media('lg'), $`col.start(1) col.end(4) row.start(1) row.end(7) m.b(${css.vh(-100/9)}) m.l(${css.vh(-100/18)})`],
-                    ['.graphic-item', $`w(100%) block rounded.r(999px) bg.size(cover) bg.position(${'50% 50%'})`],
-                ],
-                ['> .text',           $`col.start(6) col.end(8) row.start(8) row.end(auto)`,
-                    [css.media('lg'), $`col.start(5) col.end(9) row.start(6) row.end(auto)`],
-                    $`relative`,
-                    ['&::after',`
-                        content: '';
-                        position: absolute;
-                        width: 88vw;
-                        height: 88vw;
-                        border: 1px solid #000;
-                        border-radius: 50%;
-                        left: 50%;
-                        top: calc(-50% - 44vw);
-                        margin-left: -44vw;
-                    `]
-                ],
+                    ['> .graphic',        $`col.start(1) col.end(6) row.start(1) row.end(7) m.b(${css.vh(-100/9)})
+                        flex-h`,
+                        [css.media('lg'), $`col.start(1) col.end(4) row.start(1) row.end(7) m.b(${css.vh(-100/9)}) m.l(${css.vh(-100/18)})`],
+                        ['.graphic-item', $`w(100%) block rounded.r(999px) bg.size(cover) bg.position(${'50% 50%'})`],
+                    ],
+                    ['> .text',           $`col.start(6) col.end(8) row.start(8) row.end(auto)`,
+                        [css.media('lg'), $`col.start(5) col.end(9) row.start(6) row.end(auto)`],
+                        $`relative`,
+                        ['&::after',`
+                            content: '';
+                            position: absolute;
+                            width: 88vw;
+                            height: 88vw;
+                            border: 1px solid #000;
+                            border-radius: 50%;
+                            left: 50%;
+                            top: calc(-50% - 44vw);
+                            margin-left: -44vw;
+                        `]
+                    ],
 
-            ],
+                ],
 
                 ['section.present', css.class`relative flex-v`, `
                         padding-top: 33.333333vh;
@@ -566,6 +562,10 @@ dss.install(dss.plugin_from_obj({
                         [css.media('sm'),   $`grid-cols-1 `],
                     ],
                 ],
+
+
+
+
             ])
         }
     }
