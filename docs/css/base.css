@@ -1952,7 +1952,7 @@ section.profile-list >.area {
 
 @media screen and (max-width:992px)  {
 	 section.profile-list .title {
-	grid-column-end:3;
+	grid-column-end:3 !important;
 }
 
 }section.profile-list .item {

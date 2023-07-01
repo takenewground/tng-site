@@ -33,6 +33,9 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<style>
 			::selection { background-color: hsl(47deg 60% 60% / .8); }
+			
+			a 								{text-decoration: underline;}
+				.btn, .btn a 	{text-decoration: none;}
 		</style>
 		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
 
@@ -104,61 +107,74 @@
 									v-4.5h13.5h4.5h13.5h4.5v4.5H35.3z M75.8,61.1V38.6V22.8v-2.2h4.5v2.2v38.2H75.8z"/>
 								</g>
 							</svg>		
-							<h1 class="title-main" style=" 
-								margin-top: auto; margin-bottom: auto;
-								display: flex;  flex-direction: row;     justify-content: flex-end;
-								flex-wrap: wrap;
-								gap: .5ch;
-								display: block;  
-								text-align:center;									
+							
+							<div class="flex-v items-center" style="
+								margin:auto;
 							">
-								<style>
-									.title-main > * {
-										white-space: nowrap;
-									}
-									.break-col {
-										flex-basis: 100%;
-										width: 0;
-									}
-									.title-line-span {
-										width:auto; min-width:1ch;
-										display: block;
-										flex: 1;
-										height: .11111111ch;
-										align-self: center;
-										border: solid 0.1111ch #ccc; box-sizing: content-box;
-										margin-bottom: 0.311ch;
+								<h1 class="title-main" style=" 
+									margin-top: auto; 
+									margin-bottom: 6rem;
+									display: flex;  flex-direction: row;     justify-content: flex-end;
+									flex-wrap: wrap;
+									gap: .5ch;
+									display: block;  
+									text-align:center;									
+								">
+									<style>
+										.title-main > * {
+											white-space: nowrap;
+										}
+										.break-col {
+											flex-basis: 100%;
+											width: 0;
+										}
+										.title-line-span {
+											width:auto; min-width:1ch;
+											display: block;
+											flex: 1;
+											height: .11111111ch;
+											align-self: center;
+											border: solid 0.1111ch #ccc; box-sizing: content-box;
+											margin-bottom: 0.311ch;
+											mix-blend-mode: difference;
+										}
+									</style>								
+									<span style="font-size: calc(6vh + 6vw);">ICON</span>
+									<!-- <span class="lowercase italic">leadershit</span> -->
+									
+									<!-- <span style="
+										color: hsl(0deg 0% 50%);
+										transform-origin: right;
+										transform: scaleX(2);
+										display: inline-block;
 										mix-blend-mode: difference;
-									}
-								</style>								
-								<span style="font-size: calc(6vh + 6vw);">ICON</span>
-								<!-- <span class="lowercase italic">leadershit</span> -->
-								
-								<!-- <span style="
-									color: hsl(0deg 0% 50%);
-									transform-origin: right;
-									transform: scaleX(2);
-									display: inline-block;
-									mix-blend-mode: difference;
-								">⏤ </span> -->
+									">⏤ </span> -->
 
-								<div class="break-col"></div>
-								<!-- <span>into</span> -->
-								<!-- <span class="title-line-span"></span> -->
-								<!-- <span class="lowercase italic" >
-									it's what you negotiate</span> 							 -->
-							</h1>
-							<div class="flex-v items-center" >
-								<span>July 18-19, 2023</span>
-								<span>Los Angeles, CA</span>
-								<a href="https://www.eventbrite.com/e/the-negotiation-lab-july-18-19th-2023-tickets-596041655637" 
-									style="  
-									    margin-top: 3rem;
-										background-color: hsl(0deg 0% 100% / 0.5);
-										padding: 2ch 3ch;
-										backdrop-filter: blur(8px) invert(1);
-										color: black; 
-								">REGISTER NOW</a>
+									<div class="break-col"></div>
+									<!-- <span>into</span> -->
+									<!-- <span class="title-line-span"></span> -->
+									<!-- <span class="lowercase italic" >
+										it's what you negotiate</span> 							 -->
+								</h1>
+								<span>November 9-11, 2023</span>
+								<span><a href="https://lagodigarda.lefayresorts.com/it">Lefay Resort</a>, Lago di Garda, Italia</span>
+								<span style="display:flex; gap: 4.5rem">
+									<a class="btn" href="https://youtu.be/fWW2L6mmzCs"
+										style="  
+											margin-top: 3rem;
+											background-color: hsl(0deg 0% 100% / 0.9);
+											padding: 2ch 3ch;
+											color: black; 
+									">Play Video</a>
+									<a class="btn" href="https://info276733.typeform.com/to/fUTOjVir" 
+										style="  
+											margin-top: 3rem;
+											background-color: hsl(0deg 0% 100% / 0.5);
+											padding: 2ch 3ch;
+											backdrop-filter: blur(8px) invert(1);
+											color: black; 
+									">APPLY NOW</a>
+								</span>
 							</div>			
 							<!-- <div class="text" style="
 								    text-align: left;									
@@ -187,24 +203,16 @@
 							<!-- <h2 class="col-span-9"><span class="italic">Every</span> conversation is a negotiation</h2> -->
 							<div class="col-span-9 text-l">
 								<p>
-									Unlock the Power of Savvy: Illuminate Your Path to Influence, Meaning, and Legacy!
+									Unlock the power of savvy - illuminate your path to influence, meaning, and legacy!
 									
 									<!-- Unleash Influence. Forge Community. Embrace Power. Make Your Mark at ICON.									 -->
 
 									<br/><br/>
 									
 									<!-- Reserve your place now and join us at ICON to embark on a transformative journey toward unlocking your full potential. -->
-									To all the trailblazers, mavens of knowledge, and champions of integrity, get ready to unleash your full power at ICON. We have meticulously crafted this event with your unique brilliance in mind.
+									To all the trailblazers, mavens of knowledge, and champions of integrity, get ready to unleash your full power at ICON. We have meticulously crafted this 3 day event with your unique brilliance in mind.
 								</p>
-							</div>
-							
-							<h2 class="col-span-9">Who will benefit<span class="italic"></span></h2>
-							<h4 class="col-span-9">The Maverick</h4>
-							<p>Bring your inner rebel: defy conformity, shatter expectations, and unleash unconventional brilliance. ICON, where risk-takers, trailblazers, and rebels unite, dancing to their own thunderous rhythm. No conversation is too dangerous, and no idea too radical—prepare to push your boundaries, ignite your audacity, and forge a legacy that echoes through time.</p>
-							<h4 class="col-span-2">The Maven</h4>
-							<p>ICON: where knowledge junkies and trendsetters rule. Plunge into the abyss of your passions, surpass the trends, and command unrivaled authority in your domain. The ICON Community hunger for your insights and expertise, from the hottest gadgets to mind-blowing breakthroughs, and cutting-edge innovations. Seize the spotlight and leave your indelible mark.</p>							
-							<h4 class="col-span-2">The Mensch</h4>
-							<p>Embrace your extraordinary spirit at ICON: unleash the rebel with integrity, defy the status quo, and make waves that change the world. Join the honorable ranks of ICON, where honesty, humility, and accountability reign supreme. Be the mensch who lends a helping hand, respects, and amplifies a heart that's larger than life.</p>
+							</div>													
 				
 							<h2 class="col-span-9">What to expect<span class="italic"></span></h2>
 							<h4 class="col-span-2">Day 1: Understanding and Resolving Limitations</h4>							
@@ -213,6 +221,21 @@
 							<p>The second day involves accurately assessing your current position, reviewing your journey, evaluating your present situation, and determining the desired future state of your legacy. It also explores strategies for resilience, adaptability, conflict engagement, and fostering meaningful connections.</p>
 							<h4 class="col-span-2">Day 3: Crafting Vision and Maximizing Impact</h4>
 							<p>On the last day we delve into understanding the different stages of life and their implications, visionary thinking to design a powerful future vision, overcoming challenges by refining and aligning your vision, and expanding your influence through playful celebrations of life and networking to reshape possibilities.</p>
+							<h4 class="col-span-2">Michelin Star Cuisine</h4>
+							<p>The final evening's meal will be prepared by the Michelin Star chef at the award winning restaurant <a href="https://www.gaudes.it/matteo-grandi-in-basilica/">Matteo Grand in Basilica</a>, situated in front of the world famous architecture of the Villas Palladiana.</p>
+							<h4 class="col-span-2">Location, Location, Location</h4>
+							<p>								
+								<a href="https://lagodigarda.lefayresorts.com/en/lake-garda-hotel-and-spa">Lefay Resort & SPA Lago di Garda</a> 
+								is located in Gargnano, in the heart of the spectacular “Riviera dei Limoni.” A location for anyone who still wishes to be surprised and who loves to get lost and then find themselves again.
+							</p>
+
+							<h2 class="col-span-9">Who will benefit<span class="italic"></span></h2>
+							<h4 class="col-span-9">The Maverick</h4>
+							<p>Bring your inner rebel: defy conformity, shatter expectations, and unleash unconventional brilliance. ICON, where risk-takers, trailblazers, and rebels unite, dancing to their own thunderous rhythm. No conversation is too dangerous, and no idea too radical—prepare to push your boundaries, ignite your audacity, and forge a legacy that echoes through time.</p>
+							<h4 class="col-span-2">The Maven</h4>
+							<p>The ICON experience is where knowledge junkies and trendsetters rule. Plunge into the abyss of your passions, surpass the trends, and command unrivaled authority in your domain. The ICON community is hungry for your insights and expertise, from the hottest gadgets to mind-blowing breakthroughs, and cutting-edge innovations. Seize the spotlight and leave your indelible mark.</p>							
+							<h4 class="col-span-2">The Mensch</h4>
+							<p>Embrace your extraordinary spirit at ICON: unleash the rebel with integrity, defy the status quo, and make waves that change the world. Join the honorable ranks of ICON, where honesty, humility, and accountability reign supreme. Be the mensch who lends a helping hand, respects, and amplifies a heart that's larger than life.</p>
 					
 							<!-- <h2 class="">You will discover...<span class="italic"></span></h2>
 							<h4 class="">What it takes to get more of what you want when you’re not sure it’s available.</h4>						
@@ -220,15 +243,22 @@
 							<h4 class="">How to create flexibility in situations that get stuck.</h4> -->
 							<div class="flex-v items-start" >					
 								<h2>ICON</h2>			
-								<span style="opacity:.6">July 18-19, 2023</span>
-								<span style="opacity:.4">Los Angeles, CA</span>
-								<a href="https://www.eventbrite.com/e/the-negotiation-lab-july-18-19th-2023-tickets-596041655637"
+								<span style="opacity:.6">November 9-11, 2023</span>
+								<span><a href="https://lagodigarda.lefayresorts.com/it">Lefay Resort</a>, Lago di Garda, Italia</span>
+								<a class="btn" href="https://youtu.be/fWW2L6mmzCs"
 									style="  
 									    margin-top: 3rem;
 										background-color: hsl(0deg 0% 100% / 0.9);
 										padding: 2ch 3ch;
 										color: black; 
-								">Register Now</a>
+								">Play Video</a>
+								<a class="btn" href="https://info276733.typeform.com/to/fUTOjVir"
+								style="  
+									margin-top: 3rem;
+									background-color: hsl(0deg 0% 100% / 0.9);
+									padding: 2ch 3ch;
+									color: black; 
+								">Apply Now</a>
 							</div>	
 						</div>
 					</div>
@@ -264,7 +294,7 @@
 				<section class="profile-list" data-scroll-section>
 					<div class="area">
 						<div class="title" style="
-								grid-column-end: 3;
+								grid-column-end: 4;
 							">
 							<svg style="height:1rem; margin-bottom: 1rem;" 	 viewBox="0 0 600 68.9" version="1.1" x="0px" y="0px">	
 								<polygon style="fill:#fff;" points="39.8,0 0,68.9 79.6,68.9 	"/>	
@@ -277,41 +307,51 @@
 								font-weight: 600;
 								line-height: 1.1111111;
 								letter-spacing: -0.131vw;
-							">The Negotiation Lab Leaders</h1>
+							">ICON Facilitators</h1>
 						</div>
 						
-						<div class="item" style="
-							    grid-column-start: 2;
-								transform:translateY(33.3333333%);
-								margin-bottom: 66.666666%;
+						<div class="item" style="							    
 						">
 							<img class="avatar" src="img/team-d3.500x750.jpg" style="aspect-ratio:2/3;">
 							<span class="name">
 								Dan Tocchini
 							</span>
-							<span class="role">
+							<!-- <span class="role">
 								Founding Partner, Team Integration
-							</span>		
+							</span>		 -->
 							<span class="links">
 								<a href="https://www.linkedin.com/in/dantocchini/">LinkedIn</a>
 								<a href="https://www.instagram.com/dan_tocchini/">Instagram</a>
 							</span>																			
 						</div>
 						<div class="item" style="
-							transform:translateY(-33.3333333%);
 						">
 							<img class="avatar" src="img/team-adrian.500x750.jpg" style="aspect-ratio:2/3;">
 							<span class="name">
 								Adrian Koehler
 							</span>
-							<span class="role">
+							<!-- <span class="role">
 								Founding Partner, Founder Dynamics
-							</span>		
+							</span>		 -->
 							<span class="links">
 								<a href="https://www.linkedin.com/in/adriankoehler/">LinkedIn</a>
 								<a href="https://www.instagram.com/adrian.k/">Instagram</a>
 							</span>																			
-						</div>										
+						</div>		
+						<div class="item" style="
+						">
+							<img class="avatar" src="img/team-davide.500x750.jpg" style="aspect-ratio:2/3;">
+							<span class="name">
+								Davide Zaccariello
+							</span>
+							<!-- <span class="role">
+								Trainer
+							</span>		 -->
+							<span class="links">
+								<a href="https://www.linkedin.com/in/davidezaccariello/">LinkedIn</a>
+							</span>																			
+						</div>		
+						
 					</div>
 				</section>				
 
@@ -345,18 +385,28 @@
 					<div class="area">
 						<img class="obseal hover-target" src="img/obverse.300/seal.jpg"
 							style="mix-blend-mode:plus-lighter; aspect-ratio:1; margin:auto;">
-
+							
 							<div class="flex-v items-center" >					
 								<h2>ICON</h2>			
-								<span style="opacity:.6">July 18-19, 2023</span>
-								<span style="opacity:.4">Los Angeles, CA</span>
-								<a href="https://www.eventbrite.com/e/the-negotiation-lab-july-18-19th-2023-tickets-596041655637"
-									style="  
-									    margin-top: 3rem;
-										background-color: hsl(0deg 0% 100% / 0.5);
-										padding: 2ch 3ch;
-										color: black; 
-								">LEARN MORE</a>
+								<span style="opacity:.6">November 9-11, 2023</span>
+								<span><a href="https://lagodigarda.lefayresorts.com/it">Lefay Resort</a>, Lago di Garda, Italia</span>
+								<span style="display:flex; gap: 4.5rem">
+									<a class="btn" href="https://youtu.be/fWW2L6mmzCs"
+										style="  
+											margin-top: 3rem;
+											background-color: hsl(0deg 0% 100% / 0.9);
+											padding: 2ch 3ch;
+											color: black; 
+									">Play Video</a>
+									<a class="btn" href="https://info276733.typeform.com/to/fUTOjVir" 
+										style="  
+											margin-top: 3rem;
+											background-color: hsl(0deg 0% 100% / 0.5);
+											padding: 2ch 3ch;
+											backdrop-filter: blur(8px) invert(1);
+											color: black; 
+									">APPLY NOW</a>
+								</span>
 							</div>		
 											
 					</div>
@@ -369,7 +419,7 @@
 			<!-- tng contact -->
 			
 			<div style="position: fixed; top: 11.111111vh; right: 11.1111111vw; z-index:999999;">
-				<a onclick="tng_contact.show()"
+				<a  class="btn" onclick="tng_contact.show()"
 					style="display: block;
 						backdrop-filter: blur(8px) brightness(0.8); -webkit-backdrop-filter: blur(8px) brightness(0.8);
 						padding: 2ch 3ch;"
