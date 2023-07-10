@@ -366,318 +366,52 @@
 				>CONTACT US</a>
 			</div>
 
-			<script type="module">								
-				const TAG = "tng-contact";				
-				const SHOW_DELAY = 1600;
-				const HIDE_DELAY = 1600;
-				const raf = requestAnimationFrame;
-				const delay = function(ms, fn) { return setTimeout(fn, ms); };
-				const undelay = clearTimeout;
-				
-				class TNG_Contact extends HTMLElement 
-				{
-					constructor() 	{ super(); _init(this);}
-					is_shown() 		{ return this.classList.contains("show"); }
-					toggle() 		{ _toggle(this, !this.is_shown()); }
-					show() 			{ if (!this.is_shown()) _toggle(this, true); }
-					hide() 			{ if (this.is_shown()) _toggle(this, false); }
-				}
-
-				customElements.define(TAG, TNG_Contact);
-
-				let FRAGMENT;
-				
-				function _init(el)
-				{
-					el._delay = 0;					
-					el.onclick = function (e) 
-					{ 
-						if (el === e.target) el.hide();
-						if (e.target.classList.contains("button_close")) {
-							el.hide()
-						}
-					}			
-					if (el.is_shown()) 
-						_toggle(el, true);		
-					
-					el.addEventListener("formwillsubmit", function(){
-						el.classList.add("submitting");
-					})
-					el.addEventListener("formerror", function(){
-						el.classList.remove("submitting");
-						// el.hide();
-					})
-					el.addEventListener("formsuccess", function(){
-						el.classList.remove("submitting");
-						el.hide();
-					})
-					// el.querySelector(".button_close").onclick = function () {
-					// 	el.hide();
-					// }
-				}
-
-				function _toggle(el, show) 
-				{		
-					if (el._delay) 
-						return
-													
-					if (show) 
-					{	
-						raf(function() 
-						{					
-						FRAGMENT || (FRAGMENT = window.tmpl_contact_panel.content.firstElementChild.cloneNode(true));			
-						el.classList.remove("hidden");
-						el.appendChild(FRAGMENT);						
-						raf(function() 
-						{																		
-							el.classList.add("show");							
-							// el._delay = delay(SHOW_DELAY, function() 
-							// {						
-							// 	el.classList.add("shown");										
-							// 	el._delay = 0;
-							// });
-						});
-						});
-					}
-					else 
-					{
-						raf(function() 
-						{
-							el.classList.remove("show");							
-							// el.classList.remove("shown");
-							el._delay = delay(HIDE_DELAY, function() 
-							{
-								raf(function() { 
-									el.classList.add("hidden");
-									el.removeChild(FRAGMENT); 
-								})
-								el._delay = 0;
-							});
-						});
-					}
-				}
-			</script>
-			<style>						
-				tng-contact { 	
-					display: block;
-					position: fixed; top: 0px; left: 0px; 
-					width: 100vw; height: 100vh;
-					z-index: 9999999;					
-					
-					transition: background-color .3s;
-					background-color: hsl(0 0% 0% / 0);
-					pointer-events: none;
-				}
-				tng-contact.show { 					
-					background-color: hsl(0 0% 0% / .444444);												
-					pointer-events: inherit;					
-				}				
-				tng-contact.hidden { 	
-					display: none;
-					width: 0vw; height: 0vh;
-				}
-				
-				tng-contact > .panel {					
-					position: absolute;
-					height: 100vh;
-					width: 81ch; max-width: 100vw;
-					top: 0px;
-					right: 0px;					
-					transform: translate3d(100%,0px,0px);							
-					transition: transform .7s cubic-bezier(0.22, 1, 0.36, 1); 		
-				}
-				tng-contact.show > .panel {
-					transform: translate3d(0px,0px,0px);
-				}
-				tng-contact:not(.show) > .panel {
-					transition: transform 1.33333s cubic-bezier(0.22, 1, 0.36, 1);
-				}
-				tng-contact .panel-footer {					
-					position: absolute;					
-					bottom: 0px;
-					left: 0;	right:0;		
-					transform: translate3d(0px,100%,0px);				
-					transition: transform 1.333s cubic-bezier(0.22, 1, 0.36, 1);				
-				}
-				tng-contact.show .panel-footer {
-					transform: translate3d(0px,0px,0px);
-				}
-				tng-contact .panel-nav {					
-					position: absolute;					
-					top: 0px;
-					left: 0;	right:0;		
-					transform: translate3d(0px,-100%,0px);				
-					transition: transform 1.333s cubic-bezier(0.22, 1, 0.36, 1);				
-				}				
-				tng-contact.show .panel-nav {
-					transform: translate3d(0px,0px,0px);
-				}
-				tng-contact .area {
-					overflow-y: auto;
-					height: 100%; width: 100%;
-    				padding: 11.1111vh 6ch;
-
-					-webkit-backdrop-filter: blur(12px) brightness(2);  					
-					backdrop-filter: blur(12px) brightness(2);  					
-    				background: hsl(0deg 0% 88% / 90%);
-/* 					
-					-webkit-backdrop-filter: saturate(10000) grayscale(1);
-						    backdrop-filter: saturate(10000) grayscale(1);					
-    				background: hsl(45deg 0% 37% / 0.933333);
-
-					-webkit-backdrop-filter: blur(1.2px) saturate(10000) grayscale(1) contrast(0.3);
-							backdrop-filter: blur(1.2px) saturate(10000) grayscale(1) contrast(0.3);					
-    				background: hsl(45deg 0% 37% / 0.8);
-
-					backdrop-filter: blur(5px) saturate(10000) grayscale(1) brightness(0.3);
-    				background: hsl(45deg 0% 0% / 0.8);
-
-					-webkit-backdrop-filter:blur(2.3px) saturate(10000) contrast(0.09)  brightness(0.422222)  grayscale(1);
-					backdrop-filter:blur(2.3px) saturate(10000) contrast(0.09)  brightness(0.422222)  grayscale(1);
-					background: hsl(45deg 0% 0% / 0); */
-
-					-webkit-transition-duration: 1.5s;
-    						transition-duration: 1.5s;
-    				-webkit-transition-property: color, background-color;
-    						transition-property: color, background-color;
-				}				
-				@keyframes form-back-pulse { 
-					50% {background-color: hsl(0deg 0% 70% / 90%);} 
-				}
-				tng-contact.submitting .area {
-					pointer-events: none;					
-					-webkit-animation-name: form-back-pulse;
-    					    animation-name: form-back-pulse;
-					-webkit-animation-iteration-count: infinite;
-    						animation-iteration-count: infinite;
-    				-webkit-animation-duration: 1.5s;
-    						animation-duration: 1.5s;
-    				-webkit-animation-delay: 0.5s;
-    						animation-delay: 0.5s;
-    				-webkit-animation-timing-function: linear;
-    						animation-timing-function: linear;
-				}				
-				tng-contact     	.field { transition: transform .9s cubic-bezier(0.22, 1, 0.36, 1), opacity 1.0s ease-out; }				
-				tng-contact			.field:nth-child(4n)  		{ transition-delay: .0s, .0s; }
-				tng-contact			.field:nth-child(4n + 1) 	{ transition-delay: .1s, .1s; }
-				tng-contact			.field:nth-child(4n + 2) 	{ transition-delay: .2s, .2s; }
-				tng-contact			.field:nth-child(4n + 3) 	{ transition-delay: .3s, .3s; }
-				tng-contact 		.field 						{ transform: translate3d(0px,-5ch,0px); opacity:0; }			
-				tng-contact.show 	.field 						{ transform: translate3d(0px,0px,0px); opacity:1; }  
-				tng-contact:not(.show) 	.field 					{ transition-delay: 1.0s, 0.0s; }  
-
-
-				tng-contact button {
-					backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-					padding: 3ch 6ch;
-					text-transform: uppercase;
-					background: hsl(0deg 0% 100% / 70%);
-					color: black;
-					margin-left: auto;
-				}
-				.is_mobile tng-contact .button_submit {					
-					padding: 3ch 6ch 16ch;
-				}
-			</style>
-			<style>
-				input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus,
-				textarea:-webkit-autofill, textarea:-webkit-autofill:hover, textarea:-webkit-autofill:focus,
-				select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus {
-  					border: none; background-color: black !important; background-image: none !important; -webkit-box-shadow: none !important;
-				}
-
-				button, input, textarea, textarea-wrap::after { color: inherit; font-family: inherit; font-size: inherit; font-weight: inherit; line-height: inherit; letter-spacing: inherit; background: none; outline: none;	}
-
-				.field input::placeholder, .field textarea::placeholder { color:hsl(0deg 0% 50%); }		
-				.field input			 , .field textarea 				{ color: hsl(0deg 0% 0%); }						
-
-				form .field { 
-					padding-bottom: 0em; 
-					padding-top: 1em; 
-				}
-
-				.field:focus-within > label { border-color:white; }
-												
-				.field > label, .field > .input { padding-bottom: 1em; padding-top: 1em; }
-				.field > label { 
-					width: 100%;
-					text-transform: uppercase;
-                            font-size: .77777777rem;
-                            letter-spacing: .33333ch;
-					color: hsl(0deg 0% 30%);
-    				border-bottom: 2px dotted hsl(0deg 0% 50%);
-				}								
-				.field > .input { 
-					width: auto; flex: 1; 
-					background-color: transparent !important;
-				}								
-				
-				.textarea-wrap {									
-					display: grid; /* easy way to plop the elements on top of each other and have them both sized based on the tallest one's height */
-				}
-				.textarea-wrap::after {									
-					content: attr(data-replicated-value) " "; /* Note the weird space! Needed to preventy jumpy behavior */
-					white-space: pre-wrap; /* This is how textarea text behaves */
-					visibility: hidden; /* Hidden from view, clicks, and screen readers */
-					overflow-wrap: anywhere;
-				}
-				.textarea-wrap > textarea {									
-					resize: none;	  /* You could leave this, but after a user resizes, then it ruins the auto sizing */				
-					overflow: hidden; /* Firefox shows scrollbar on growth, you can hide like this. */
-					overflow-wrap: anywhere;
-				}
-				.textarea-wrap > textarea,	.textarea-wrap::after {	
-					grid-area: 1 / 1 / 2 / 2; /* Place on top of each other */  
-				}
-			</style>
-			<script type="module"> 
-				import "./el/form.js"; 											
-			</script>		
-
-			<tng-contact id="tng_contact"></tng-contact>
-
-			<template id="tmpl_contact_panel">
-				<div class="panel" data-scroll-section>		
-						
-					<div class="area">
-						<el-form id="el_contact_form">
-						<form id="contact-form" class="flex-v" 
-							style="font-size: 16px;"> <!-- 16px for iOS zoom issue -->
-
-							<div class="fields flex-v">									
-								<div 		class="field flex-v"> 	<label>Name, Company</label>
-									<input 	class="input" type="text" name="name" placeholder="Johnny Curious, Visitor Inc." required
-										oninput="const v= this.value; setTimeout(()=>{this.value = v + ' '; this.value=v;},0)"/>
-								</div>									
-								<div 		class="field flex-v"> 	<label>Email</label>
-									<input 	class="input" type="email" name="email" placeholder="curious@visitor.com" required 
-										oninput="const v= this.value; setTimeout(()=>{this.value = v + ' '; this.value=v;},0)"
-									/>
-								</div>				
-								<div class="field flex-v" style="margin-bottom: calc(100vh / 9);"> 	
-									<label>Message</label>
-									<div 	class="input textarea-wrap">	<textarea type="text" name="message" placeholder="How did you hear about us?" required oninput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
-									</div>										
-								</div>									
-							</div>														
-						</form>		
-						</el-form>							
+			<link  href="el/tng_contact.css" rel="stylesheet" type="text/css" />
+			<script src="el/tng_contact.js" type="module"></script>
+			<link  href="el/form.css" rel="stylesheet" type="text/css" />
+			<script src="el/form.js" type="module"></script>																		
+			<tng-contact id="tng_contact">
+				<template>
+					<div class="panel" data-scroll-section>								
+						<div class="area">
+							<el-form id="el_contact_form">
+								<form id="contact-form" class="flex-v" 
+									style="font-size: 16px;"> <!-- 16px for iOS zoom issue -->
+		
+									<div class="fields flex-v">									
+										<div 		class="field flex-v"> 	<label>Name, Company</label>
+											<input 	class="input" type="text" name="name" placeholder="Johnny Curious, Visitor Inc." required
+												oninput="const v= this.value; setTimeout(()=>{this.value = v + ' '; this.value=v;},0)"/>
+										</div>									
+										<div 		class="field flex-v"> 	<label>Email</label>
+											<input 	class="input" type="email" name="email" placeholder="curious@visitor.com" required 
+												oninput="const v= this.value; setTimeout(()=>{this.value = v + ' '; this.value=v;},0)"
+											/>
+										</div>				
+										<div class="field flex-v" style="margin-bottom: calc(100vh / 9);"> 	
+											<label>Message</label>
+											<div 	class="input textarea-wrap">	<textarea type="text" name="message" placeholder="How did you hear about us?" required oninput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
+											</div>										
+										</div>									
+									</div>														
+								</form>		
+							</el-form>							
+						</div>
+						<div class="panel-nav flex">					
+							<p form-status></p>				
+							<button class="button_close hover-target" >X</button>								
+						</div>		
+						<div class="panel-footer flex">					
+							<p form-status></p>				
+							<button class="button_submit hover-target" 
+								onclick="document.getElementById('el_contact_form').submit()">
+								SEND NOW							
+							</button>														
+						</div>
 					</div>
-					<div class="panel-nav flex">					
-						<p form-status></p>				
-						<button class="button_close hover-target" >X</button>								
-					</div>		
-					<div class="panel-footer flex">					
-						<p form-status></p>				
-						<button class="button_submit hover-target" 
-							onclick="document.getElementById('el_contact_form').submit()">
-							SEND NOW							
-						</button>														
-					</div>
-				</div>
-			</template>
+				</template>
+			</tng-contact>
 			
-
 		</div>
 		<script type="module" src="js/index.js"></script>
 		

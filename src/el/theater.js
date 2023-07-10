@@ -1,21 +1,21 @@
-const TAG = "tng-contact";				
+const TAG = "el-theater";				
 const SHOW_DELAY = 1600;
-const HIDE_DELAY = 1600;
+const HIDE_DELAY = 1300;
 const raf = requestAnimationFrame;
 const delay = function(ms, fn) { return setTimeout(fn, ms); };
 const undelay = clearTimeout;
 
-class TNG_Contact extends HTMLElement 
+class El_Theater extends HTMLElement 
 {
     constructor() 	{ super(); _init(this);}
     is_shown() 		{ return this.classList.contains("show"); }
     toggle() 		{ _toggle(this, !this.is_shown()); }
     show() 			{ if (!this.is_shown()) _toggle(this, true); }
     hide() 			{ if (this.is_shown()) _toggle(this, false); }
-    clone_template(){ return this.firstElementChild.content.firstElementChild.cloneNode(true); }    
+    clone_template(){ return this.firstElementChild.content.firstElementChild.cloneNode(true);  }    
 }
 
-customElements.define(TAG, TNG_Contact);
+customElements.define(TAG, El_Theater);
 
 let FRAGMENT;
 
@@ -144,3 +144,53 @@ function _toggle(el, show)
 //     }
 
 // }
+
+
+
+
+
+
+
+
+
+// if (window.theater) throw new Error("window.theater exists!?")
+
+// const theater = (function theater_constructor(){}).prototype;
+
+// theater.setup = setup;
+// theater.open = open;
+// theater.close = close;
+// theater.play = play;
+
+// const flags = new Uint8Array(1);
+// const OPEN = 0;
+// const PLAYING = 1;
+
+
+// // const 
+// function setup()
+// {
+    
+// }
+
+// function open() 
+// {
+//     if (is_open()) 
+//         return;
+    
+//     flags[OPEN] = 1;
+// }
+
+// function close()
+// {
+//     if (!is_open())
+//         return;
+
+//     flags[OPEN] = 0;
+// }
+
+// function is_open()
+// {
+//     return flags[OPEN] === 1;
+// }
+
